@@ -1,0 +1,469 @@
+Clusters:
+  - Id: qr
+    Routes:
+      - MatchPath: /api/qrmanager/rdr
+        MapTo: /api/qrmanager/rdr
+      - MatchPath: /api/qrmanager/ppay
+        MapTo: /api/qrmanager/ppay
+      - MatchPath: /qr
+        MapTo: /api/qrmanager
+  - Id: mana
+    Routes:
+    #######################   Api ที่คุยกันตรงๆ   #######################
+      - MatchPath: /signalr/{hub}/negotiate
+        MapTo: /signalr/{hub}/negotiate
+        Methods: [POST]
+      - MatchPath: /device/{id}/updateprofile
+        MapTo: /device/{id}/updateprofile
+      - MatchPath: /device/{id}/logout
+        MapTo: /device/{id}/logout
+        Methods: [POST]
+      - MatchPath: /device/noop
+        MapTo: /device/noop
+        Methods: [GET, POST, PUT, DELETE]
+      - MatchPath: /home/{id}/{isUpdateOnly}
+        MapTo: /home/{id}/{isUpdateOnly}
+      - MatchPath: /home/{id}/pageno/{pageNo}
+        MapTo: /home/{id}/pageno/{pageNo}
+      - MatchPath: /home/updateshorcut
+        MapTo: /home/updateshorcut
+      - MatchPath: /notification/{id}
+        MapTo: /notification/{id}
+      - MatchPath: /api/home/shortcuts
+        MapTo: /home/shortcuts
+      - MatchPath: /api/mcontent/form/uploadimage/sas
+        MapTo: /mcontent/uploadimage/sas
+      - MatchPath: /gps/place
+        MapTo: /gps/place
+      - MatchPath: /gps/coordinate
+        MapTo: /gps/coordinate
+      - MatchPath: /api/cart/order/visit/ncrtodr-{id}
+        MapTo: /cart/order/visit/ncrtodr-{id}
+      - MatchPath: /api/cart/order/pay/ncrtodr-{id}
+        MapTo: /cart/order/pay/ncrtodr-{id}
+        Methods: [GET, POST]
+      - MatchPath: /api/cart/order/shopping-cart/ncrtodr-{id}
+        MapTo: /cart/order/ncrtodr-{id}
+      - MatchPath: /api/cart/order/shopping-cart-pay/ncrtodr-{id}
+        MapTo: /cart/order/ncrtodr-{id}
+      - MatchPath: /api/cart/order/shopping-cart-delivery-select/ncrtodr-{id}
+        MapTo: /cart/order/option/ncrtodr-{id}
+      - MatchPath: /api/cart/order/location/{mcid}/ncrtodr-{id}
+        MapTo: /cart/order/location/ncrtodr-{id}
+        Methods: [POST]
+      - MatchPath: /api/cart/order/shippingmethod/{mcid}/ncrtodr-{id}
+        MapTo: /cart/order/shippingmethod/ncrtodr-{id}
+        Methods: [POST]
+      - MatchPath: /api/escrow/neschfd-{id}
+        MapTo: /escrow/neschfd-{id}
+      - MatchPath: /api/escrow/cancel/nafmdtl-{id}
+        MapTo: /escrow/cancel/nafmdtl-{id}
+        Methods: [GET, POST]
+      - MatchPath: /api/escrow/form/nescpst-{id}
+        MapTo: /escrow/form/nescpst-{id}
+        Methods: [GET, POST]
+      - MatchPath: /api/escrow/update/neschfd-{id}
+        MapTo: /escrow/update/neschfd-{id}
+      - MatchPath: /api/escrow/result/dlg/{dialogstatus}/{nptid}
+        MapTo: /escrow/result/dlg/{dialogstatus}/{nptid}
+      - MatchPath: /api/escrow/releasedlg/{oldendpoint}/nescpst-{id}
+        MapTo: /escrow/releasedlg/{oldendpoint}/nescpst-{id}
+      - MatchPath: /home/update/{id}
+        MapTo: /home/update/{id}
+      - MatchPath: /api/home/updatestate/{nptid}
+        MapTo: /home/updatestate/{nptid}
+      - MatchPath: /search/suggest
+        MapTo: /search/suggest
+      - MatchPath: /api/cart/adhoc/pay/ncrtahc-{id}
+        MapTo: /cart/adhoc/pay/ncrtahc-{id}
+        Methods: [POST]
+      - MatchPath: /api/wallet/ppay/payment/pay/nppypmt-{id}
+        MapTo: /wallet/ppay/payment/pay/nppypmt-{id}
+        Methods: [POST]
+      - MatchPath: /api/wallet/default/withdraw/confirm/nwltwit-{id}
+        MapTo: /wallet/default/withdraw/confirm/nwltwit-{id}
+        Methods: [POST]
+      - MatchPath: /api/wallet/exaccount/neacadd-{id}
+        MapTo: /wallet/exaccount/neacadd-{id}
+        Methods: [POST]
+      - MatchPath: /search/result
+        MapTo: /search/result
+      - MatchPath: /wallet/deposit/success/nppydep-{id}
+        MapTo: /wallet/deposit/success/nppydep-{id}
+      - MatchPath: /wallet/deposit2021/success/nwltdep-{id}
+        MapTo: /wallet/deposit2021/success/nwltdep-{id}
+      - MatchPath: /wallet/withdraw/success/nppywit-{id}
+        MapTo: /wallet/withdraw/success/nppywit-{id}
+      - MatchPath: /wallet/resultsuccess/updatebalance/{mcontentId}/{endpointId}
+        MapTo: /wallet/resultsuccess/updatebalance/{mcontentId}/{endpointId}
+      - MatchPath: /wallet3rd/withdrawresult2021
+        MapTo: /wallet3rd/withdrawresult2021
+        Methods: [GET, POST]
+      - MatchPath: /wallet3rd/result/adhoc
+        MapTo: /wallet3rd/result/adhoc
+        Methods: [GET, POST]
+      - MatchPath: /wallet3rd/result/ppay/pmt
+        MapTo: /wallet3rd/result/ppay/pmt
+        Methods: [GET, POST]
+      - MatchPath: /wallet3rd/withdrawresult
+        MapTo: /wallet3rd/withdrawresult
+        Methods: [GET, POST]
+      - MatchPath: /wallet3rd/depositeresult
+        MapTo: /wallet3rd/depositeresult
+        Methods: [GET, POST]
+      - MatchPath: /FileUpload/{id}
+        MapTo: /FileUpload/{id}
+      - MatchPath: /auth/{endpointId}
+        MapTo: /auth/{endpointId}
+      - MatchPath: /auth/bizs/{endpointId}
+        MapTo: /auth/bizs/{endpointId}
+      - MatchPath: /auth/login
+        MapTo: /auth/login
+        Methods: [POST]
+      - MatchPath: /mcontent/togglepin/{id}
+        MapTo: /mcontent/togglepin/{id}
+        Methods: [POST]
+      #######################   Endpoints to each API   #######################
+      - MatchPath: /api/endpoints/nidplog-{id}
+        MapTo: /auth/visit/nidplog-{id}
+      - MatchPath: /api/endpoints/nadddev{idx}
+        MapTo: /device/visit/nadddev{idx}/devdevice
+      - MatchPath: /api/endpoints/nmctmck-{id}
+        MapTo: /mcontent/endpoints/nmctmck-{id}
+      - MatchPath: /api/endpoints/nafmdtl-{id}
+        MapTo: /applicationform/visit/nafmdtl-{id}
+      - MatchPath: /api/endpoints/nbizhme-{id}
+        MapTo: /bizaccount/visit/nbizhme-{id}/bizpage
+      - MatchPath: /api/endpoints/nbizdtl-{id}
+        MapTo: /bizaccount/visit/nbizdtl-{id}/home
+      - MatchPath: /api/endpoints/nbizwtx-{id}
+        MapTo: /bizaccount/txconfirm/data/{id}
+        Methods: [GET, POST]
+      - MatchPath: /api/endpoints/nbizttx-{id}
+        MapTo: /bizaccount/txconfirm/data/{id}
+      - MatchPath: /api/endpoints/nbizimg-{id}
+        MapTo: /bizaccount/visit/nbizimg-{id}/image
+      - MatchPath: /api/endpoints/nmemdtl-{id}
+        MapTo: /membership/endpoints/nmemdtl-{id}
+        Methods: [GET, POST]
+      - MatchPath: /api/endpoints/nesprcv-{id}
+        MapTo: /eslip/endpoints/nesprcv-{id}/receive
+        Methods: [POST]
+      - MatchPath: /api/endpoints/nespuse-{id}
+        MapTo: /eslip/endpoints/nespuse-{id}/use
+        Methods: [POST]
+      - MatchPath: /api/endpoints/npv3dtl-{id}
+        MapTo: /privilege/endpoints/npv3dtl-{id}
+        Methods: [GET, POST]
+      - MatchPath: /api/endpoints/npv3crt-{id}
+        MapTo: /privilege/endpoints/npv3crt-{id}/cart
+        Methods: [GET, POST]
+      - MatchPath: /api/endpoints/npdt{idx}
+        MapTo: /product/endpoints/npdt{idx}
+      - MatchPath: /api/endpoints/ncrtodr-{id}
+        MapTo: /cart/order/visit/ncrtodr-{id}
+      - MatchPath: /api/endpoints/ncrtpdl-{id}
+        MapTo: /cart/product/ncrtpdl-{id}/delete
+        Methods: [GET, POST]
+      - MatchPath: /api/endpoints/ncrtahc-{id}
+        MapTo: /cart/adhoc/create/visit/ncrtahc-{id}
+      - MatchPath: /api/endpoints/nschhme-{id}
+        MapTo: /search/visit/nschhme-{id}
+      - MatchPath: /api/endpoints/nempreq-{id}
+        MapTo: /employee/register/visit/nempreq-{id}
+      - MatchPath: /api/endpoints/nshpctt-{id}
+        MapTo: /contract/shipping/visit/nshpctt-{id}
+      - MatchPath: /api/endpoints/ndvyctt-{id}
+        MapTo: /contract/delivery/visit/ndvyctt-{id}
+      - MatchPath: /api/endpoints/nppypmt-{id}
+        MapTo: /wallet/ppay/payment/create/visit/nppypmt-{id}
+      # - MatchPath: /api/endpoints/nppydep-{id}
+      #   MapTo: /wallet/deposit/visit/nppydep-{id}
+      # - MatchPath: /api/endpoints/nppywit-{id}
+      #   MapTo: /wallet/withdraw/visit/nppywit-{id}
+      - MatchPath: /api/endpoints/nwtx{id}
+        MapTo: /wallet/transaction/visit/nwtx{id}
+      - MatchPath: /api/endpoints/npflimg-{id}
+        MapTo: /profile/visit/npflimg-{id}/image
+      - MatchPath: /api/endpoints/npflupd-{id}
+        MapTo: /device/{id}/updateprofile
+      - MatchPath: /api/endpoints/nrmddtl-{id}
+        MapTo: /reminder/visit/nrmddtl-{id}
+      - MatchPath: /api/endpoints/nrmdses-{id}
+        MapTo: /reminder/visit/nrmdses-{id}/session
+      ##################   Form & Page => Get data / Submit data   ##################
+      - MatchPath: /mcontent/data/{mcid}/nidplog-{id}
+        MapTo: /auth/nidplog-{id}
+        Methods: [POST]
+      - MatchPath: /mcontent/data/idp-acceptance/nidplog-{id}
+        MapTo: /auth/nidplog-{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/idp-ba-select/nidplog-{id}
+        MapTo: /auth/bizs/nidplog-{id}
+      # - MatchPath: /mcontent/data/{mcid}/nadddev-{id}
+      #   MapTo: /device/data/{id}/devdevice
+      #   Methods: [GET, PUT]
+      # - MatchPath: /mcontent/form/hook/{mcid}/{nptid}/{hookid}
+      #   MapTo: /mcontent/hook/{mcid}/{nptid}/{hookid}
+      - MatchPath: /mcontent/data/{mcid}/nafmdtl-{id}
+        MapTo: /applicationform/data/{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/{mcid}/nbizhme-{id}
+        MapTo: /bizaccount/bizpage/{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/merchant-select/nbizdtl-{id}
+        MapTo: /bizaccount/{id}
+      - MatchPath: /mcontent/data/merchant-create/nbizdtl-{id}
+        MapTo: /bizaccount/{id}
+        Methods: [POST]
+      - MatchPath: /mcontent/data/merchant-home-basic/nbizdtl-{id}
+        MapTo: /bizaccount/{id}/basic
+      - MatchPath: /mcontent/data/merchant-home-pending/nbizdtl-{id}
+        MapTo: /bizaccount/{id}/basic
+      - MatchPath: /mcontent/data/merchant-home/nbizdtl-{id}
+        MapTo: /bizaccount/{id}/advance
+      - MatchPath: /mcontent/data/merchant-profile/nbizpfl-{id}
+        MapTo: /bizaccount/{id}/profile
+      - MatchPath: /mcontent/data/merchant-profile-image-edit/nbizimg-{id}
+        MapTo: /bizaccount/{id}/image
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/merchant-edit-name/nbiznme-{id}
+        MapTo: /bizaccount/{id}/name
+        Methods: [GET, PUT]
+      - MatchPath: /mcontent/data/merchant-edit-code/nbizcde-{id}
+        MapTo: /bizaccount/{id}/code
+        Methods: [GET, PUT]
+      - MatchPath: /mcontent/data/merchant-phone/nbizphn-{id}
+        MapTo: /bizaccount/{id}/phones
+      - MatchPath: /mcontent/data/merchant-add-phone/nbizphn-{id}
+        MapTo: /bizaccount/{id}/phones
+        Methods: [POST]
+      - MatchPath: /mcontent/data/merchant-edit-phone/nbizphn-{id}
+        MapTo: /bizaccount/{id}/phones/edit
+        Methods: [GET, PUT]
+      - MatchPath: /mcontent/data/merchant-address/nbizads-{id}
+        MapTo: /bizaccount/{id}/address
+        Methods: [GET, PUT]
+      - MatchPath: /mcontent/data/merchant-schedule-setting/nbizsch-{id}
+        MapTo: /bizaccount/{id}/schedules
+        Methods: [GET, PUT]
+      - MatchPath: /mcontent/data/merchant-contract/nbizctt-{id}
+        MapTo: /bizaccount/{id}/contracts
+      - MatchPath: /mcontent/data/merchant-contract-income/nbizctt-{id}
+        MapTo: /bizaccount/contracts/{id}
+      - MatchPath: /mcontent/data/merchant-deposit/nbizplg-{id}
+        MapTo: /bizaccount/{id}/pledges
+      - MatchPath: /mcontent/data/merchant-transaction/nbiztxl-{id}
+        MapTo: /bizaccount/{id}/transactions
+      - MatchPath: /mcontent/data/merchant-qr-receive-money/nbizqrp-{id}
+        MapTo: /bizaccount/{id}/qrpayment
+        Methods: [GET, PUT]
+      - MatchPath: /mcontent/data/merchant-topup/nbiztop-{id}
+        MapTo: /bizaccount/{id}/deposit
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/{mcid}/nbiztop-{id}
+        MapTo: /bizaccount/tx/data/{id}/deposit
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/merchant-topup-confirm/nbizttx-{id}
+        MapTo: /bizaccount/txconfirm/data/{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/merchant-topup-completed/nbizttx-{id}
+        MapTo: /bizaccount/txcompleted/data/{id}
+      - MatchPath: /mcontent/data/{mcid}/nbizwit-{id}
+        MapTo: /bizaccount/tx/data/{id}/withdraw
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/merchant-withdraw-confirm/nbizwtx-{id}
+        MapTo: /bizaccount/txconfirm/data/{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/merchant-withdraw-completed/nbizwtx-{id}
+        MapTo: /bizaccount/txcompleted/data/{id}
+      - MatchPath: /mcontent/data/merchant-employee/nbizemp-{id}
+        MapTo: /bizaccount/{id}/employees
+      # - MatchPath: /mcontent/data/{mcid}/nbizemp-{id}
+      #   MapTo: /bizaccount/employees/{id}
+      #   Methods: [GET, POST]
+      - MatchPath: /mcontent/data/merchant-budget/nbizbgt-{id}
+        MapTo: /bizaccount/{id}/budgets
+        Methods: 
+      # - MatchPath: /mcontent/data/{mcid}/nbizbgt-{id}
+      #   MapTo: /bizaccount/budgets/{id}
+      #   Methods: [GET, POST]
+      - MatchPath: /mcontent/data/{mcid}/nmemlst{idx}
+        MapTo: /membership
+      - MatchPath: /mcontent/data/{mcid}/nmemreg-{id}
+        MapTo: /membership/{id}/agreement
+      - MatchPath: /mcontent/data/{mcid}/nmemdtl-{id}
+        MapTo: /membership/{id}/detail
+      - MatchPath: /mcontent/data/{mcid}/nesplst{idx}
+        MapTo: /eslip/bizaccounts
+      - MatchPath: /mcontent/data/{mcid}/nesprcv-{id}
+        MapTo: /eslip/distributions/{id}
+      - MatchPath: /mcontent/data/{mcid}/nespuse-{id}
+        MapTo: /eslip/{id}
+      - MatchPath: /mcontent/data/{mcid}/nespmct-{id}
+        MapTo: /eslip/bizaccounts/{id}
+      - MatchPath: /mcontent/data/{mcid}/npv3dtl-{id}
+        MapTo: /privilege/{id}
+      - MatchPath: /mcontent/data/{mcid}/npv3crt-{id}
+        MapTo: /privilege/{id}/cartdata
+      - MatchPath: /mcontent/data/{mcid}/npdtdtl-{id}
+        MapTo: /product/data/{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/{mcid}/npdtext-{id}
+        MapTo: /product/data/{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/{mcid}/npflads-home
+        MapTo: /profile/address
+      - MatchPath: /mcontent/data/{mcid}/npflads-create
+        MapTo: /profile/address
+        Methods: [POST]
+      # - MatchPath: /api/mcontent/data/{mcid}/npflads-(shipment|bill)
+      #   MapTo: /profile/address
+      - MatchPath: /mcontent/data/{mcid}/npflads-{id}
+        MapTo: /profile/address/{id}
+        Methods: [GET, PUT, DELETE]
+      - MatchPath: /mcontent/data/{mcid}/npflimg-{id}
+        MapTo: /profile/image
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/{mcid}/npflnme-home
+        MapTo: /profile
+        Methods: [GET, PUT]
+      - MatchPath: /mcontent/data/{mcid}/npflacc-home
+        MapTo: /profile
+        Methods: [GET, PUT]
+      # - MatchPath: /mcontent/data/{mcid}/npfl{idx}
+      #   MapTo: /profile
+      #   Methods: [GET, PUT]
+      - MatchPath: /mcontent/data/wallet-topup-detail/nppydep-{id}
+        MapTo: /wallet/depositrequest/nppydep-{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/wallet-topup-confirm/nppydep-{id}
+        MapTo: /wallet/deposit/nppydep-{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/wallet-topup-completed/nppydep-{id}
+        MapTo: /wallet/deposit/success/data/nppydep-{id}
+      - MatchPath: /mcontent/data/wallet-topup-ppay/nwltdep-{id}
+        MapTo: /wallet/depositrequest2021/nwltdep-{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/wallet-topup-ppay-confirm/nwltdep-{id}
+        MapTo: /wallet/deposit2021/nwltdep-{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/wallet-topup-completed/nwltdep-{id}
+        MapTo: /wallet/deposit2021/success/data/nwltdep-{id}
+      - MatchPath: /mcontent/data/wallet-withdraw-detail/nppywit-{id}
+        MapTo: /wallet/withdrawrequest/nppywit-{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/wallet-withdraw-confirm/nppywit-{id}
+        MapTo: /wallet/withdraw/nppywit-{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/wallet-withdraw-completed/nppywit-{id}
+        MapTo: /wallet/withdraw/success/data/nppywit-{id}
+      - MatchPath: /mcontent/data/wallet-withdraw-completed/nwltwit-{id}
+        MapTo: /wallet/withdraw/account/success/data/nwltwit-{id}
+      # - MatchPath: /mcontent/data/wallet-topup/nwltdqr-{id}
+      #   MapTo: /wallet/user/accounts/nwltdqr-{id}
+      - MatchPath: /mcontent/data/wallet-topup-qr-create/nwltdqr-{id}
+        MapTo: /wallet/depositqrrequest/nwltdqr-{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/wallet-topup-qr-confirm/nwltdqr-{id}
+        MapTo: /wallet/depositqr/nwltdqr-{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/wallet-topup-complete-qr/nwltdqr-{id}
+        MapTo: /wallet/depositqr/success/nwltdqr-{id}
+      - MatchPath: /mcontent/data/wallet-topup/nwltdep-{id}
+        MapTo: /wallet/user/accounts/nwltdep-{id}
+      - MatchPath: /mcontent/data/wallet-topup-bankaccount/nwltdep-{id}
+        MapTo: /wallet/depositqrrequest/acc/nwltdep-{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/wallet-topup-bankaccount-confirm/nwltdep-{id}
+        MapTo: /wallet/depositqr/acc/nwltdep-{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/wallet-topup-complete-qr/nwltdep-{id}
+        MapTo: /wallet/depositqr/acc/success/nwltdep-{id}
+      - MatchPath: /mcontent/data/{mcid}/nescpst-{id}
+        MapTo: /escrow/form/nescpst-{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/{mcid}/neschfd-{id}
+        MapTo: /escrow/data/{mcid}/neschfd-{id}
+      - MatchPath: /mcontent/data/{mcid}/nshpctt-{id}
+        MapTo: /contract/shipping/consent/nshpctt-{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/{mcid}/ndvyctt-{id}
+        MapTo: /contract/delivery/consent/ndvyctt-{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/{mcid}/nempreq-{id}
+        MapTo: /employee/register/consent/nempreq-{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/cart-adhoc-creating/ncrtahc-{id}
+        MapTo: /cart/adhoc/create/ncrtahc-{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/cart-adhoc-pay/ncrtahc-{id}
+        MapTo: /cart/adhoc/confirm/ncrtahc-{id}
+      - MatchPath: /mcontent/data/cart-adhoc-completed/ncrtahc-{id}
+        MapTo: /cart/adhoc/completed/ncrtahc-{id}
+      - MatchPath: /mcontent/data/wallet-withdraw-completed/ncrtodr-{id}
+        MapTo: /cart/order/pay/ncrtodr-{id}/complete
+      # - MatchPath: /mcontent/data/ppay-payment-creating/{nppypmt}-{id}
+      #   MapTo: /api/qrmanager/ppay/{txt}
+      - MatchPath: /mcontent/data/ppay-payment-creating/nppypmt-{id}
+        MapTo: /wallet/ppay/payment/create/nppypmt-{id}
+        Methods: [POST]
+      - MatchPath: /mcontent/data/ppay-payment-confirm/nppypmt-{id}
+        MapTo: /wallet/ppay/payment/confirm/nppypmt-{id}
+      - MatchPath: /mcontent/data/ppay-payment-completed/nppypmt-{id}
+        MapTo: /wallet/ppay/payment/completed/nppypmt-{id}
+      - MatchPath: /mcontent/data/financial-menu/nfinanc-home
+        MapTo: /wallet/default
+      - MatchPath: /mcontent/data/wallet-select/nwltlst-{id}
+        MapTo: /wallet
+      - MatchPath: /mcontent/data/wallet-detail/nwltdft-{id}
+        MapTo: /wallet/1/transaction
+      - MatchPath: /mcontent/data/wallet-transaction-adhoc/nwtxahc-{id}
+        MapTo: /wallet/transaction/adhoc/nwtxahc-{id}
+      - MatchPath: /mcontent/data/wallet-transaction-ppay-payment/nwtxpmt-{id}
+        MapTo: /wallet/transaction/ppaypayment/nwtxpmt-{id}
+      - MatchPath: /mcontent/data/wallet-transaction-topup/nwtxdep-{id}
+        MapTo: /wallet/transaction/deposit/nwtxdep-{id}
+      - MatchPath: /mcontent/data/wallet-transaction-withdraw/nwtxwit-{id}
+        MapTo: /wallet/transaction/withdraw/nwtxwit-{id}
+      - MatchPath: /mcontent/data/wallet-transaction-receivemoney/nwtxrmy-{id}
+        MapTo: /wallet/transaction/receivemoney/nwtxrmy-{id}
+      - MatchPath: /mcontent/data/wallet-withdraw/nwltwit-{id}
+        MapTo: /wallet/user/accounts/nwltwit-{id}
+      - MatchPath: /mcontent/data/wallet-withdraw-bankaccount/nwltwit-{id}
+        MapTo: /wallet/default/withdraw/account/nwltwit-{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/wallet-withdraw-bankaccount-confirm/nwltwit-{id}
+        MapTo: /wallet/default/withdraw/confirm/nwltwit-{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/account-main/neaclst-{id}
+        MapTo: /wallet/exaccounts/neaclst-{id}
+      - MatchPath: /mcontent/data/account-confirm-ppay/neacadd-{id}
+        MapTo: /wallet/exaccount/neacadd-{id}
+      - MatchPath: /mcontent/data/account-confirm-bankaccount/neacadd-{id}
+        MapTo: /wallet/exaccount/neacadd-{id}
+      - MatchPath: /mcontent/data/account-create-ppay/neacadd-{id}
+        MapTo: /wallet/exaccount/promptpay/neacadd-{id}
+        Methods: [POST]
+      - MatchPath: /mcontent/data/account-create-bankaccount/neacadd-{id}
+        MapTo: /wallet/exaccount/bank/neacadd-{id}
+        Methods: [POST]
+      - MatchPath: /mcontent/data/{mcid}/nrmddtl-{id}
+        MapTo: /reminder/{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/{mcid}/nrmdses-{id}
+        MapTo: /reminder/session/{id}
+        Methods: [GET, POST]
+      # - MatchPath: /mcontent/data/{mcid}/{nptid}
+      #   MapTo: /mcontent/data/{mcid}/{nptid}
+      #   Methods: [GET, POST, PUT, DELETE]
+      - MatchPath: /mcontent/{*id}
+        MapTo: /mcontent/{id}
+        Methods: [GET, POST, PUT, DELETE]
+      - MatchPath: /mcontent/f/{*id}
+        MapTo: /mcontent/f/{id}
+      ##################   TEMP   ##################
+      # - MatchPath: /{*path}
+      #   MapTo: /{path}
+      # - MatchPath: /
+      #   MapTo: /swagger
