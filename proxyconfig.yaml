@@ -76,6 +76,9 @@ Clusters:
         MapTo: /home/updatestate/{nptid}
       - MatchPath: /search/suggest
         MapTo: /search/suggest
+      - MatchPath: /api/cart/adhoc/visit/ncrtahc-{id}
+        MapTo: /cart/adhoc/visit/ncrtahc-{id}
+        Methods: [GET]
       - MatchPath: /api/cart/adhoc/pay/ncrtahc-{id}
         MapTo: /cart/adhoc/pay/ncrtahc-{id}
         Methods: [POST]
@@ -344,6 +347,9 @@ Clusters:
         Methods: [GET, POST]
       - MatchPath: /mcontent/data/wallet-topup-completed/nppydep-{id}
         MapTo: /wallet/deposit/success/data/nppydep-{id}
+      - MatchPath: /mcontent/data/sandbox-wallet-topup-detail/nwltdep-{id}
+        MapTo: /wallet/sanbox/topup/nwltdep-{id}
+        Methods: [GET, POST]
       - MatchPath: /mcontent/data/wallet-topup-ppay/nwltdep-{id}
         MapTo: /wallet/depositrequest2021/nwltdep-{id}
         Methods: [GET, POST]
