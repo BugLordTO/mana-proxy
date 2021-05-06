@@ -9,30 +9,47 @@ Clusters:
         MapTo: /api/qrmanager
       - MatchPath: /api/barcodemanager/rdr
         MapTo: /api/barcodemanager/rdr
-  - Id: mana
+  - Id: mana_
     Routes:
-    #######################   Api ที่คุยกันตรงๆ   #######################
+      - MatchPath: /device/{id}/updateprofile
+        MapTo: /device/{id}/updateprofile
+      - MatchPath: /home/{id}/{isUpdateOnly}
+        MapTo: /home/{id}/{isUpdateOnly}
+      - MatchPath: /home/{id}/pageno/{pageNo}
+        MapTo: /home/{id}/pageno/{pageNo}
+      - MatchPath: /home/update/{id}
+        MapTo: /home/update/{id}
+      - MatchPath: /api/home/shortcuts
+        MapTo: /home/shortcuts
+      - MatchPath: /notification/{id}
+        MapTo: /notification/{id}
       - MatchPath: /signalr/{hub}/negotiate
         MapTo: /signalr/{hub}/negotiate
         Methods: [POST]
-      - MatchPath: /device/{id}/updateprofile
-        MapTo: /device/{id}/updateprofile
+  - Id: mana
+    Routes:
+    #######################   Api ที่คุยกันตรงๆ   #######################
+      # - MatchPath: /signalr/{hub}/negotiate # MOVE
+      #   MapTo: /signalr/{hub}/negotiate # MOVE
+      #   Methods: [POST] # MOVE
+      # - MatchPath: /device/{id}/updateprofile # MOVE
+      #   MapTo: /device/{id}/updateprofile # MOVE
       - MatchPath: /device/{id}/logout
         MapTo: /device/{id}/logout
         Methods: [POST]
       - MatchPath: /device/noop
         MapTo: /device/noop
         Methods: [GET, POST, PUT, DELETE]
-      - MatchPath: /home/{id}/{isUpdateOnly}
-        MapTo: /home/{id}/{isUpdateOnly}
-      - MatchPath: /home/{id}/pageno/{pageNo}
-        MapTo: /home/{id}/pageno/{pageNo}
+      # - MatchPath: /home/{id}/{isUpdateOnly} # MOVE
+      #   MapTo: /home/{id}/{isUpdateOnly} # MOVE
+      # - MatchPath: /home/{id}/pageno/{pageNo} # MOVE
+      #   MapTo: /home/{id}/pageno/{pageNo} # MOVE
       - MatchPath: /home/updateshorcut
         MapTo: /home/updateshorcut
-      - MatchPath: /notification/{id}
-        MapTo: /notification/{id}
-      - MatchPath: /api/home/shortcuts
-        MapTo: /home/shortcuts
+      # - MatchPath: /notification/{id} # MOVE
+      #   MapTo: /notification/{id} # MOVE
+      # - MatchPath: /api/home/shortcuts # MOVE
+      #   MapTo: /home/shortcuts # MOVE
       - MatchPath: /api/mcontent/form/uploadimage/sas
         MapTo: /mcontent/uploadimage/sas
       - MatchPath: /gps/place
@@ -70,8 +87,8 @@ Clusters:
         MapTo: /escrow/result/dlg/{dialogstatus}/{nptid}
       - MatchPath: /api/escrow/releasedlg/{oldendpoint}/nescpst-{id}
         MapTo: /escrow/releasedlg/{oldendpoint}/nescpst-{id}
-      - MatchPath: /home/update/{id}
-        MapTo: /home/update/{id}
+      # - MatchPath: /home/update/{id} # MOVE
+      #   MapTo: /home/update/{id} # MOVE
       - MatchPath: /api/home/updatestate/{nptid}
         MapTo: /home/updatestate/{nptid}
       - MatchPath: /search/suggest
