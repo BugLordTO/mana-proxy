@@ -197,6 +197,9 @@ Clusters:
       - MatchPath: /api/endpoints/nrmdses-{id}
         MapTo: /reminder/visit/nrmdses-{id}/session
       ##################   Form & Page => Get data / Submit data   ##################
+      - MatchPath: /mcontent/data/report-create/nrptdtl-{id}
+        MapTo: /report/issue/create/{id}
+        Methods: [POST]
       - MatchPath: /mcontent/data/{mcid}/nidplog-{id}
         MapTo: /auth/nidplog-{id}
         Methods: [POST]
