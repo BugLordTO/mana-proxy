@@ -9,7 +9,7 @@ Clusters:
         MapTo: /api/qrmanager
       - MatchPath: /api/barcodemanager/rdr
         MapTo: /api/barcodemanager/rdr
-  - Id: mana_
+  - Id: mana2
     Routes:
       - MatchPath: /device/{id}/updateprofile
         MapTo: /device/{id}/updateprofile
