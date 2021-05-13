@@ -8,7 +8,11 @@ Clusters:
       - MatchPath: /qr
         MapTo: /api/qrmanager
       - MatchPath: /api/barcodemanager/rdr
-        MapTo: /api/barcodemanager/rdr
+        MapTo: /api/barcodemanager/rdr  
+  - Id: backoffice
+    Routes:
+      - MatchPath: /mana/issue/{uid}
+        MapTo: /mana/issue/{uid}
   - Id: mana
     Routes:
     #######################   Api ที่คุยกันตรงๆ   #######################
@@ -198,7 +202,7 @@ Clusters:
         MapTo: /reminder/visit/nrmdses-{id}/session
       ##################   Form & Page => Get data / Submit data   ##################
       - MatchPath: /mcontent/data/report-create/nrptdtl-{id}
-        MapTo: /report/issue/create/{id}
+        MapTo: /report/issue/create/nrptdtl-{id}
         Methods: [POST]
       - MatchPath: /mcontent/data/{mcid}/nidplog-{id}
         MapTo: /auth/nidplog-{id}
