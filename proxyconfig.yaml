@@ -203,6 +203,12 @@ Clusters:
       - MatchPath: /mcontent/data/report-main/nrptdtl-{id}
         MapTo: /report/issue/nrptdtl-{id}
         Methods: [GET]      
+      - MatchPath: /mcontent/data/report-progress/nrptiss-{id}
+        MapTo: /report/issue/detail/nrptiss-{id}
+        Methods: [GET]      
+      - MatchPath: /mcontent/data/report-operation-log/nrptlog-{id}
+        MapTo: /report/issue/log/nrptlog-{id}
+        Methods: [GET]      
       - MatchPath: /mcontent/data/{mcid}/nidplog-{id}
         MapTo: /auth/nidplog-{id}
         Methods: [POST]
