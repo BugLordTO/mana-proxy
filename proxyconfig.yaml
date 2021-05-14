@@ -199,7 +199,7 @@ Clusters:
       ##################   Form & Page => Get data / Submit data   ##################
       - MatchPath: /mcontent/data/report-create/nrptdtl-{id}
         MapTo: /report/issue/nrptdtl-{id}
-        Methods: [POST]      
+        Methods: [GET, POST]      
       - MatchPath: /mcontent/data/report-main/nrptdtl-{id}
         MapTo: /report/issue/nrptdtl-{id}
         Methods: [GET]      
