@@ -201,7 +201,7 @@ Clusters:
         MapTo: /report/issue/nrptdtl-{id}
         Methods: [GET, POST]      
       - MatchPath: /mcontent/data/report-main/nrptdtl-{id}
-        MapTo: /report/issue/nrptdtl-{id}
+        MapTo: /report/issue/list/nrptdtl-{id}
         Methods: [GET]      
       - MatchPath: /mcontent/data/report-progress/nrptiss-{id}
         MapTo: /report/issue/detail/nrptiss-{id}
