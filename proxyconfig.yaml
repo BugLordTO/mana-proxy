@@ -214,6 +214,9 @@ Clusters:
       - MatchPath: /mcontent/data/consent-freezing-by-manager/nfrzacc-{id}
         MapTo: /report/freeze/session/nfrzacc-{id}
         Methods: [GET]      
+      - MatchPath: /mcontent/data/consent-freezing-by-manager/nfrzacc-{id}
+        MapTo: /report/freeze/nfrzacc-{id}
+        Methods: [POST]  
       - MatchPath: /mcontent/data/{mcid}/nidplog-{id}
         MapTo: /auth/nidplog-{id}
         Methods: [POST]
