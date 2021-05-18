@@ -196,6 +196,8 @@ Clusters:
         MapTo: /reminder/visit/nrmddtl-{id}
       - MatchPath: /api/endpoints/nrmdses-{id}
         MapTo: /reminder/visit/nrmdses-{id}/session
+      - MatchPath: /api/endpoints/nfrzacc-{id}
+        MapTo: /report/freeze/visit/nfrzacc-{id}
       ##################   Form & Page => Get data / Submit data   ##################
       - MatchPath: /mcontent/data/report-create/nrptdtl-{id}
         MapTo: /report/issue/nrptdtl-{id}
@@ -208,6 +210,9 @@ Clusters:
         Methods: [GET]      
       - MatchPath: /mcontent/data/report-operation-log/nrptlog-{id}
         MapTo: /report/issue/log/nrptlog-{id}
+        Methods: [GET]        
+      - MatchPath: /mcontent/data/consent-freezing-by-manager/nfrzacc-{id}
+        MapTo: /report/freeze/session/nfrzacc-{id}
         Methods: [GET]      
       - MatchPath: /mcontent/data/{mcid}/nidplog-{id}
         MapTo: /auth/nidplog-{id}
