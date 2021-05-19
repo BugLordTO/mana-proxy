@@ -200,6 +200,10 @@ Clusters:
         MapTo: /report/freeze/visit/nfrzacc-{id}
       - MatchPath: /api/endpoints/nunfrez-{id}
         MapTo: /report/unfreeze/visit/nunfrez-{id}
+      - MatchPath: /api/endpoints/nulkmng-{id}
+        MapTo: /report/unlock/manager/visit/nulkmng-{id}
+      - MatchPath: /api/endpoints/nulkusr-{id}
+        MapTo: /report/unlock/user/visit/nulkusr-{id}
       ##################   Form & Page => Get data / Submit data   ##################
       - MatchPath: /mcontent/data/report-create/nrptdtl-{id}
         MapTo: /report/issue/nrptdtl-{id}
@@ -218,7 +222,13 @@ Clusters:
         Methods: [GET, POST]     
       - MatchPath: /mcontent/data/consent-unfreezing-by-manager/nunfrez-{id}
         MapTo: /report/unfreeze/session/nunfrez-{id}
-        Methods: [GET, POST]      
+        Methods: [GET, POST]     
+      - MatchPath: /mcontent/data/consent-unfreezing-by-manager/nulkmng-{id}
+        MapTo: /report/unlock/manager/session/nulkmng-{id}
+        Methods: [GET, POST]     
+      - MatchPath: /mcontent/data/consent-unfreezing-by-manager/nulkusr-{id}
+        MapTo: /report/unlock/user/session/nulkusr-{id}
+        Methods: [GET, POST]              
       - MatchPath: /mcontent/data/{mcid}/nidplog-{id}
         MapTo: /auth/nidplog-{id}
         Methods: [POST]
