@@ -39,6 +39,22 @@ Clusters:
         MapTo: /gps/place
       - MatchPath: /gps/coordinate
         MapTo: /gps/coordinate
+      - MatchPath: /mcontent/data/kyc-tel-confirm/nkycbsc-{id}
+        MapTo: /kyc/markedmobile
+      - MatchPath: /kyc/validate/mobile/{mobile}
+        MapTo: /kyc/validate/mobile/{mobile}
+      - MatchPath: /mcontent/data/kyc-agreement/nkycbsc-{id}
+        MapTo: /kyc/basic/create/nkycbsc-{id}
+      - MatchPath: /mcontent/data/kyc-basic-create/nkycbsc-{id}
+        MapTo: /kyc/basic/create/nkycbsc-{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/kyc-basic-confirm/nkycbsc-{id}
+        MapTo: /kyc/basic/confirm/nkycbsc-{id}
+      - MatchPath: /kyc/basic/send/nkycbsc-{id}
+        MapTo: /kyc/basic/send/nkycbsc-{id}
+        Methods: [POST]
+      - MatchPath: /mcontent/data/kyc-main/nkycdlt-{id}
+        MapTo: /kyc/nkycbsc-{id}
       - MatchPath: /api/cart/order/visit/ncrtodr-{id}
         MapTo: /cart/order/visit/ncrtodr-{id}
       - MatchPath: /api/cart/order/pay/ncrtodr-{id}
@@ -264,9 +280,6 @@ Clusters:
         MapTo: /bizaccount/{id}/qrpayment
         Methods: [GET, PUT]
       - MatchPath: /mcontent/data/merchant-topup/nbiztop-{id}
-        MapTo: /bizaccount/{id}/deposit
-        Methods: [GET, POST]
-      - MatchPath: /mcontent/data/{mcid}/nbiztop-{id}
         MapTo: /bizaccount/tx/data/{id}/deposit
         Methods: [GET, POST]
       - MatchPath: /mcontent/data/merchant-topup-confirm/nbizttx-{id}
@@ -274,7 +287,7 @@ Clusters:
         Methods: [GET, POST]
       - MatchPath: /mcontent/data/merchant-topup-completed/nbizttx-{id}
         MapTo: /bizaccount/txcompleted/data/{id}
-      - MatchPath: /mcontent/data/{mcid}/nbizwit-{id}
+      - MatchPath: /mcontent/data/merchant-withdraw/nbizwit-{id}
         MapTo: /bizaccount/tx/data/{id}/withdraw
         Methods: [GET, POST]
       - MatchPath: /mcontent/data/merchant-withdraw-confirm/nbizwtx-{id}
