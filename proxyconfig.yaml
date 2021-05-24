@@ -212,7 +212,39 @@ Clusters:
         MapTo: /reminder/visit/nrmddtl-{id}
       - MatchPath: /api/endpoints/nrmdses-{id}
         MapTo: /reminder/visit/nrmdses-{id}/session
+      - MatchPath: /api/endpoints/nfrzacc-{id}
+        MapTo: /report/freeze/visit/nfrzacc-{id}
+      - MatchPath: /api/endpoints/nunfrez-{id}
+        MapTo: /report/unfreeze/visit/nunfrez-{id}
+      - MatchPath: /api/endpoints/nulkmng-{id}
+        MapTo: /report/unlock/manager/visit/nulkmng-{id}
+      - MatchPath: /api/endpoints/nulkusr-{id}
+        MapTo: /report/unlock/user/visit/nulkusr-{id}
       ##################   Form & Page => Get data / Submit data   ##################
+      - MatchPath: /mcontent/data/report-create/nrptdtl-{id}
+        MapTo: /report/issue/nrptdtl-{id}
+        Methods: [GET, POST]      
+      - MatchPath: /mcontent/data/report-main/nrptdtl-{id}
+        MapTo: /report/issue/list/nrptdtl-{id}
+        Methods: [GET]      
+      - MatchPath: /mcontent/data/report-progress/nrptiss-{id}
+        MapTo: /report/issue/detail/nrptiss-{id}
+        Methods: [GET]      
+      - MatchPath: /mcontent/data/report-operation-log/nrptlog-{id}
+        MapTo: /report/issue/log/nrptlog-{id}
+        Methods: [GET]        
+      - MatchPath: /mcontent/data/consent-freezing-by-manager/nfrzacc-{id}
+        MapTo: /report/freeze/session/nfrzacc-{id}
+        Methods: [GET, POST]     
+      - MatchPath: /mcontent/data/consent-unfreezing-by-manager/nunfrez-{id}
+        MapTo: /report/unfreeze/session/nunfrez-{id}
+        Methods: [GET, POST]     
+      - MatchPath: /mcontent/data/consent-unfreezing-by-manager/nulkmng-{id}
+        MapTo: /report/unlock/manager/session/nulkmng-{id}
+        Methods: [GET, POST]     
+      - MatchPath: /mcontent/data/consent-unfreezing-by-manager/nulkusr-{id}
+        MapTo: /report/unlock/user/session/nulkusr-{id}
+        Methods: [GET, POST]              
       - MatchPath: /mcontent/data/{mcid}/nidplog-{id}
         MapTo: /auth/nidplog-{id}
         Methods: [POST]
