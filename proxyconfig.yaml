@@ -132,7 +132,7 @@ Clusters:
       - MatchPath: /wallet3rd/depositeresult
         MapTo: /wallet3rd/depositeresult
         Methods: [GET, POST]
-      - MatchPath: /FileUpload/{id}
+      - MatchPath: /FileUpload/{*id}
         MapTo: /FileUpload/{id}
       - MatchPath: /auth/{endpointId}
         MapTo: /auth/{endpointId}
@@ -312,6 +312,8 @@ Clusters:
         MapTo: /membership/{id}/agreement
       - MatchPath: /mcontent/data/{mcid}/nmemdtl-{id}
         MapTo: /membership/{id}/detail
+      - MatchPath: /api/mcontent/promome-membership
+        MapTo: /FileUpload/636966876336333503/logo/636979148221970082/promome/LogoPM.png
       - MatchPath: /mcontent/data/{mcid}/nesplst{idx}
         MapTo: /eslip/bizaccounts
       - MatchPath: /mcontent/data/{mcid}/nesprcv-{id}
