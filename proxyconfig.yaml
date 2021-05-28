@@ -218,8 +218,14 @@ Clusters:
         MapTo: /report/unfreeze/visit/nunfrez-{id}
       - MatchPath: /api/endpoints/nulkmng-{id}
         MapTo: /report/unlock/manager/visit/nulkmng-{id}
+      - MatchPath: /mcontent/data/consent-userinfo-by-manager/nulkmng-{id}
+        MapTo: /report/unlock/manager/session/nulkmng-{id}
+        Methods: [GET, POST] 
       - MatchPath: /api/endpoints/nulkusr-{id}
         MapTo: /report/unlock/user/visit/nulkusr-{id}
+      - MatchPath: /mcontent/data/consent-userinfo-by-user/nulkusr-{id}
+        MapTo: /report/unlock/user/session/nulkusr-{id}
+        Methods: [GET, POST] 
       ##################   Form & Page => Get data / Submit data   ##################
       - MatchPath: /mcontent/data/report-create/nrptdtl-{id}
         MapTo: /report/issue/nrptdtl-{id}
