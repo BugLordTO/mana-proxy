@@ -33,8 +33,8 @@ Clusters:
         MapTo: /notification/{id}
       - MatchPath: /api/home/shortcuts
         MapTo: /home/shortcuts
-      - MatchPath: /api/mcontent/form/uploadimage/sas
-        MapTo: /mcontent/uploadimage/sas
+      - MatchPath: /tempupload/{mcid}/{endpointId}/sas
+        MapTo: /tempupload/{mcid}/{endpointId}/sas
       - MatchPath: /gps/place
         MapTo: /gps/place
       - MatchPath: /gps/coordinate
