@@ -35,6 +35,7 @@ Clusters:
         MapTo: /home/shortcuts
       - MatchPath: /tempupload/{mcid}/{endpointId}
         MapTo: /tempupload/{mcid}/{endpointId}
+        Methods: [POST]
       - MatchPath: /gps/place
         MapTo: /gps/place
       - MatchPath: /gps/coordinate
