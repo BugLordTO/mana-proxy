@@ -9,6 +9,17 @@ Clusters:
         MapTo: /api/qrmanager
       - MatchPath: /api/barcodemanager/rdr
         MapTo: /api/barcodemanager/rdr
+  - Id: manaapi
+    Routes:
+      - MatchPath: /tempupload/{mcid}/{endpointId}
+        MapTo: /tempupload/{mcid}/{endpointId}
+        Methods: [POST]
+      - MatchPath: /mcontent/data/{mcid}/npflimg-{id}
+        MapTo: /profile/image
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/kyc-basic-create/nkycbsc-{id}
+        MapTo: /kyc/basic/create/nkycbsc-{id}
+        Methods: [GET, POST]
   - Id: mana
     Routes:
     #######################   Api ที่คุยกันตรงๆ   #######################
@@ -33,9 +44,6 @@ Clusters:
         MapTo: /notification/{id}
       - MatchPath: /api/home/shortcuts
         MapTo: /home/shortcuts
-      - MatchPath: /tempupload/{mcid}/{endpointId}
-        MapTo: /tempupload/{mcid}/{endpointId}
-        Methods: [POST]
       - MatchPath: /gps/place
         MapTo: /gps/place
       - MatchPath: /gps/coordinate
@@ -46,9 +54,6 @@ Clusters:
         MapTo: /kyc/validate/mobile/{mobile}
       - MatchPath: /mcontent/data/kyc-agreement/nkycbsc-{id}
         MapTo: /kyc/basic/create/nkycbsc-{id}
-      - MatchPath: /mcontent/data/kyc-basic-create/nkycbsc-{id}
-        MapTo: /kyc/basic/create/nkycbsc-{id}
-        Methods: [GET, POST]
       - MatchPath: /mcontent/data/kyc-basic-confirm/nkycbsc-{id}
         MapTo: /kyc/basic/confirm/nkycbsc-{id}
       - MatchPath: /kyc/basic/send/nkycbsc-{id}
@@ -381,9 +386,6 @@ Clusters:
       - MatchPath: /mcontent/data/{mcid}/npflads-{id}
         MapTo: /profile/address/{id}
         Methods: [GET, PUT, DELETE]
-      - MatchPath: /mcontent/data/{mcid}/npflimg-{id}
-        MapTo: /profile/image
-        Methods: [GET, POST]
       - MatchPath: /mcontent/data/{mcid}/npflnme-home
         MapTo: /profile
         Methods: [GET, PUT]
