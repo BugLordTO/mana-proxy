@@ -20,6 +20,9 @@ Clusters:
       - MatchPath: /mcontent/data/kyc-basic-create/nkycbsc-{id}
         MapTo: /kyc/basic/create/nkycbsc-{id}
         Methods: [GET, POST]
+      - MatchPath: /mcontent/data/merchant-profile-image-edit/nbizimg-{id}
+        MapTo: /bizaccount/{id}/image
+        Methods: [GET, POST]
   - Id: mana
     Routes:
       #######################   Api ที่คุยกันตรงๆ   #######################
@@ -289,9 +292,6 @@ Clusters:
         MapTo: /bizaccount/{id}/advance
       - MatchPath: /mcontent/data/merchant-profile/nbizpfl-{id}
         MapTo: /bizaccount/{id}/profile
-      - MatchPath: /mcontent/data/merchant-profile-image-edit/nbizimg-{id}
-        MapTo: /bizaccount/{id}/image
-        Methods: [GET, POST]
       - MatchPath: /mcontent/data/merchant-edit-name/nbiznme-{id}
         MapTo: /bizaccount/{id}/name
         Methods: [GET, PUT]
