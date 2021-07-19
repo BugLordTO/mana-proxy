@@ -260,6 +260,12 @@ Clusters:
       - MatchPath: /mcontent/data/consent-unfreezing-by-manager/nulkusr-{id}
         MapTo: /report/unlock/user/session/nulkusr-{id}
         Methods: [GET, POST]
+      - MatchPath: /report/feed/ignore/nfedign-{id}
+        MapTo: /report/feed/ignore/nfedign-{id}
+        Methods: [POST]
+      - MatchPath: /report/feed/reject/{id}
+        MapTo: /report/feed/reject/{id}
+        Methods: [POST]
       - MatchPath: /mcontent/data/{mcid}/nidplog-{id}
         MapTo: /auth/nidplog-{id}
         Methods: [POST]
