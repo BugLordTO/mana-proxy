@@ -20,6 +20,9 @@ Clusters:
       - MatchPath: /mcontent/data/kyc-basic-create/nkycbsc-{id}
         MapTo: /kyc/basic/create/nkycbsc-{id}
         Methods: [GET, POST]
+      - MatchPath: /mcontent/data/kyc-basic-create/nkycrst-{id}
+        MapTo: /kyc/basic/resubmit/nkycrst-{id}
+        Methods: [GET, POST]
       - MatchPath: /mcontent/data/merchant-profile-image-edit/nbizimg-{id}
         MapTo: /bizaccount/{id}/image
         Methods: [GET, POST]
@@ -53,17 +56,24 @@ Clusters:
         MapTo: /gps/coordinate
       - MatchPath: /mcontent/data/kyc-tel-confirm/nkycbsc-{id}
         MapTo: /kyc/markedmobile
+      - MatchPath: /mcontent/data/kyc-tel-confirm/nkycrst-{id}
+        MapTo: /kyc/markedmobile
       - MatchPath: /kyc/validate/mobile/{mobile}
         MapTo: /kyc/validate/mobile/{mobile}
       - MatchPath: /mcontent/data/kyc-agreement/nkycbsc-{id}
         MapTo: /kyc/basic/create/nkycbsc-{id}
       - MatchPath: /mcontent/data/kyc-basic-confirm/nkycbsc-{id}
         MapTo: /kyc/basic/confirm/nkycbsc-{id}
+      - MatchPath: /mcontent/data/kyc-basic-confirm/nkycrst-{id}
+        MapTo: /kyc/basic/confirm/nkycrst-{id}
       - MatchPath: /kyc/basic/send/nkycbsc-{id}
         MapTo: /kyc/basic/send/nkycbsc-{id}
         Methods: [POST]
+      - MatchPath: /kyc/basic/send/nkycrst-{id}
+        MapTo: /kyc/basic/send/nkycrst-{id}
+        Methods: [POST]
       - MatchPath: /mcontent/data/kyc-main/nkycdlt-{id}
-        MapTo: /kyc/nkycbsc-{id}
+        MapTo: /kyc/nkycdlt-{id}
       - MatchPath: /api/cart/order/visit/ncrtodr-{id}
         MapTo: /cart/order/visit/ncrtodr-{id}
       - MatchPath: /api/cart/order/pay/ncrtodr-{id}
@@ -199,6 +209,8 @@ Clusters:
         MapTo: /cart/adhoc/create/visit/ncrtahc-{id}
       - MatchPath: /api/endpoints/nschhme-{id}
         MapTo: /search/visit/nschhme-{id}
+      - MatchPath: /api/endpoints/nkycrst-{id}
+        MapTo: /kyc/basic/resubmit/visit/nkycrst-{id}
       - MatchPath: /api/endpoints/nempreq-{id}
         MapTo: /employee/register/visit/nempreq-{id}
       - MatchPath: /api/endpoints/nshpctt-{id}
