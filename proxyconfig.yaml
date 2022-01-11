@@ -5,13 +5,36 @@ Clusters:
         MapTo: /api/qrmanager/rdr
       - MatchPath: /api/qrmanager/ppay
         MapTo: /api/qrmanager/ppay
+      - MatchPath: /qr/url
+        MapTo: /api/qrmanager/url
       - MatchPath: /qr
         MapTo: /api/qrmanager
+      - MatchPath: /qr/url
+        MapTo: /api/qrmanager/url
+      - MatchPath: /qrrdr/url
+        MapTo: /api/qrmanager/url/rdr
       - MatchPath: /api/barcodemanager/rdr
         MapTo: /api/barcodemanager/rdr
+  - Id: manaapi
+    Routes:
+      - MatchPath: /tempupload/{mcid}/{endpointId}
+        MapTo: /tempupload/{mcid}/{endpointId}
+        Methods: [POST]
+      - MatchPath: /mcontent/data/{mcid}/npflimg-{id}
+        MapTo: /profile/image
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/kyc-basic-create/nkycbsc-{id}
+        MapTo: /kyc/basic/create/nkycbsc-{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/kyc-basic-create/nkycrst-{id}
+        MapTo: /kyc/basic/resubmit/nkycrst-{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/merchant-profile-image-edit/nbizimg-{id}
+        MapTo: /bizaccount/{id}/image
+        Methods: [GET, POST]
   - Id: mana
     Routes:
-    #######################   Api ที่คุยกันตรงๆ   #######################
+      #######################   Api ที่คุยกันตรงๆ   #######################
       - MatchPath: /signalr/{hub}/negotiate
         MapTo: /signalr/{hub}/negotiate
         Methods: [POST]
@@ -33,12 +56,30 @@ Clusters:
         MapTo: /notification/{id}
       - MatchPath: /api/home/shortcuts
         MapTo: /home/shortcuts
-      - MatchPath: /api/mcontent/form/uploadimage/sas
-        MapTo: /mcontent/uploadimage/sas
       - MatchPath: /gps/place
         MapTo: /gps/place
       - MatchPath: /gps/coordinate
         MapTo: /gps/coordinate
+      - MatchPath: /mcontent/data/kyc-tel-confirm/nkycbsc-{id}
+        MapTo: /kyc/markedmobile
+      - MatchPath: /mcontent/data/kyc-tel-confirm/nkycrst-{id}
+        MapTo: /kyc/markedmobile
+      - MatchPath: /kyc/validate/mobile/{mobile}
+        MapTo: /kyc/validate/mobile/{mobile}
+      - MatchPath: /mcontent/data/kyc-agreement/nkycbsc-{id}
+        MapTo: /kyc/basic/create/nkycbsc-{id}
+      - MatchPath: /mcontent/data/kyc-basic-confirm/nkycbsc-{id}
+        MapTo: /kyc/basic/confirm/nkycbsc-{id}
+      - MatchPath: /mcontent/data/kyc-basic-confirm/nkycrst-{id}
+        MapTo: /kyc/basic/confirm/nkycrst-{id}
+      - MatchPath: /kyc/basic/send/nkycbsc-{id}
+        MapTo: /kyc/basic/send/nkycbsc-{id}
+        Methods: [POST]
+      - MatchPath: /kyc/basic/send/nkycrst-{id}
+        MapTo: /kyc/basic/send/nkycrst-{id}
+        Methods: [POST]
+      - MatchPath: /mcontent/data/kyc-main/nkycdlt-{id}
+        MapTo: /kyc/nkycdlt-{id}
       - MatchPath: /api/cart/order/visit/ncrtodr-{id}
         MapTo: /cart/order/visit/ncrtodr-{id}
       - MatchPath: /api/cart/order/pay/ncrtodr-{id}
@@ -116,7 +157,7 @@ Clusters:
       - MatchPath: /wallet3rd/depositeresult
         MapTo: /wallet3rd/depositeresult
         Methods: [GET, POST]
-      - MatchPath: /FileUpload/{id}
+      - MatchPath: /FileUpload/{*id}
         MapTo: /FileUpload/{id}
       - MatchPath: /auth/{endpointId}
         MapTo: /auth/{endpointId}
@@ -168,12 +209,14 @@ Clusters:
       - MatchPath: /api/endpoints/ncrtodr-{id}
         MapTo: /cart/order/visit/ncrtodr-{id}
       - MatchPath: /api/endpoints/ncrtpdl-{id}
-        MapTo: /cart/product/ncrtpdl-{id}/delete
+        MapTo: /cart/order/product/ncrtpdl-{id}/delete
         Methods: [GET, POST]
       - MatchPath: /api/endpoints/ncrtahc-{id}
         MapTo: /cart/adhoc/create/visit/ncrtahc-{id}
       - MatchPath: /api/endpoints/nschhme-{id}
         MapTo: /search/visit/nschhme-{id}
+      - MatchPath: /api/endpoints/nkycrst-{id}
+        MapTo: /kyc/basic/resubmit/visit/nkycrst-{id}
       - MatchPath: /api/endpoints/nempreq-{id}
         MapTo: /employee/register/visit/nempreq-{id}
       - MatchPath: /api/endpoints/nshpctt-{id}
@@ -196,7 +239,51 @@ Clusters:
         MapTo: /reminder/visit/nrmddtl-{id}
       - MatchPath: /api/endpoints/nrmdses-{id}
         MapTo: /reminder/visit/nrmdses-{id}/session
+      - MatchPath: /api/endpoints/nfrzacc-{id}
+        MapTo: /report/freeze/visit/nfrzacc-{id}
+      - MatchPath: /api/endpoints/nunfrez-{id}
+        MapTo: /report/unfreeze/visit/nunfrez-{id}
+      - MatchPath: /api/endpoints/nulkmng-{id}
+        MapTo: /report/unlock/manager/visit/nulkmng-{id}
+      - MatchPath: /mcontent/data/consent-userinfo-by-manager/nulkmng-{id}
+        MapTo: /report/unlock/manager/session/nulkmng-{id}
+        Methods: [GET, POST]
+      - MatchPath: /api/endpoints/nulkusr-{id}
+        MapTo: /report/unlock/user/visit/nulkusr-{id}
+      - MatchPath: /mcontent/data/consent-userinfo-by-user/nulkusr-{id}
+        MapTo: /report/unlock/user/session/nulkusr-{id}
+        Methods: [GET, POST]
       ##################   Form & Page => Get data / Submit data   ##################
+      - MatchPath: /mcontent/data/report-create/nrptdtl-{id}
+        MapTo: /report/issue/nrptdtl-{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/report-main/nrptdtl-{id}
+        MapTo: /report/issue/list/nrptdtl-{id}
+        Methods: [GET]
+      - MatchPath: /mcontent/data/report-progress/nrptiss-{id}
+        MapTo: /report/issue/detail/nrptiss-{id}
+        Methods: [GET]
+      - MatchPath: /mcontent/data/report-operation-log/nrptlog-{id}
+        MapTo: /report/issue/log/nrptlog-{id}
+        Methods: [GET]
+      - MatchPath: /mcontent/data/consent-freezing-by-manager/nfrzacc-{id}
+        MapTo: /report/freeze/session/nfrzacc-{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/consent-unfreezing-by-manager/nunfrez-{id}
+        MapTo: /report/unfreeze/session/nunfrez-{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/consent-unfreezing-by-manager/nulkmng-{id}
+        MapTo: /report/unlock/manager/session/nulkmng-{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/consent-unfreezing-by-manager/nulkusr-{id}
+        MapTo: /report/unlock/user/session/nulkusr-{id}
+        Methods: [GET, POST]
+      - MatchPath: /report/feed/ignore/nfedign-{id}
+        MapTo: /report/feed/ignore/nfedign-{id}
+        Methods: [POST]
+      - MatchPath: /report/feed/reject/{id}
+        MapTo: /report/feed/reject/{id}
+        Methods: [POST]
       - MatchPath: /mcontent/data/{mcid}/nidplog-{id}
         MapTo: /auth/nidplog-{id}
         Methods: [POST]
@@ -229,9 +316,6 @@ Clusters:
         MapTo: /bizaccount/{id}/advance
       - MatchPath: /mcontent/data/merchant-profile/nbizpfl-{id}
         MapTo: /bizaccount/{id}/profile
-      - MatchPath: /mcontent/data/merchant-profile-image-edit/nbizimg-{id}
-        MapTo: /bizaccount/{id}/image
-        Methods: [GET, POST]
       - MatchPath: /mcontent/data/merchant-edit-name/nbiznme-{id}
         MapTo: /bizaccount/{id}/name
         Methods: [GET, PUT]
@@ -264,9 +348,6 @@ Clusters:
         MapTo: /bizaccount/{id}/qrpayment
         Methods: [GET, PUT]
       - MatchPath: /mcontent/data/merchant-topup/nbiztop-{id}
-        MapTo: /bizaccount/{id}/deposit
-        Methods: [GET, POST]
-      - MatchPath: /mcontent/data/{mcid}/nbiztop-{id}
         MapTo: /bizaccount/tx/data/{id}/deposit
         Methods: [GET, POST]
       - MatchPath: /mcontent/data/merchant-topup-confirm/nbizttx-{id}
@@ -274,7 +355,7 @@ Clusters:
         Methods: [GET, POST]
       - MatchPath: /mcontent/data/merchant-topup-completed/nbizttx-{id}
         MapTo: /bizaccount/txcompleted/data/{id}
-      - MatchPath: /mcontent/data/{mcid}/nbizwit-{id}
+      - MatchPath: /mcontent/data/merchant-withdraw/nbizwit-{id}
         MapTo: /bizaccount/tx/data/{id}/withdraw
         Methods: [GET, POST]
       - MatchPath: /mcontent/data/merchant-withdraw-confirm/nbizwtx-{id}
@@ -289,7 +370,7 @@ Clusters:
       #   Methods: [GET, POST]
       - MatchPath: /mcontent/data/merchant-budget/nbizbgt-{id}
         MapTo: /bizaccount/{id}/budgets
-        Methods: 
+        Methods:
       # - MatchPath: /mcontent/data/{mcid}/nbizbgt-{id}
       #   MapTo: /bizaccount/budgets/{id}
       #   Methods: [GET, POST]
@@ -299,6 +380,8 @@ Clusters:
         MapTo: /membership/{id}/agreement
       - MatchPath: /mcontent/data/{mcid}/nmemdtl-{id}
         MapTo: /membership/{id}/detail
+      - MatchPath: /api/mcontent/promome-membership
+        MapTo: /FileUpload/636966876336333503/logo/636979148221970082/promome/LogoPM.png
       - MatchPath: /mcontent/data/{mcid}/nesplst{idx}
         MapTo: /eslip/bizaccounts
       - MatchPath: /mcontent/data/{mcid}/nesprcv-{id}
@@ -327,9 +410,6 @@ Clusters:
       - MatchPath: /mcontent/data/{mcid}/npflads-{id}
         MapTo: /profile/address/{id}
         Methods: [GET, PUT, DELETE]
-      - MatchPath: /mcontent/data/{mcid}/npflimg-{id}
-        MapTo: /profile/image
-        Methods: [GET, POST]
       - MatchPath: /mcontent/data/{mcid}/npflnme-home
         MapTo: /profile
         Methods: [GET, PUT]
