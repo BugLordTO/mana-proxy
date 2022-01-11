@@ -7,6 +7,10 @@ Clusters:
         MapTo: /api/qrmanager/ppay
       - MatchPath: /qr
         MapTo: /api/qrmanager
+      - MatchPath: /qr/url
+        MapTo: /api/qrmanager/url
+      - MatchPath: /qrrdr/url
+        MapTo: /api/qrmanager/url/rdr
       - MatchPath: /api/barcodemanager/rdr
         MapTo: /api/barcodemanager/rdr
   - Id: manaapi
