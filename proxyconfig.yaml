@@ -5,6 +5,8 @@ Clusters:
         MapTo: /api/qrmanager/rdr
       - MatchPath: /api/qrmanager/ppay
         MapTo: /api/qrmanager/ppay
+      - MatchPath: /qr/url
+        MapTo: /api/qrmanager/url
       - MatchPath: /qr
         MapTo: /api/qrmanager
       - MatchPath: /qr/url
