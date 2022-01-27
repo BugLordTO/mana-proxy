@@ -192,6 +192,9 @@ Clusters:
         MapTo: /bizaccount/txconfirm/data/{id}
       - MatchPath: /api/endpoints/nbizimg-{id}
         MapTo: /bizaccount/visit/nbizimg-{id}/image
+      - MatchPath: /api/endpoints/nbizkym.feed-{id}
+        MapTo: /bizaccount/visit/nbizkym.feed-{id}/kymbasicfeed
+        Methods: [GET, POST]
       - MatchPath: /api/endpoints/nmemdtl-{id}
         MapTo: /membership/endpoints/nmemdtl-{id}
         Methods: [GET, POST]
@@ -261,6 +264,8 @@ Clusters:
       - MatchPath: /mcontent/data/consent-kyc-by-manager/nkycapl-{id}
         MapTo: /kyc/consent/session/nkycapl-{id}
         Methods: [GET, POST]
+      - MatchPath: /api/endpoints/nkycchk-{id}
+        MapTo: /kyc/visit/nkycchk-{id}/kyccheck
       ##################   Form & Page => Get data / Submit data   ##################
       - MatchPath: /mcontent/data/report-create/nrptdtl-{id}
         MapTo: /report/issue/nrptdtl-{id}
@@ -375,10 +380,11 @@ Clusters:
       #   Methods: [GET, POST]
       - MatchPath: /mcontent/data/merchant-budget/nbizbgt-{id}
         MapTo: /bizaccount/{id}/budgets
-        Methods:
       # - MatchPath: /mcontent/data/{mcid}/nbizbgt-{id}
       #   MapTo: /bizaccount/budgets/{id}
       #   Methods: [GET, POST]
+      - MatchPath: /mcontent/data/kym-feed/nbizkym.feed-{id}
+        MapTo: /bizaccount/{id}/kymbasicfeed
       - MatchPath: /mcontent/data/{mcid}/nmemlst{idx}
         MapTo: /membership
       - MatchPath: /mcontent/data/{mcid}/nmemreg-{id}
