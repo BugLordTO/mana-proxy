@@ -416,8 +416,10 @@ Clusters:
       - MatchPath: /mcontent/data/{mcid}/npflads-create
         MapTo: /profile/address
         Methods: [POST]
-      # - MatchPath: /api/mcontent/data/{mcid}/npflads-(shipment|bill)
-      #   MapTo: /profile/address
+      - MatchPath: /api/mcontent/data/{mcid}/npflads-shipment
+        MapTo: /profile/address
+      - MatchPath: /api/mcontent/data/{mcid}/npflads-bill
+        MapTo: /profile/address
       - MatchPath: /mcontent/data/{mcid}/npflads-{id}
         MapTo: /profile/address/{id}
         Methods: [GET, PUT, DELETE]
