@@ -32,9 +32,9 @@ Clusters:
       - MatchPath: /mcontent/data/merchant-profile-image-edit/nbizimg-{id}
         MapTo: /bizaccount/{id}/image
         Methods: [GET, POST]
-      - MatchPath: /mcontent/data/merchant-create/nbizdtl-{id}
-        MapTo: /bizaccount/{id}
-        Methods: [POST]
+      # - MatchPath: /mcontent/data/merchant-create/nbizdtl-{id}
+      #   MapTo: /bizaccount/{id}
+      #   Methods: [POST]
   - Id: mana
     Routes:
       #######################   Api ที่คุยกันตรงๆ   #######################
@@ -317,6 +317,9 @@ Clusters:
         MapTo: /bizaccount/{id}/catalog
       - MatchPath: /mcontent/data/merchant-select/nbizdtl-{id}
         MapTo: /bizaccount/{id}
+      - MatchPath: /mcontent/data/merchant-create/nbizdtl-{id}
+        MapTo: /bizaccount/{id}
+        Methods: [POST]
       - MatchPath: /mcontent/data/merchant-home-basic/nbizdtl-{id}
         MapTo: /bizaccount/{id}/basic
       - MatchPath: /mcontent/data/merchant-home-pending/nbizdtl-{id}
