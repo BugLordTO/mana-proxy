@@ -227,6 +227,8 @@ Clusters:
         MapTo: /employee/register/visit/nempreq-{id}
       - MatchPath: /api/endpoints/nshpctt-{id}
         MapTo: /contract/shipping/visit/nshpctt-{id}
+      - MatchPath: /api/endpoints/nshpctt.biz-{id}
+        MapTo: /contract/shipshipping/consent/nshpctt.biz-{id}/biz
       - MatchPath: /api/endpoints/ndvyctt-{id}
         MapTo: /contract/delivery/visit/ndvyctt-{id}
       - MatchPath: /api/endpoints/nppypmt-{id}
