@@ -218,7 +218,7 @@ Clusters:
       - MatchPath: /api/endpoints/ncrtodr-{id}
         MapTo: /cart/order/visit/ncrtodr-{id}
       - MatchPath: /api/endpoints/ncrtpdl-{id}
-        MapTo: /cart/order/product/ncrtpdl-{id}/delete
+        MapTo: /cart/order/product/ncrtpdl-{id}/remove
         Methods: [GET, POST]
       - MatchPath: /api/endpoints/ncrtahc-{id}
         MapTo: /cart/adhoc/create/visit/ncrtahc-{id}
@@ -322,6 +322,9 @@ Clusters:
         MapTo: /bizaccount/{id}/catalog
       - MatchPath: /mcontent/data/merchant-select/nbizdtl-{id}
         MapTo: /bizaccount/{id}
+      # - MatchPath: /mcontent/data/merchant-create/nbizdtl-{id}
+      #   MapTo: /bizaccount/{id}
+      #   Methods: [POST]
       - MatchPath: /mcontent/data/merchant-home-basic/nbizdtl-{id}
         MapTo: /bizaccount/{id}/basic
       - MatchPath: /mcontent/data/merchant-home-pending/nbizdtl-{id}
@@ -489,9 +492,12 @@ Clusters:
         Methods: [GET, POST]
       - MatchPath: /mcontent/data/{mcid}/neschfd-{id}
         MapTo: /escrow/data/{mcid}/neschfd-{id}
+        Methods: [GET, POST]
       - MatchPath: /mcontent/data/{mcid}/nshpctt-{id}
         MapTo: /contract/shipping/consent/nshpctt-{id}
         Methods: [GET, POST]
+      - MatchPath: /mcontent/data/{mcid}/nshpctt.biz-{id}
+        MapTo: /contract/shipping/consent/nshpctt.biz-{id}/biz
       - MatchPath: /mcontent/data/{mcid}/ndvyctt-{id}
         MapTo: /contract/delivery/consent/ndvyctt-{id}
         Methods: [GET, POST]
