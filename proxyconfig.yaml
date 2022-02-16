@@ -485,6 +485,7 @@ Clusters:
         Methods: [GET, POST]
       - MatchPath: /mcontent/data/{mcid}/neschfd-{id}
         MapTo: /escrow/data/{mcid}/neschfd-{id}
+        Methods: [GET, POST]
       - MatchPath: /mcontent/data/{mcid}/nshpctt-{id}
         MapTo: /contract/shipping/consent/nshpctt-{id}
         Methods: [GET, POST]
