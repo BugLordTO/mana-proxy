@@ -55,8 +55,6 @@ Clusters:
         MapTo: /home/{id}/pageno/{pageNo}
       - MatchPath: /home/updateshorcut
         MapTo: /home/updateshorcut
-      - MatchPath: /np/npflbln-home
-        MapTo: /home/updatebalance
       - MatchPath: /notification/{id}
         MapTo: /notification/{id}
       - MatchPath: /api/home/shortcuts
@@ -246,6 +244,8 @@ Clusters:
         MapTo: /profile/visit/npflimg-{id}/image
       - MatchPath: /api/endpoints/npflupd-{id}
         MapTo: /device/{id}/updateprofile
+      - MatchPath: /api/endpoints/npflbln-home
+        MapTo: /home/updatebalance
       - MatchPath: /api/endpoints/nrmddtl-{id}
         MapTo: /reminder/visit/nrmddtl-{id}
       - MatchPath: /api/endpoints/nrmdses-{id}
