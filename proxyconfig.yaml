@@ -55,6 +55,8 @@ Clusters:
         MapTo: /home/{id}/pageno/{pageNo}
       - MatchPath: /home/updateshorcut
         MapTo: /home/updateshorcut
+      - MatchPath: /np/npflbln-home
+        MapTo: /home/updatebalance
       - MatchPath: /notification/{id}
         MapTo: /notification/{id}
       - MatchPath: /api/home/shortcuts
