@@ -450,6 +450,8 @@ Clusters:
         MapTo: /wallet/transaction/deposit/nwtxdep-{id}
       - MatchPath: /mcontent/data/wallet-transaction-withdraw/nwtxwit-{id}
         MapTo: /wallet/transaction/withdraw/nwtxwit-{id}
+      - MatchPath: /mcontent/data/wallet-transaction-withdraw/nwtxwac-{id}
+        MapTo: /wallet/transaction/withdraw/nwtxwac-{id}
       - MatchPath: /mcontent/data/wallet-transaction-receivemoney/nwtxrmy-{id}
         MapTo: /wallet/transaction/receivemoney/nwtxrmy-{id}
       - MatchPath: /mcontent/data/wallet-withdraw/nwltwit-{id}
