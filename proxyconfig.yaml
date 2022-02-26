@@ -248,6 +248,8 @@ Clusters:
         MapTo: /device/{id}/updateprofile
       - MatchPath: /api/endpoints/npflbln-home
         MapTo: /home/updatebalance
+      - MatchPath: /api/endpoints/npflkyc-home
+        MapTo: /home/updatekyc
       - MatchPath: /api/endpoints/nrmddtl-{id}
         MapTo: /reminder/visit/nrmddtl-{id}
       - MatchPath: /api/endpoints/nrmdses-{id}
