@@ -63,6 +63,8 @@ Clusters:
         MapTo: /gps/place
       - MatchPath: /gps/coordinate
         MapTo: /gps/coordinate
+      - MatchPath: /kyc/update
+        MapTo: /kyc/update
       - MatchPath: /mcontent/data/kyc-tel-confirm/nkycbsc-{id}
         MapTo: /kyc/markedmobile
       - MatchPath: /mcontent/data/kyc-tel-confirm/nkycrst-{id}
