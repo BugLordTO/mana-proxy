@@ -230,6 +230,8 @@ Clusters:
         MapTo: /kyc/basic/resubmit/visit/nkycrst-{id}
       - MatchPath: /api/endpoints/nempreq-{id}
         MapTo: /employee/register/visit/nempreq-{id}
+      - MatchPath: /api/endpoints/nempinf-{id}
+        MapTo: /employee/register/visit/nempinf-{id}/info
       - MatchPath: /api/endpoints/nshpctt-{id}
         MapTo: /contract/shipping/visit/nshpctt-{id}
       - MatchPath: /api/endpoints/ndvyctt-{id}
