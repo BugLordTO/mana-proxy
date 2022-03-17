@@ -181,8 +181,11 @@ Clusters:
       - MatchPath: /api/endpoints/ntrhahc-{id}
         MapTo: /cart/adhoc/create/ntrhahc-{id}/trash
         Methods: [POST]
-      - MatchPath: /api/endpoints/ntrhahc-{id}
-        MapTo: /cart/adhoc/pay/ntrhahc-{id}/trash
+      - MatchPath: /api/endpoints/ntrhcfm-{id}
+        MapTo: /cart/adhoc/pay/ntrhcfm-{id}/trash
+        Methods: [POST]
+      - MatchPath: /api/endpoints/ntrhcf2-{id}
+        MapTo: /cart/adhoc/pay/ntrhcf2-{id}/trash
         Methods: [POST]
       - MatchPath: /api/endpoints/nidplog-{id}
         MapTo: /auth/visit/nidplog-{id}
