@@ -178,6 +178,8 @@ Clusters:
         MapTo: /mcontent/togglepin/{id}
         Methods: [POST]
       #######################   Endpoints to each API   #######################
+      - MatchPath: /api/endpoints/ntrhalk-home
+        MapTo: /cart/adhoc/applink/ntrhalk-home/trash
       - MatchPath: /api/endpoints/ntrhahc-{id}
         MapTo: /cart/adhoc/create/ntrhahc-{id}/trash
         Methods: [POST]
