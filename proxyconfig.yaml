@@ -178,6 +178,23 @@ Clusters:
         MapTo: /mcontent/togglepin/{id}
         Methods: [POST]
       #######################   Endpoints to each API   #######################
+      - MatchPath: /api/endpoints/ntrhalk-{id}
+        MapTo: /cart/adhoc/applink/ntrhalk-{id}/trash
+      - MatchPath: /api/endpoints/ntrhahc-{id}
+        MapTo: /cart/adhoc/create/ntrhahc-{id}/trash
+        Methods: [POST]
+      - MatchPath: /api/endpoints/ntrhcfm-{id}
+        MapTo: /cart/adhoc/pay/ntrhcfm-{id}/trash
+        Methods: [POST]
+      - MatchPath: /api/endpoints/ntrhcf2-{id}
+        MapTo: /cart/adhoc/pay/ntrhcf2-{id}/trash
+        Methods: [POST]
+      - MatchPath: /wallet/resultsuccess/updatebalance/{mcontentId}/{endpointId}/trash
+        MapTo: /wallet/resultsuccess/updatebalance/{mcontentId}/{endpointId}/trash
+      - MatchPath: /mcontent/data/cart-adhoc-completed/ntrhcfm-{id}
+        MapTo: /cart/adhoc/completed/ntrhcfm-{id}
+      - MatchPath: /mcontent/data/cart-adhoc-completed/ntrhcf2-{id}
+        MapTo: /cart/adhoc/completed/ntrhcf2-{id}
       - MatchPath: /api/endpoints/nidplog-{id}
         MapTo: /auth/visit/nidplog-{id}
       - MatchPath: /api/endpoints/nadddev{idx}
