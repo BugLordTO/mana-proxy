@@ -208,10 +208,13 @@ Clusters:
       - MatchPath: /api/endpoints/nbizdtl-{id}
         MapTo: /bizaccount/visit/nbizdtl-{id}/home
       - MatchPath: /api/endpoints/nbizwtx-{id}
-        MapTo: /bizaccount/txconfirm/data/{id}
-        Methods: [GET, POST]
+        MapTo: /bizaccount/tx/visit/nbizwtx-{id}
       - MatchPath: /api/endpoints/nbizttx-{id}
-        MapTo: /bizaccount/txconfirm/data/{id}
+        MapTo: /bizaccount/tx/visit/nbizttx-{id}
+      - MatchPath: /api/endpoints/nbizatx-{id}
+        MapTo: /bizaccount/tx/visit/nbizatx-{id}
+      - MatchPath: /api/endpoints/nbizctx-{id}
+        MapTo: /bizaccount/tx/visit/nbizctx-{id}
       - MatchPath: /api/endpoints/nbizimg-{id}
         MapTo: /bizaccount/visit/nbizimg-{id}/image
       - MatchPath: /api/endpoints/nbizkym.feed-{id}
@@ -397,6 +400,8 @@ Clusters:
         Methods: [GET, POST]
       - MatchPath: /mcontent/data/merchant-topup-completed/nbizttx-{id}
         MapTo: /bizaccount/txcompleted/data/{id}
+      - MatchPath: /mcontent/data/merchant-transaction-topup/nbizttx-{id}
+        MapTo: /bizaccount/tx/data/nbizttx-{id}
       - MatchPath: /mcontent/data/merchant-withdraw/nbizwit-{id}
         MapTo: /bizaccount/tx/data/{id}/withdraw
         Methods: [GET, POST]
@@ -405,6 +410,12 @@ Clusters:
         Methods: [GET, POST]
       - MatchPath: /mcontent/data/merchant-withdraw-completed/nbizwtx-{id}
         MapTo: /bizaccount/txcompleted/data/{id}
+      - MatchPath: /mcontent/data/merchant-transaction-withdraw/nbizwtx-{id}
+        MapTo: /bizaccount/tx/data/nbizwtx-{id}
+      - MatchPath: /mcontent/data/merchant-transaction-receive/nbizatx-{id}
+        MapTo: /bizaccount/tx/data/nbizatx-{id}
+      - MatchPath: /mcontent/data/merchant-transaction-receive/nbizctx-{id}
+        MapTo: /bizaccount/tx/data/nbizctx-{id}
       - MatchPath: /mcontent/data/merchant-employee/nbizemp-{id}
         MapTo: /bizaccount/{id}/employees
       # - MatchPath: /mcontent/data/{mcid}/nbizemp-{id}
