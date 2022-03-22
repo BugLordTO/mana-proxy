@@ -211,6 +211,10 @@ Clusters:
         MapTo: /bizaccount/tx/visit/nbizwtx-{id}
       - MatchPath: /api/endpoints/nbizttx-{id}
         MapTo: /bizaccount/tx/visit/nbizttx-{id}
+      - MatchPath: /api/endpoints/nbizatx-{id}
+        MapTo: /bizaccount/tx/visit/nbizatx-{id}
+      - MatchPath: /api/endpoints/nbizctx-{id}
+        MapTo: /bizaccount/tx/visit/nbizctx-{id}
       - MatchPath: /api/endpoints/nbizimg-{id}
         MapTo: /bizaccount/visit/nbizimg-{id}/image
       - MatchPath: /api/endpoints/nbizkym.feed-{id}
@@ -408,6 +412,10 @@ Clusters:
         MapTo: /bizaccount/txcompleted/data/{id}
       - MatchPath: /mcontent/data/merchant-transaction-withdraw/nbizwtx-{id}
         MapTo: /bizaccount/tx/data/nbizwtx-{id}
+      - MatchPath: /mcontent/data/merchant-transaction-receive/nbizatx-{id}
+        MapTo: /bizaccount/tx/data/nbizatx-{id}
+      - MatchPath: /mcontent/data/merchant-transaction-receive/nbizctx-{id}
+        MapTo: /bizaccount/tx/data/nbizctx-{id}
       - MatchPath: /mcontent/data/merchant-employee/nbizemp-{id}
         MapTo: /bizaccount/{id}/employees
       # - MatchPath: /mcontent/data/{mcid}/nbizemp-{id}
