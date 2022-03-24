@@ -17,9 +17,12 @@ Clusters:
         MapTo: /api/barcodemanager/rdr
   - Id: manaapi
     Routes:
+      #######################   Api ที่คุยกันตรงๆ   #######################
       - MatchPath: /tempupload/{mcid}/{endpointId}
         MapTo: /tempupload/{mcid}/{endpointId}
         Methods: [POST]
+      #######################   Endpoints to each API   #######################
+      ##################   Form & Page => Get data / Submit data   ##################
       - MatchPath: /mcontent/data/{mcid}/npflimg-{id}
         MapTo: /profile/image
         Methods: [GET, POST]
@@ -65,26 +68,14 @@ Clusters:
         MapTo: /gps/coordinate
       - MatchPath: /kyc/update
         MapTo: /kyc/update
-      - MatchPath: /mcontent/data/kyc-tel-confirm/nkycbsc-{id}
-        MapTo: /kyc/markedmobile
-      - MatchPath: /mcontent/data/kyc-tel-confirm/nkycrst-{id}
-        MapTo: /kyc/markedmobile
       - MatchPath: /kyc/validate/mobile/{mobile}
         MapTo: /kyc/validate/mobile/{mobile}
-      - MatchPath: /mcontent/data/kyc-agreement/nkycbsc-{id}
-        MapTo: /kyc/basic/create/nkycbsc-{id}
-      - MatchPath: /mcontent/data/kyc-basic-confirm/nkycbsc-{id}
-        MapTo: /kyc/basic/confirm/nkycbsc-{id}
-      - MatchPath: /mcontent/data/kyc-basic-confirm/nkycrst-{id}
-        MapTo: /kyc/basic/confirm/nkycrst-{id}
       - MatchPath: /kyc/basic/send/nkycbsc-{id}
         MapTo: /kyc/basic/send/nkycbsc-{id}
         Methods: [POST]
       - MatchPath: /kyc/basic/send/nkycrst-{id}
         MapTo: /kyc/basic/send/nkycrst-{id}
         Methods: [POST]
-      - MatchPath: /mcontent/data/kyc-main/nkycdlt-{id}
-        MapTo: /kyc/nkycdlt-{id}
       - MatchPath: /kyc/feed/del/nkycsts-{id}
         MapTo: /kyc/feed/del/nkycsts-{id}
         Methods: [POST]
@@ -284,19 +275,10 @@ Clusters:
         MapTo: /report/unlock/manager/visit/nulkmng-{id}
       - MatchPath: /api/endpoints/nkycsts-{id}
         MapTo: /kyc/status/visit/nkycsts-{id}
-      - MatchPath: /mcontent/data/consent-userinfo-by-manager/nulkmng-{id}
-        MapTo: /report/unlock/manager/session/nulkmng-{id}
-        Methods: [GET, POST]
       - MatchPath: /api/endpoints/nulkusr-{id}
         MapTo: /report/unlock/user/visit/nulkusr-{id}
-      - MatchPath: /mcontent/data/consent-userinfo-by-user/nulkusr-{id}
-        MapTo: /report/unlock/user/session/nulkusr-{id}
-        Methods: [GET, POST]
       - MatchPath: /api/endpoints/nkycapl-{id}
         MapTo: /kyc/consent/visit/nkycapl-{id}
-      - MatchPath: /mcontent/data/consent-kyc-by-manager/nkycapl-{id}
-        MapTo: /kyc/consent/session/nkycapl-{id}
-        Methods: [GET, POST]
       - MatchPath: /api/endpoints/nkycchk-{id}
         MapTo: /kyc/visit/nkycchk-{id}/kyccheck
       ##################   Form & Page => Get data / Submit data   ##################
@@ -323,6 +305,15 @@ Clusters:
         Methods: [GET, POST]
       - MatchPath: /mcontent/data/consent-unfreezing-by-manager/nulkusr-{id}
         MapTo: /report/unlock/user/session/nulkusr-{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/consent-userinfo-by-manager/nulkmng-{id}
+        MapTo: /report/unlock/manager/session/nulkmng-{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/consent-userinfo-by-user/nulkusr-{id}
+        MapTo: /report/unlock/user/session/nulkusr-{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/consent-kyc-by-manager/nkycapl-{id}
+        MapTo: /kyc/consent/session/nkycapl-{id}
         Methods: [GET, POST]
       - MatchPath: /report/feed/ignore/nfedign-{id}
         MapTo: /report/feed/ignore/nfedign-{id}
@@ -474,6 +465,18 @@ Clusters:
       - MatchPath: /mcontent/data/{mcid}/npflacc-home
         MapTo: /profile
         Methods: [GET, PUT]
+      - MatchPath: /mcontent/data/kyc-tel-confirm/nkycbsc-{id}
+        MapTo: /kyc/markedmobile
+      - MatchPath: /mcontent/data/kyc-tel-confirm/nkycrst-{id}
+        MapTo: /kyc/markedmobile
+      - MatchPath: /mcontent/data/kyc-agreement/nkycbsc-{id}
+        MapTo: /kyc/basic/create/nkycbsc-{id}
+      - MatchPath: /mcontent/data/kyc-basic-confirm/nkycbsc-{id}
+        MapTo: /kyc/basic/confirm/nkycbsc-{id}
+      - MatchPath: /mcontent/data/kyc-basic-confirm/nkycrst-{id}
+        MapTo: /kyc/basic/confirm/nkycrst-{id}
+      - MatchPath: /mcontent/data/kyc-main/nkycdlt-{id}
+        MapTo: /kyc/nkycdlt-{id}
       # - MatchPath: /mcontent/data/{mcid}/npfl{idx}
       #   MapTo: /profile
       #   Methods: [GET, PUT]
