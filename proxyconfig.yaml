@@ -79,23 +79,6 @@ Clusters:
       - MatchPath: /kyc/feed/del/nkycsts-{id}
         MapTo: /kyc/feed/del/nkycsts-{id}
         Methods: [POST]
-      - MatchPath: /api/cart/order/visit/ncrtodr-{id}
-        MapTo: /cart/order/visit/ncrtodr-{id}
-      - MatchPath: /api/cart/order/pay/ncrtodr-{id}
-        MapTo: /cart/order/pay/ncrtodr-{id}
-        Methods: [GET, POST]
-      - MatchPath: /api/cart/order/shopping-cart/ncrtodr-{id}
-        MapTo: /cart/order/ncrtodr-{id}
-      - MatchPath: /api/cart/order/shopping-cart-pay/ncrtodr-{id}
-        MapTo: /cart/order/ncrtodr-{id}
-      - MatchPath: /api/cart/order/shopping-cart-delivery-select/ncrtodr-{id}
-        MapTo: /cart/order/option/ncrtodr-{id}
-      - MatchPath: /api/cart/order/location/{mcid}/ncrtodr-{id}
-        MapTo: /cart/order/location/ncrtodr-{id}
-        Methods: [POST]
-      - MatchPath: /api/cart/order/shippingmethod/{mcid}/ncrtodr-{id}
-        MapTo: /cart/order/shippingmethod/ncrtodr-{id}
-        Methods: [POST]
       - MatchPath: /api/escrow/neschfd-{id}
         MapTo: /escrow/neschfd-{id}
       - MatchPath: /api/escrow/cancel/nafmdtl-{id}
@@ -230,6 +213,12 @@ Clusters:
         MapTo: /product/endpoints/npdt{idx}
       - MatchPath: /api/endpoints/ncrtodr-{id}
         MapTo: /cart/order/visit/ncrtodr-{id}
+      - MatchPath: /api/endpoints/ncrtdel-{id}
+        MapTo: /cart/order/delete/ncrtdel-{id}
+        Methods: [POST]
+      - MatchPath: /api/endpoints/ncrtpay-{id}
+        MapTo: /cart/order/pay/ncrtpay-{id}
+        Methods: [GET, POST]
       - MatchPath: /api/endpoints/ncrtpdl-{id}
         MapTo: /cart/order/product/ncrtpdl-{id}/remove
         Methods: [GET, POST]
@@ -552,6 +541,18 @@ Clusters:
         MapTo: /cart/adhoc/completed/ncrtahc-{id}
       - MatchPath: /mcontent/data/wallet-withdraw-completed/ncrtodr-{id}
         MapTo: /cart/order/pay/ncrtodr-{id}/complete
+      - MatchPath: /mcontent/data/shopping-cart/ncrtodr-{id}
+        MapTo: /cart/order/ncrtodr-{id}
+      - MatchPath: /mcontent/data/shopping-cart-pay/ncrtpay-{id}
+        MapTo: /cart/order/ncrtpay-{id}
+      - MatchPath: /mcontent/data/shopping-cart-delivery-select/ncrtodr-{id}
+        MapTo: /cart/order/option/ncrtodr-{id}
+      - MatchPath: /mcontent/data/location/{mcid}/ncrtodr-{id}
+        MapTo: /cart/order/location/ncrtodr-{id}
+        Methods: [POST]
+      - MatchPath: /mcontent/data/shippingmethod/{mcid}/ncrtodr-{id}
+        MapTo: /cart/order/shippingmethod/ncrtodr-{id}
+        Methods: [POST]
       # - MatchPath: /mcontent/data/ppay-payment-creating/{nppypmt}-{id}
       #   MapTo: /api/qrmanager/ppay/{txt}
       - MatchPath: /mcontent/data/ppay-payment-creating/nppypmt-{id}
