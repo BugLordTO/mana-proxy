@@ -79,16 +79,6 @@ Clusters:
       - MatchPath: /kyc/feed/del/nkycsts-{id}
         MapTo: /kyc/feed/del/nkycsts-{id}
         Methods: [POST]
-      - MatchPath: /api/escrow/neschfd-{id}
-        MapTo: /escrow/neschfd-{id}
-      - MatchPath: /api/escrow/cancel/nafmdtl-{id}
-        MapTo: /escrow/cancel/nafmdtl-{id}
-        Methods: [GET, POST]
-      - MatchPath: /api/escrow/form/nescpst-{id}
-        MapTo: /escrow/form/nescpst-{id}
-        Methods: [GET, POST]
-      - MatchPath: /api/escrow/update/neschfd-{id}
-        MapTo: /escrow/update/neschfd-{id}
       - MatchPath: /api/escrow/result/dlg/{dialogstatus}/{nptid}
         MapTo: /escrow/result/dlg/{dialogstatus}/{nptid}
       - MatchPath: /api/escrow/releasedlg/{oldendpoint}/nescpst-{id}
@@ -224,6 +214,16 @@ Clusters:
         Methods: [GET, POST]
       - MatchPath: /api/endpoints/ncrtahc-{id}
         MapTo: /cart/adhoc/create/visit/ncrtahc-{id}
+      - MatchPath: /api/endpoints/neschfd-{id}
+        MapTo: /escrow/neschfd-{id}
+      - MatchPath: /api/endpoints/nescpst-{id}
+        MapTo: /escrow/rating/nescpst-{id}
+      - MatchPath: /api/endpoints/nafmdtl-{id}
+        MapTo: /escrow/cancel/nafmdtl-{id}
+        Methods: [GET, POST]
+      - MatchPath: /api/endpoints/neschfd.canceled-{id}
+        MapTo: /escrow/canceled/neschfd.canceled-{id}
+        Methods: [GET, POST]
       - MatchPath: /api/endpoints/nschhme-{id}
         MapTo: /search/visit/nschhme-{id}
       - MatchPath: /api/endpoints/nkycrst-{id}
@@ -516,11 +516,13 @@ Clusters:
       - MatchPath: /mcontent/data/wallet-topup-complete-qr/nwltdep-{id}
         MapTo: /wallet/depositqr/acc/success/nwltdep-{id}
       - MatchPath: /mcontent/data/{mcid}/nescpst-{id}
-        MapTo: /escrow/form/nescpst-{id}
+        MapTo: /escrow/data/{mcid}/nescpst-{id}
         Methods: [GET, POST]
       - MatchPath: /mcontent/data/{mcid}/neschfd-{id}
         MapTo: /escrow/data/{mcid}/neschfd-{id}
         Methods: [GET, POST]
+      - MatchPath: /mcontent/data/{mcid}/neschfd.canceled-{id}
+        MapTo: /escrow/data/{mcid}/neschfd.canceled-{id}
       - MatchPath: /mcontent/data/{mcid}/nshpctt-{id}
         MapTo: /contract/shipping/consent/nshpctt-{id}
         Methods: [GET, POST]
@@ -545,6 +547,8 @@ Clusters:
         MapTo: /cart/order/ncrtodr-{id}
       - MatchPath: /mcontent/data/shopping-cart-pay/ncrtpay-{id}
         MapTo: /cart/order/ncrtpay-{id}
+      - MatchPath: /mcontent/data/cart-adhoc-completed/neschfd-{id}
+        MapTo: /cart/order/completed/neschfd-{id}
       - MatchPath: /mcontent/data/shopping-cart-delivery-select/ncrtodr-{id}
         MapTo: /cart/order/option/ncrtodr-{id}
       - MatchPath: /mcontent/data/location/{mcid}/ncrtodr-{id}
