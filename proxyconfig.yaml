@@ -216,10 +216,10 @@ Clusters:
         MapTo: /cart/adhoc/create/visit/ncrtahc-{id}
       - MatchPath: /api/endpoints/neschfd-{id}
         MapTo: /escrow/neschfd-{id}
-      - MatchPath: /api/endpoints/nescpst-{id}
-        MapTo: /escrow/rating/nescpst-{id}
-      - MatchPath: /api/endpoints/nafmdtl-{id}
-        MapTo: /escrow/cancel/nafmdtl-{id}
+      - MatchPath: /api/endpoints/neschfd.rating-{id}
+        MapTo: /escrow/rating/neschfd.rating-{id}
+      - MatchPath: /api/endpoints/neschfd.cancel-{id}
+        MapTo: /escrow/cancel/neschfd.cancel-{id}
         Methods: [GET, POST]
       - MatchPath: /api/endpoints/neschfd.canceled-{id}
         MapTo: /escrow/canceled/neschfd.canceled-{id}
