@@ -198,8 +198,14 @@ Clusters:
         MapTo: /bizaccount/visit/nbizcat-{id}/catalog
       - MatchPath: /api/endpoints/nbizdtl-{id}
         MapTo: /bizaccount/visit/nbizdtl-{id}/home
+      - MatchPath: /api/endpoints/nbizwit.confirm-{id}
+        MapTo: /bizaccount/txconfirm/data/{id}
+        Methods: [GET, POST]
       - MatchPath: /api/endpoints/nbizwtx-{id}
         MapTo: /bizaccount/tx/visit/nbizwtx-{id}
+      - MatchPath: /api/endpoints/nbiztop.confirm-{id}
+        MapTo: /bizaccount/txconfirm/data/{id}
+        Methods: [GET, POST]
       - MatchPath: /api/endpoints/nbizttx-{id}
         MapTo: /bizaccount/tx/visit/nbizttx-{id}
       - MatchPath: /api/endpoints/nbizatx-{id}
