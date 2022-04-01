@@ -392,7 +392,7 @@ Clusters:
       - MatchPath: /mcontent/data/merchant-topup/nbiztop-{id}
         MapTo: /bizaccount/tx/data/{id}/deposit
         Methods: [GET, POST]
-      - MatchPath: /mcontent/data/merchant-topup-confirm/nbizttx-{id}
+      - MatchPath: /mcontent/data/merchant-topup-confirm/nbiztop.confirm-{id}
         MapTo: /bizaccount/txconfirm/data/{id}
         Methods: [GET, POST]
       - MatchPath: /mcontent/data/merchant-topup-completed/nbizttx-{id}
@@ -402,7 +402,7 @@ Clusters:
       - MatchPath: /mcontent/data/merchant-withdraw/nbizwit-{id}
         MapTo: /bizaccount/tx/data/{id}/withdraw
         Methods: [GET, POST]
-      - MatchPath: /mcontent/data/merchant-withdraw-confirm/nbizwtx-{id}
+      - MatchPath: /mcontent/data/merchant-withdraw-confirm/nbizwit.confirm-{id}
         MapTo: /bizaccount/txconfirm/data/{id}
         Methods: [GET, POST]
       - MatchPath: /mcontent/data/merchant-withdraw-completed/nbizwtx-{id}
