@@ -557,10 +557,14 @@ Clusters:
         MapTo: /cart/order/completed/neschfd-{id}
       - MatchPath: /mcontent/data/shopping-cart-delivery-select/ncrtodr-{id}
         MapTo: /cart/order/option/ncrtodr-{id}
-      - MatchPath: /mcontent/data/location/{mcid}/ncrtodr-{id}
+      # - MatchPath: /mcontent/data/location/{mcid}/ncrtodr-{id}
+      #   MapTo: /cart/order/location/ncrtodr-{id}
+      - MatchPath: /cart/order/location/{mcid}/ncrtodr-{id}
         MapTo: /cart/order/location/ncrtodr-{id}
         Methods: [POST]
-      - MatchPath: /mcontent/data/shippingmethod/{mcid}/ncrtodr-{id}
+      # - MatchPath: /mcontent/data/shippingmethod/{mcid}/ncrtodr-{id}
+      #   MapTo: /cart/order/shippingmethod/ncrtodr-{id}
+      - MatchPath: /api/cart/order/shippingmethod/{mcid}/ncrtodr-{id}
         MapTo: /cart/order/shippingmethod/ncrtodr-{id}
         Methods: [POST]
       # - MatchPath: /mcontent/data/ppay-payment-creating/{nppypmt}-{id}
