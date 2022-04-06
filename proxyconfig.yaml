@@ -81,8 +81,8 @@ Clusters:
         Methods: [POST]
       - MatchPath: /api/escrow/result/dlg/{dialogstatus}/{nptid}
         MapTo: /escrow/result/dlg/{dialogstatus}/{nptid}
-      - MatchPath: /api/escrow/releasedlg/{oldendpoint}/nescpst-{id}
-        MapTo: /escrow/releasedlg/{oldendpoint}/nescpst-{id}
+      - MatchPath: /api/escrow/releasedlg/{oldendpoint}/neschfd.rating-{id}
+        MapTo: /escrow/releasedlg/{oldendpoint}/neschfd.rating-{id}
       - MatchPath: /home/update/{id}
         MapTo: /home/update/{id}
       - MatchPath: /api/home/updatestate/{nptid}
@@ -222,8 +222,10 @@ Clusters:
         MapTo: /cart/adhoc/create/visit/ncrtahc-{id}
       - MatchPath: /api/endpoints/neschfd-{id}
         MapTo: /escrow/neschfd-{id}
+        Methods: [GET, POST]
       - MatchPath: /api/endpoints/neschfd.rating-{id}
         MapTo: /escrow/rating/neschfd.rating-{id}
+        Methods: [GET, POST]
       - MatchPath: /api/endpoints/neschfd.cancel-{id}
         MapTo: /escrow/cancel/neschfd.cancel-{id}
         Methods: [GET, POST]
@@ -527,8 +529,15 @@ Clusters:
       - MatchPath: /mcontent/data/{mcid}/neschfd-{id}
         MapTo: /escrow/data/{mcid}/neschfd-{id}
         Methods: [GET, POST]
+      - MatchPath: /mcontent/data/{mcid}/neschfd.rating-{id}
+        MapTo: /escrow/data/{mcid}/neschfd.rating-{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/{mcid}/neschfd.cancel-{id}
+        MapTo: /escrow/data/{mcid}/neschfd.cancel-{id}
+        Methods: [GET, POST]
       - MatchPath: /mcontent/data/{mcid}/neschfd.canceled-{id}
         MapTo: /escrow/data/{mcid}/neschfd.canceled-{id}
+        Methods: [GET, POST]
       - MatchPath: /mcontent/data/{mcid}/nshpctt-{id}
         MapTo: /contract/shipping/consent/nshpctt-{id}
         Methods: [GET, POST]
