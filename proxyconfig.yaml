@@ -568,7 +568,7 @@ Clusters:
         MapTo: /cart/order/option/ncrtodr-{id}
       # - MatchPath: /mcontent/data/location/{mcid}/ncrtodr-{id}
       #   MapTo: /cart/order/location/ncrtodr-{id}
-      - MatchPath: /cart/order/location/{mcid}/ncrtodr-{id}
+      - MatchPath: /api/cart/order/location/{mcid}/ncrtodr-{id}
         MapTo: /cart/order/location/ncrtodr-{id}
         Methods: [POST]
       # - MatchPath: /mcontent/data/shippingmethod/{mcid}/ncrtodr-{id}
