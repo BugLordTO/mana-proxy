@@ -205,8 +205,8 @@ Clusters:
       - MatchPath: /api/endpoints/npv3crt-{id}
         MapTo: /privilege/endpoints/npv3crt-{id}/cart
         Methods: [GET, POST]
-      - MatchPath: /api/endpoints/npdt{idx}
-        MapTo: /product/endpoints/npdt{idx}
+      - MatchPath: /api/endpoints/npdtdtl-{id}
+        MapTo: /product/endpoints/npdtdtl-{id}
       - MatchPath: /api/endpoints/ncrtodr-{id}
         MapTo: /cart/order/visit/ncrtodr-{id}
       - MatchPath: /api/endpoints/ncrtdel-{id}
