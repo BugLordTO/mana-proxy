@@ -439,10 +439,7 @@ Clusters:
       - MatchPath: /mcontent/data/{mcid}/npv3crt-{id}
         MapTo: /privilege/{id}/cartdata
       - MatchPath: /mcontent/data/{mcid}/npdtdtl-{id}
-        MapTo: /product/data/{id}
-        Methods: [GET, POST]
-      - MatchPath: /mcontent/data/{mcid}/npdtext-{id}
-        MapTo: /product/data/{id}
+        MapTo: /product/data/npdtdtl-{id}
         Methods: [GET, POST]
       - MatchPath: /mcontent/data/{mcid}/npflads-home
         MapTo: /profile/address
