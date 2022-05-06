@@ -167,6 +167,8 @@ Clusters:
         MapTo: /mcontent/endpoints/nmctmck-{id}
       - MatchPath: /api/endpoints/nafmdtl-{id}
         MapTo: /applicationform/visit/nafmdtl-{id}
+      - MatchPath: /api/endpoints/nbizppf-{id}
+        MapTo: /bizaccount/visit/nbizppf-{id}/publicprofile
       - MatchPath: /api/endpoints/nbizcat-{id}
         MapTo: /bizaccount/visit/nbizcat-{id}/catalog
       - MatchPath: /api/endpoints/nbizdtl-{id}
@@ -279,6 +281,8 @@ Clusters:
       - MatchPath: /api/endpoints/nkycchk-{id}
         MapTo: /kyc/visit/nkycchk-{id}/kyccheck
       ##################   Form & Page => Get data / Submit data   ##################
+      - MatchPath: /mcontent/header/{mode}/{id}
+        MapTo: /mcontent/{mode}/{id}/header
       - MatchPath: /mcontent/data/report-create/nrptdtl-{id}
         MapTo: /report/issue/nrptdtl-{id}
         Methods: [GET, POST]
@@ -334,6 +338,8 @@ Clusters:
       - MatchPath: /mcontent/data/{mcid}/nafmdtl-{id}
         MapTo: /applicationform/data/{id}
         Methods: [GET, POST]
+      - MatchPath: /mcontent/data/{mcid}/nbizppf-{id}
+        MapTo: /bizaccount/nbizppf-{id}/publicprofile
       - MatchPath: /mcontent/data/{mcid}/nbizcat-{id}
         MapTo: /bizaccount/{id}/catalog
       - MatchPath: /mcontent/data/merchant-select/nbizdtl-{id}
