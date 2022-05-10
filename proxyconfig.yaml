@@ -208,15 +208,13 @@ Clusters:
       - MatchPath: /api/endpoints/npdtdtl-{id}
         MapTo: /product/endpoints/npdtdtl-{id}
       - MatchPath: /api/endpoints/ncrtodr-{id}
-        MapTo: /cart/order/visit/ncrtodr-{id}
-      - MatchPath: /api/endpoints/ncrtdel-{id}
-        MapTo: /cart/order/delete/ncrtdel-{id}
-        Methods: [POST]
+        MapTo: /cart/order/endpoints/ncrtodr-{id}
+        Methods: [GET, POST]
       - MatchPath: /api/endpoints/ncrtpay-{id}
         MapTo: /cart/order/pay/ncrtpay-{id}
         Methods: [GET, POST]
       - MatchPath: /api/endpoints/ncrtpdl-{id}
-        MapTo: /cart/order/product/ncrtpdl-{id}/remove
+        MapTo: /cart/order/product/endpoints/ncrtpdl-{id}/remove
         Methods: [GET, POST]
       - MatchPath: /api/endpoints/ncrtahc-{id}
         MapTo: /cart/adhoc/create/visit/ncrtahc-{id}
