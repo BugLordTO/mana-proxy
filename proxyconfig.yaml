@@ -207,18 +207,16 @@ Clusters:
       - MatchPath: /api/endpoints/npv3crt-{id}
         MapTo: /privilege/endpoints/npv3crt-{id}/cart
         Methods: [GET, POST]
-      - MatchPath: /api/endpoints/npdt{idx}
-        MapTo: /product/endpoints/npdt{idx}
+      - MatchPath: /api/endpoints/npdtdtl-{id}
+        MapTo: /product/endpoints/npdtdtl-{id}
       - MatchPath: /api/endpoints/ncrtodr-{id}
-        MapTo: /cart/order/visit/ncrtodr-{id}
-      - MatchPath: /api/endpoints/ncrtdel-{id}
-        MapTo: /cart/order/delete/ncrtdel-{id}
-        Methods: [POST]
+        MapTo: /cart/order/endpoints/ncrtodr-{id}
+        Methods: [GET, POST]
       - MatchPath: /api/endpoints/ncrtpay-{id}
         MapTo: /cart/order/pay/ncrtpay-{id}
         Methods: [GET, POST]
       - MatchPath: /api/endpoints/ncrtpdl-{id}
-        MapTo: /cart/order/product/ncrtpdl-{id}/remove
+        MapTo: /cart/order/product/endpoints/ncrtpdl-{id}/remove
         Methods: [GET, POST]
       - MatchPath: /api/endpoints/ncrtahc-{id}
         MapTo: /cart/adhoc/create/visit/ncrtahc-{id}
@@ -445,10 +443,7 @@ Clusters:
       - MatchPath: /mcontent/data/{mcid}/npv3crt-{id}
         MapTo: /privilege/{id}/cartdata
       - MatchPath: /mcontent/data/{mcid}/npdtdtl-{id}
-        MapTo: /product/data/{id}
-        Methods: [GET, POST]
-      - MatchPath: /mcontent/data/{mcid}/npdtext-{id}
-        MapTo: /product/data/{id}
+        MapTo: /product/data/npdtdtl-{id}
         Methods: [GET, POST]
       - MatchPath: /mcontent/data/{mcid}/npflads-home
         MapTo: /profile/address
