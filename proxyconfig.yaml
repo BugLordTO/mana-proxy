@@ -276,6 +276,8 @@ Clusters:
         MapTo: /report/unlock/user/visit/nulkusr-{id}
       - MatchPath: /api/endpoints/nkycapl-{id}
         MapTo: /kyc/consent/visit/nkycapl-{id}
+      - MatchPath: /api/endpoints/nkymapl-{id}
+        MapTo: /kyc/consent/visit/nkymapl-{id}
       - MatchPath: /api/endpoints/nkycchk-{id}
         MapTo: /kyc/visit/nkycchk-{id}/kyccheck
       ##################   Form & Page => Get data / Submit data   ##################
@@ -313,6 +315,9 @@ Clusters:
         Methods: [GET, POST]
       - MatchPath: /mcontent/data/consent-kyc-by-manager/nkycapl-{id}
         MapTo: /kyc/consent/session/nkycapl-{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/consent-kyc-by-manager/nkymapl-{id}
+        MapTo: /kyc/consent/session/nkymapl-{id}
         Methods: [GET, POST]
       - MatchPath: /report/feed/ignore/nfedign-{id}
         MapTo: /report/feed/ignore/nfedign-{id}
