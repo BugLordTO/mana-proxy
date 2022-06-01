@@ -529,6 +529,10 @@ Clusters:
         Methods: [GET, POST]
       - MatchPath: /mcontent/data/wallet-topup-complete-qr/nwltdep-{id}
         MapTo: /wallet/depositqr/acc/success/nwltdep-{id}
+      - MatchPath: /wallet/deposit2021/success/nwltdqr-{id}
+        MapTo: /wallet/deposit2021/success/nwltdqr-{id}
+      - MatchPath: /mcontent/data/wallet-topup-completed/nwltdqr-{id}
+        MapTo: /wallet/deposit2021/success/data/nwltdqr-{id}
       - MatchPath: /mcontent/data/{mcid}/nescpst-{id}
         MapTo: /escrow/data/{mcid}/nescpst-{id}
         Methods: [GET, POST]
