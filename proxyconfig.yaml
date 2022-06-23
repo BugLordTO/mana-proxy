@@ -17,15 +17,16 @@ Clusters:
         MapTo: /api/barcodemanager/rdr
   - Id: manaapi
     Routes:
+      #######################   PROFILE   #######################
+      - MatchPath: /mcontent/data/user-profile-image-edit/npflimg-{id}
+        MapTo: /profile/image/npflimg-{id}
+        Methods: [GET, POST]
       #######################   Api ที่คุยกันตรงๆ   #######################
       - MatchPath: /tempupload/{mcid}/{endpointId}
         MapTo: /tempupload/{mcid}/{endpointId}
         Methods: [POST]
       #######################   Endpoints to each API   #######################
       ##################   Form & Page => Get data / Submit data   ##################
-      - MatchPath: /mcontent/data/{mcid}/npflimg-{id}
-        MapTo: /profile/image
-        Methods: [GET, POST]
       - MatchPath: /mcontent/data/kyc-basic-create/nkycbsc-{id}
         MapTo: /kyc/basic/create/nkycbsc-{id}
         Methods: [GET, POST]
@@ -40,6 +41,52 @@ Clusters:
         Methods: [POST]
   - Id: mana
     Routes:
+      #######################   PROFILE   #######################
+      - MatchPath: /api/endpoints/npflacc-home
+        MapTo: /profile/endpoints/npflacc-home
+      - MatchPath: /mcontent/data/user-profile/npflacc-home
+        MapTo: /profile/npflacc-home
+      - MatchPath: /api/endpoints/npflnme-home
+        MapTo: /profile/endpoints/npflnme-home/name
+      - MatchPath: /mcontent/data/user-profile-edit-name/npflnme-home
+        MapTo: /profile/name/npflnme-home
+        Methods: [GET, PUT]
+      - MatchPath: /api/endpoints/npflimg-{id}
+        MapTo: /profile/endpoints/npflimg-{id}/image
+      - MatchPath: /api/endpoints/npflads-home
+        MapTo: /profile/endpoints/npflads-home/shipping
+      - MatchPath: /mcontent/data/user-address-shipping/npflads-home
+        MapTo: /profile/shipping/npflads-home
+      - MatchPath: /api/endpoints/npflads-create
+        MapTo: /profile/endpoints/npflads-create/shipping/create
+      - MatchPath: /mcontent/data/user-address-shipping-create/npflads-create
+        MapTo: /profile/shipping/npflads-create/create
+        Methods: [GET, POST]
+      - MatchPath: /api/endpoints/npflads-{id}
+        MapTo: /profile/endpoints/npflads-{id}/shipping/edit
+      - MatchPath: /mcontent/data/user-address-shipping-create/npflads-{id}
+        MapTo: /profile/shipping/npflads-{id}/edit
+        Methods: [GET, PUT]
+      - MatchPath: /api/endpoints/npflads-{id}
+        MapTo: /profile/endpoints/npflads-{id}/shipping/delete
+        Methods: [GET, DELETE]
+      - MatchPath: /api/endpoints/npfladb-home
+        MapTo: /profile/endpoints/npfladb-home/billing
+      - MatchPath: /mcontent/data/user-address-billing/npfladb-home
+        MapTo: /profile/billing/npfladb-home
+      - MatchPath: /api/endpoints/npfladb-create
+        MapTo: /profile/endpoints/npfladb-create/billing/create
+      - MatchPath: /mcontent/data/user-address-billing-create/npfladb-create
+        MapTo: /profile/billing/npfladb-create/create
+        Methods: [GET, POST]
+      - MatchPath: /api/endpoints/npfladb-{id}
+        MapTo: /profile/endpoints/npfladb-{id}/billing/edit
+      - MatchPath: /mcontent/data/user-address-billing-create/npfladb-{id}
+        MapTo: /profile/billing/npfladb-{id}/edit
+        Methods: [GET, PUT]
+      - MatchPath: /api/endpoints/npfladb-{id}
+        MapTo: /profile/endpoints/npfladb-{id}/billing/delete
+        Methods: [GET, DELETE]
       #######################   Api ที่คุยกันตรงๆ   #######################
       - MatchPath: /signalr/{hub}/negotiate
         MapTo: /signalr/{hub}/negotiate
@@ -252,10 +299,6 @@ Clusters:
       #   MapTo: /wallet/withdraw/visit/nppywit-{id}
       - MatchPath: /api/endpoints/nwtx{id}
         MapTo: /wallet/transaction/visit/nwtx{id}
-      - MatchPath: /api/endpoints/npflimg-{id}
-        MapTo: /profile/visit/npflimg-{id}/image
-      - MatchPath: /api/endpoints/npflupd-{id}
-        MapTo: /device/{id}/updateprofile
       - MatchPath: /api/endpoints/npflbln-home
         MapTo: /home/updatebalance
       - MatchPath: /api/endpoints/npflkyc-home
@@ -452,24 +495,10 @@ Clusters:
       - MatchPath: /mcontent/data/{mcid}/npdtdtl-{id}
         MapTo: /product/data/npdtdtl-{id}
         Methods: [GET, POST]
-      - MatchPath: /mcontent/data/{mcid}/npflads-home
-        MapTo: /profile/addresses
-      - MatchPath: /mcontent/data/{mcid}/npflads-create
-        MapTo: /profile/addresses
-        Methods: [POST]
       - MatchPath: /api/mcontent/data/{mcid}/npflads-shipment
         MapTo: /profile/addresses
       - MatchPath: /api/mcontent/data/{mcid}/npflads-bill
         MapTo: /profile/addresses
-      - MatchPath: /mcontent/data/{mcid}/npflads-{id}
-        MapTo: /profile/addresses/npflads-{id}
-        Methods: [GET, PUT, DELETE]
-      - MatchPath: /mcontent/data/{mcid}/npflnme-home
-        MapTo: /profile
-        Methods: [GET, PUT]
-      - MatchPath: /mcontent/data/{mcid}/npflacc-home
-        MapTo: /profile
-        Methods: [GET, PUT]
       - MatchPath: /mcontent/data/kyc-tel-confirm/nkycbsc-{id}
         MapTo: /kyc/markedmobile
       - MatchPath: /mcontent/data/kyc-tel-confirm/nkycrst-{id}
@@ -482,9 +511,6 @@ Clusters:
         MapTo: /kyc/basic/confirm/nkycrst-{id}
       - MatchPath: /mcontent/data/kyc-main/nkycdlt-{id}
         MapTo: /kyc/nkycdlt-{id}
-      # - MatchPath: /mcontent/data/{mcid}/npfl{idx}
-      #   MapTo: /profile
-      #   Methods: [GET, PUT]
       - MatchPath: /mcontent/data/wallet-topup-detail/nppydep-{id}
         MapTo: /wallet/depositrequest/nppydep-{id}
         Methods: [GET, POST]
