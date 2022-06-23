@@ -70,6 +70,8 @@ Clusters:
       - MatchPath: /api/endpoints/npflads-{id}
         MapTo: /profile/endpoints/npflads-{id}/shipping/delete
         Methods: [GET, DELETE]
+      - MatchPath: /api/endpoints/npflads-change
+        MapTo: /profile/endpoints/npflads-change/shipping/change
       - MatchPath: /api/endpoints/npfladb-home
         MapTo: /profile/endpoints/npfladb-home/billing
       - MatchPath: /mcontent/data/user-address-billing/npfladb-home
@@ -87,6 +89,8 @@ Clusters:
       - MatchPath: /api/endpoints/npfladb-{id}
         MapTo: /profile/endpoints/npfladb-{id}/billing/delete
         Methods: [GET, DELETE]
+      - MatchPath: /api/endpoints/npfladb-change
+        MapTo: /profile/endpoints/npfladb-change/billing/change
       #######################   Api ที่คุยกันตรงๆ   #######################
       - MatchPath: /signalr/{hub}/negotiate
         MapTo: /signalr/{hub}/negotiate
