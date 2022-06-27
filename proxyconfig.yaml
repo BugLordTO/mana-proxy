@@ -21,18 +21,19 @@ Clusters:
       - MatchPath: /mcontent/data/user-profile-image-edit/npflimg-{id}
         MapTo: /profile/image/npflimg-{id}
         Methods: [GET, POST]
+      #######################   KYC   #######################
+      - MatchPath: /mcontent/data/kyc-basic-create/nkycbsc-create
+        MapTo: /kyc/basic/nkycbsc-create
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/kyc-basic-create/nkycbsc.resubmit-create
+        MapTo: /kyc/basic/nkycbsc.resubmit-create/resubmit
+        Methods: [GET, POST]
       #######################   Api ที่คุยกันตรงๆ   #######################
       - MatchPath: /tempupload/{mcid}/{endpointId}
         MapTo: /tempupload/{mcid}/{endpointId}
         Methods: [POST]
       #######################   Endpoints to each API   #######################
       ##################   Form & Page => Get data / Submit data   ##################
-      - MatchPath: /mcontent/data/kyc-basic-create/nkycbsc-{id}
-        MapTo: /kyc/basic/create/nkycbsc-{id}
-        Methods: [GET, POST]
-      - MatchPath: /mcontent/data/kyc-basic-create/nkycrst-{id}
-        MapTo: /kyc/basic/resubmit/nkycrst-{id}
-        Methods: [GET, POST]
       - MatchPath: /mcontent/data/merchant-profile-image-edit/nbizimg-{id}
         MapTo: /bizaccount/{id}/image
         Methods: [GET, POST]
@@ -53,6 +54,7 @@ Clusters:
         Methods: [GET, PUT]
       - MatchPath: /api/endpoints/npflimg-{id}
         MapTo: /profile/endpoints/npflimg-{id}/image
+
       - MatchPath: /api/endpoints/npflads-home
         MapTo: /profile/endpoints/npflads-home/shipping
       - MatchPath: /mcontent/data/user-address-shipping/npflads-home
@@ -72,6 +74,7 @@ Clusters:
         Methods: [GET, DELETE]
       - MatchPath: /api/endpoints/npflads-change
         MapTo: /profile/endpoints/npflads-change/shipping/change
+
       - MatchPath: /api/endpoints/npfladb-home
         MapTo: /profile/endpoints/npfladb-home/billing
       - MatchPath: /mcontent/data/user-address-billing/npfladb-home
@@ -91,6 +94,61 @@ Clusters:
         Methods: [GET, DELETE]
       - MatchPath: /api/endpoints/npfladb-change
         MapTo: /profile/endpoints/npfladb-change/billing/change
+      #######################   KYC   #######################
+      - MatchPath: /kyc/update
+        MapTo: /kyc/update
+      - MatchPath: /mcontent/data/kyc-tel-confirm/nkycbsc-{id}
+        MapTo: /kyc/mobile/marked
+      - MatchPath: /kyc/mobile/{mobile}/validate
+        MapTo: /kyc/mobile/{mobile}/validate
+      
+      - MatchPath: /api/endpoints/nkycdlt-home
+        MapTo: /kyc/endpoints/nkycdlt-home
+      - MatchPath: /mcontent/data/kyc-main/nkycdlt-home
+        MapTo: /kyc/nkycdlt-home
+      
+      - MatchPath: /api/endpoints/nkycbsc.agreement-create
+        MapTo: /kyc/endpoints/nkycbsc.agreement-create/agreement
+      - MatchPath: /mcontent/data/kyc-agreement/nkycbsc.agreement-create
+        MapTo: /kyc/agreement/nkycbsc.agreement-create
+      - MatchPath: /api/endpoints/nkycbsc-create
+        MapTo: /kyc/endpoints/nkycbsc-create/basic
+      - MatchPath: /api/endpoints/nkycbsc.resubmit-create
+        MapTo: /kyc/endpoints/nkycbsc.resubmit-create/basic/create
+
+      - MatchPath: /api/endpoints/nkycbsc.confirm-{id}
+        MapTo: /kyc/endpoints/nkycbsc.confirm-{id}/basic/confirm
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/kyc-basic-confirm/nkycbsc-{id}
+        MapTo: /kyc/basic/nkycbsc-{id}/confirm
+      - MatchPath: /api/endpoints/nkycbsc.resubmit-{id}
+        MapTo: /kyc/endpoints/nkycbsc.resubmit-{id}/basic
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/kyc-basic-confirm/nkycbsc.resubmit-{id}
+        MapTo: /kyc/basic/nkycbsc.resubmit-{id}/confirm
+        
+      - MatchPath: /api/endpoints/nkycbsc.feed-{id}
+        MapTo: /kyc/endpoints/nkycbsc.feed-{id}/basic/feed
+      - MatchPath: /api/endpoints/nkycbsc.feed-{id}
+        MapTo: /kyc/endpoints/nkycbsc.feed-{id}/basic/feed
+        Methods: [DELETE]
+      - MatchPath: /mcontent/data/kyc-feed/nkycbsc.feed-{id}
+        MapTo: /kyc/basic/nkycbsc.feed-{id}/feed
+
+      - MatchPath: /api/endpoints/nkycbsc.appoval-{id}
+        MapTo: /kyc/endpoints/nkycbsc.appoval-{id}/manager/consent/approval
+      - MatchPath: /mcontent/data/consent-kyc-by-manager/nkycbsc.appoval-{id}
+        MapTo: /manager/consent/nkycbsc.appoval-{id}/approval
+        Methods: [GET, POST]
+        
+      - MatchPath: /api/endpoints/nkycdtl.check-{id}
+        MapTo: /kyc/endpoints/nkycdtl.check-{id}/check
+
+      - MatchPath: /api/endpoints/nkymapl-{id}
+        MapTo: /kyc/consent/visit/nkymapl-{id}
+      - MatchPath: /mcontent/data/consent-kyc-by-manager/nkymapl-{id}
+        MapTo: /kyc/consent/session/nkymapl-{id}
+        Methods: [GET, POST]
       #######################   Api ที่คุยกันตรงๆ   #######################
       - MatchPath: /signalr/{hub}/negotiate
         MapTo: /signalr/{hub}/negotiate
@@ -117,19 +175,6 @@ Clusters:
         MapTo: /gps/place
       - MatchPath: /gps/coordinate
         MapTo: /gps/coordinate
-      - MatchPath: /kyc/update
-        MapTo: /kyc/update
-      - MatchPath: /kyc/validate/mobile/{mobile}
-        MapTo: /kyc/validate/mobile/{mobile}
-      - MatchPath: /kyc/basic/send/nkycbsc-{id}
-        MapTo: /kyc/basic/send/nkycbsc-{id}
-        Methods: [POST]
-      - MatchPath: /kyc/basic/send/nkycrst-{id}
-        MapTo: /kyc/basic/send/nkycrst-{id}
-        Methods: [POST]
-      - MatchPath: /kyc/feed/del/nkycsts-{id}
-        MapTo: /kyc/feed/del/nkycsts-{id}
-        Methods: [POST]
       - MatchPath: /api/escrow/result/dlg/{dialogstatus}/{nptid}
         MapTo: /escrow/result/dlg/{dialogstatus}/{nptid}
       - MatchPath: /api/escrow/releasedlg/{oldendpoint}/neschfd.rating-{id}
@@ -285,8 +330,6 @@ Clusters:
         Methods: [GET, POST]
       - MatchPath: /api/endpoints/nschhme-{id}
         MapTo: /search/visit/nschhme-{id}
-      - MatchPath: /api/endpoints/nkycrst-{id}
-        MapTo: /kyc/basic/resubmit/visit/nkycrst-{id}
       - MatchPath: /api/endpoints/nempreq-{id}
         MapTo: /employee/register/visit/nempreq-{id}
       - MatchPath: /api/endpoints/nempinf-{id}
@@ -317,16 +360,8 @@ Clusters:
         MapTo: /report/unfreeze/visit/nunfrez-{id}
       - MatchPath: /api/endpoints/nulkmng-{id}
         MapTo: /report/unlock/manager/visit/nulkmng-{id}
-      - MatchPath: /api/endpoints/nkycsts-{id}
-        MapTo: /kyc/status/visit/nkycsts-{id}
       - MatchPath: /api/endpoints/nulkusr-{id}
         MapTo: /report/unlock/user/visit/nulkusr-{id}
-      - MatchPath: /api/endpoints/nkycapl-{id}
-        MapTo: /kyc/consent/visit/nkycapl-{id}
-      - MatchPath: /api/endpoints/nkymapl-{id}
-        MapTo: /kyc/consent/visit/nkymapl-{id}
-      - MatchPath: /api/endpoints/nkycchk-{id}
-        MapTo: /kyc/visit/nkycchk-{id}/kyccheck
       ##################   Form & Page => Get data / Submit data   ##################
       - MatchPath: /mcontent/header/{mode}/{id}
         MapTo: /mcontent/{mode}/{id}/header
@@ -359,12 +394,6 @@ Clusters:
         Methods: [GET, POST]
       - MatchPath: /mcontent/data/consent-userinfo-by-user/nulkusr-{id}
         MapTo: /report/unlock/user/session/nulkusr-{id}
-        Methods: [GET, POST]
-      - MatchPath: /mcontent/data/consent-kyc-by-manager/nkycapl-{id}
-        MapTo: /kyc/consent/session/nkycapl-{id}
-        Methods: [GET, POST]
-      - MatchPath: /mcontent/data/consent-kyc-by-manager/nkymapl-{id}
-        MapTo: /kyc/consent/session/nkymapl-{id}
         Methods: [GET, POST]
       - MatchPath: /report/feed/ignore/nfedign-{id}
         MapTo: /report/feed/ignore/nfedign-{id}
@@ -474,8 +503,6 @@ Clusters:
         MapTo: /bizaccount/nbizkym.feed-{id}/kymbasicfeed
       - MatchPath: /mcontent/data/kym-feed/nbizkym.status-{id}
         MapTo: /bizaccount/nbizkym.status-{id}/kymstatus
-      - MatchPath: /mcontent/data/kyc-feed/nkycsts-{id}
-        MapTo: /kyc/basic/feed/nkycsts-{id}
       - MatchPath: /mcontent/data/{mcid}/nmemlst{idx}
         MapTo: /membership
       - MatchPath: /mcontent/data/{mcid}/nmemreg-{id}
@@ -503,18 +530,6 @@ Clusters:
         MapTo: /profile/addresses
       - MatchPath: /api/mcontent/data/{mcid}/npflads-bill
         MapTo: /profile/addresses
-      - MatchPath: /mcontent/data/kyc-tel-confirm/nkycbsc-{id}
-        MapTo: /kyc/markedmobile
-      - MatchPath: /mcontent/data/kyc-tel-confirm/nkycrst-{id}
-        MapTo: /kyc/markedmobile
-      - MatchPath: /mcontent/data/kyc-agreement/nkycbsc-{id}
-        MapTo: /kyc/basic/create/nkycbsc-{id}
-      - MatchPath: /mcontent/data/kyc-basic-confirm/nkycbsc-{id}
-        MapTo: /kyc/basic/confirm/nkycbsc-{id}
-      - MatchPath: /mcontent/data/kyc-basic-confirm/nkycrst-{id}
-        MapTo: /kyc/basic/confirm/nkycrst-{id}
-      - MatchPath: /mcontent/data/kyc-main/nkycdlt-{id}
-        MapTo: /kyc/nkycdlt-{id}
       - MatchPath: /mcontent/data/wallet-topup-detail/nppydep-{id}
         MapTo: /wallet/depositrequest/nppydep-{id}
         Methods: [GET, POST]
