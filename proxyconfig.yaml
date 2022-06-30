@@ -17,27 +17,6 @@ Clusters:
         MapTo: /api/barcodemanager/rdr
   - Id: manaapi
     Routes:
-      #######################   PROFILE   #######################
-      - MatchPath: /api/endpoints/npflacc-other
-        MapTo: /profile/endpoints/npflacc-other/other
-      - MatchPath: /mcontent/data/user-profile-other/npflacc-other
-        MapTo: /profile/other/npflacc-other
-      - MatchPath: /api/endpoints/npflacc-delete
-        MapTo: /profile/endpoints/npflacc-delete/delete
-      - MatchPath: /mcontent/data/user-profile-delete-account/npflacc-delete
-        MapTo: /profile/npflacc-delete/delete
-      - MatchPath: /api/endpoints/npflacc.validate-delete
-        MapTo: /profile/endpoints/npflacc.validate-delete/delete/validate
-        Methods: [GET, POST]
-      - MatchPath: /mcontent/data/user-profile-delete-account-validate/npflacc.validate-delete
-        MapTo: /profile/npflacc.validate-delete/delete/validate
-      - MatchPath: /api/endpoints/npflacc.confirm-delete
-        MapTo: /profile/endpoints/npflacc.confirm-delete/delete
-      - MatchPath: /mcontent/data/user-profile-delete-account/npflacc.confirm-delete
-        MapTo: /profile/npflacc.confirm-delete/delete/confirm
-      - MatchPath: /api/endpoints/npflacc.confirmdlg-delete
-        MapTo: /profile/endpoints/npflacc.confirmdlg-delete/delete/confirm/dialog
-        Methods: [GET, POST]
       #######################   Api ที่คุยกันตรงๆ   #######################
       - MatchPath: /tempupload/{mcid}/{endpointId}
         MapTo: /tempupload/{mcid}/{endpointId}
@@ -61,6 +40,27 @@ Clusters:
         Methods: [POST]
   - Id: mana
     Routes:
+      #######################   PROFILE   #######################
+      - MatchPath: /api/endpoints/npflacc-other
+        MapTo: /profile/endpoints/npflacc-other/other
+      - MatchPath: /mcontent/data/user-profile-other/npflacc-other
+        MapTo: /profile/other/npflacc-other
+      - MatchPath: /api/endpoints/npflacc-delete
+        MapTo: /profile/endpoints/npflacc-delete/delete
+      - MatchPath: /mcontent/data/user-profile-delete-account/npflacc-delete
+        MapTo: /profile/npflacc-delete/delete
+      - MatchPath: /api/endpoints/npflacc.validate-delete
+        MapTo: /profile/endpoints/npflacc.validate-delete/delete/validate
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/user-profile-delete-account-validate/npflacc.validate-delete
+        MapTo: /profile/npflacc.validate-delete/delete/validate
+      - MatchPath: /api/endpoints/npflacc.confirm-delete
+        MapTo: /profile/endpoints/npflacc.confirm-delete/delete
+      - MatchPath: /mcontent/data/user-profile-delete-account/npflacc.confirm-delete
+        MapTo: /profile/npflacc.confirm-delete/delete/confirm
+      - MatchPath: /api/endpoints/npflacc.confirmdlg-delete
+        MapTo: /profile/endpoints/npflacc.confirmdlg-delete/delete/confirm/dialog
+        Methods: [GET, POST]
       #######################   Api ที่คุยกันตรงๆ   #######################
       - MatchPath: /signalr/{hub}/negotiate
         MapTo: /signalr/{hub}/negotiate
