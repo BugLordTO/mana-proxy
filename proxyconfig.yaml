@@ -75,7 +75,8 @@ Clusters:
       - MatchPath: /api/endpoints/npflads-change
         MapTo: /profile/endpoints/npflads-change/shipping/change
       - MatchPath: /mcontent/data/gpsaddress-select/npflads-change
-        MapTo: /profile/shipping/npflads-home
+        MapTo: /profile/shipping/npflads-change/change
+        Methods: [GET, PUT]
 
       - MatchPath: /api/endpoints/npfladb-home
         MapTo: /profile/endpoints/npfladb-home/billing
@@ -97,7 +98,8 @@ Clusters:
       - MatchPath: /api/endpoints/npfladb-change
         MapTo: /profile/endpoints/npfladb-change/billing/change
       - MatchPath: /mcontent/data/gpsaddress-select/npfladb-change
-        MapTo: /profile/shipping/npfladb-home
+        MapTo: /profile/billing/npfladb-change/change
+        Methods: [GET, PUT]
       #######################   KYC   #######################
       - MatchPath: /kyc/update
         MapTo: /kyc/update
