@@ -36,7 +36,7 @@ Clusters:
       - MatchPath: /mcontent/data/user-profile-delete-account/npflacc.confirm-delete
         MapTo: /profile/npflacc.confirm-delete/delete/confirm
       - MatchPath: /api/endpoints/npflacc.confirmdlg-delete
-        MapTo: /profile/endpoints/npflacc.confirmdlg-delete/delete/dialog
+        MapTo: /profile/endpoints/npflacc.confirmdlg-delete/delete/confirm/dialog
         Methods: [GET, POST]
       #######################   Api ที่คุยกันตรงๆ   #######################
       - MatchPath: /tempupload/{mcid}/{endpointId}
