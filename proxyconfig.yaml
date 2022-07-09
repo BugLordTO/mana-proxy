@@ -142,7 +142,7 @@ Clusters:
       - MatchPath: /api/endpoints/nkycbsc.appoval-{id}
         MapTo: /kyc/endpoints/nkycbsc.appoval-{id}/manager/consent/approval
       - MatchPath: /mcontent/data/consent-kyc-by-manager/nkycbsc.appoval-{id}
-        MapTo: /manager/consent/nkycbsc.appoval-{id}/approval
+        MapTo: /kyc/manager/consent/nkycbsc.appoval-{id}/approval
         Methods: [GET, POST]
         
       - MatchPath: /api/endpoints/nkycdtl.check-{id}
@@ -530,8 +530,10 @@ Clusters:
       - MatchPath: /mcontent/data/{mcid}/npdtdtl-{id}
         MapTo: /product/data/npdtdtl-{id}
         Methods: [GET, POST]
-      - MatchPath: /api/mcontent/data/{mcid}/npflads-shipment
-        MapTo: /profile/addresses
+      - MatchPath: /api/mcontent/data/gpsaddress-change/npflads-shipment
+        MapTo: /profile/shipping/npflads-shipment/change
+      - MatchPath: /api/mcontent/data/gpsaddress-select/npflads-shipment
+        MapTo: /profile/shipping/npflads-shipment/change
       - MatchPath: /api/mcontent/data/{mcid}/npflads-bill
         MapTo: /profile/addresses
       - MatchPath: /mcontent/data/wallet-topup-detail/nppydep-{id}
