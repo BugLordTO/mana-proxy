@@ -100,6 +100,28 @@ Clusters:
       - MatchPath: /mcontent/data/gpsaddress-select/npfladb-change
         MapTo: /profile/billing/npfladb-change/change
         Methods: [GET, PUT]
+
+      - MatchPath: /api/endpoints/npflacc-other
+        MapTo: /profile/endpoints/npflacc-other/other
+      - MatchPath: /mcontent/data/user-profile-other/npflacc-other
+        MapTo: /profile/other/npflacc-other
+      - MatchPath: /api/endpoints/npflacc-delete
+        MapTo: /profile/endpoints/npflacc-delete/delete
+      - MatchPath: /mcontent/data/user-profile-delete-account/npflacc-delete
+        MapTo: /profile/npflacc-delete/delete
+      - MatchPath: /api/endpoints/npflacc.validate-delete
+        MapTo: /profile/endpoints/npflacc.validate-delete/delete/validate
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/user-profile-delete-account-validate/npflacc.validate-delete
+        MapTo: /profile/npflacc.validate-delete/delete/validate
+      - MatchPath: /api/endpoints/npflacc.confirm-delete
+        MapTo: /profile/endpoints/npflacc.confirm-delete/delete
+      - MatchPath: /mcontent/data/user-profile-delete-account/npflacc.confirm-delete
+        MapTo: /profile/npflacc.confirm-delete/delete/confirm
+      - MatchPath: /api/endpoints/npflacc.confirmdlg-delete
+        MapTo: /profile/endpoints/npflacc.confirmdlg-delete/delete/confirm/dialog
+        Methods: [GET, POST]
+
       #######################   KYC   #######################
       - MatchPath: /kyc/update
         MapTo: /kyc/update
@@ -107,12 +129,12 @@ Clusters:
         MapTo: /kyc/mobile/marked
       - MatchPath: /kyc/mobile/{mobile}/validate
         MapTo: /kyc/mobile/{mobile}/validate
-      
+
       - MatchPath: /api/endpoints/nkycdtl-home
         MapTo: /kyc/endpoints/nkycdtl-home
       - MatchPath: /mcontent/data/kyc-main/nkycdtl-home
         MapTo: /kyc/nkycdtl-home
-      
+
       - MatchPath: /api/endpoints/nkycbsc.agreement-create
         MapTo: /kyc/endpoints/nkycbsc.agreement-create/agreement
       - MatchPath: /mcontent/data/kyc-agreement/nkycbsc.agreement-create
@@ -132,7 +154,7 @@ Clusters:
         Methods: [GET, POST]
       - MatchPath: /mcontent/data/kyc-basic-confirm/nkycbsc.resubmit-{id}
         MapTo: /kyc/basic/nkycbsc.resubmit-{id}/confirm
-        
+
       - MatchPath: /api/endpoints/nkycbsc.feed-{id}
         MapTo: /kyc/endpoints/nkycbsc.feed-{id}/basic/feed
         Methods: [GET, POST]
@@ -144,7 +166,7 @@ Clusters:
       - MatchPath: /mcontent/data/consent-kyc-by-manager/nkycbsc.appoval-{id}
         MapTo: /kyc/manager/consent/nkycbsc.appoval-{id}/approval
         Methods: [GET, POST]
-        
+
       - MatchPath: /api/endpoints/nkycdtl.check-{id}
         MapTo: /kyc/endpoints/nkycdtl.check-{id}/check
 
@@ -153,6 +175,7 @@ Clusters:
       - MatchPath: /mcontent/data/consent-kyc-by-manager/nkymapl-{id}
         MapTo: /kyc/consent/session/nkymapl-{id}
         Methods: [GET, POST]
+
       #######################   Api ที่คุยกันตรงๆ   #######################
       - MatchPath: /signalr/{hub}/negotiate
         MapTo: /signalr/{hub}/negotiate
