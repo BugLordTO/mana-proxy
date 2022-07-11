@@ -171,9 +171,9 @@ Clusters:
         MapTo: /kyc/endpoints/nkycdtl.check-{id}/check
 
       - MatchPath: /api/endpoints/nkymapl-{id}
-        MapTo: /kyc/consent/visit/nkymapl-{id}
+        MapTo: /kyc/endpoints/nkymapl-{id}/manager/consent/approval
       - MatchPath: /mcontent/data/consent-kyc-by-manager/nkymapl-{id}
-        MapTo: /kyc/consent/session/nkymapl-{id}
+        MapTo: /kyc/manager/consent/nkymapl-{id}/approval
         Methods: [GET, POST]
 
       #######################   Api ที่คุยกันตรงๆ   #######################
