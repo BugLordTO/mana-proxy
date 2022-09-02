@@ -573,6 +573,12 @@ Clusters:
       - MatchPath: /mcontent/data/wallet-topup-ppay-confirm/nwltdep-{id}
         MapTo: /wallet/deposit2021/nwltdep-{id}
         Methods: [GET, POST]
+      - MatchPath: /mcontent/data/wallet-topup-ppay/ndepdlg-{id}
+        MapTo: /wallet/depositrequest2021/ndepdlg-{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/wallet-topup-ppay-confirm/ndepdlg-{id}
+        MapTo: /wallet/deposit2021/ndepdlg-{id}
+        Methods: [GET, POST]
       - MatchPath: /mcontent/data/wallet-topup-completed/nwltdep-{id}
         MapTo: /wallet/deposit2021/success/data/nwltdep-{id}
       - MatchPath: /mcontent/data/wallet-withdraw-detail/nppywit-{id}
@@ -602,6 +608,12 @@ Clusters:
         Methods: [GET, POST]
       - MatchPath: /mcontent/data/wallet-topup-bankaccount-confirm/nwltdep-{id}
         MapTo: /wallet/depositqr/acc/nwltdep-{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/wallet-topup-bankaccount/ndepdlg-{id}
+        MapTo: /wallet/depositqrrequest/acc/ndepdlg-{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/wallet-topup-bankaccount-confirm/ndepdlg-{id}
+        MapTo: /wallet/depositqr/acc/ndepdlg-{id}
         Methods: [GET, POST]
       - MatchPath: /mcontent/data/wallet-topup-complete-qr/nwltdep-{id}
         MapTo: /wallet/depositqr/acc/success/nwltdep-{id}
