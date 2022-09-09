@@ -346,6 +346,8 @@ Clusters:
       - MatchPath: /api/endpoints/neschfd-{id}
         MapTo: /escrow/neschfd-{id}
         Methods: [GET, POST]
+      - MatchPath: /api/endpoints/neschfd.detail-{id}
+        MapTo: /escrow/detail/neschfd.detail-{id}
       - MatchPath: /api/endpoints/neschfd.rating-{id}
         MapTo: /escrow/rating/neschfd.rating-{id}
         Methods: [GET, POST]
@@ -627,6 +629,8 @@ Clusters:
       - MatchPath: /mcontent/data/{mcid}/neschfd-{id}
         MapTo: /escrow/data/{mcid}/neschfd-{id}
         Methods: [GET, POST]
+      - MatchPath: /mcontent/data/{mcid}/neschfd.detail-{id}
+        MapTo: /escrow/data/{mcid}/neschfd.detail-{id}
       - MatchPath: /mcontent/data/{mcid}/neschfd.rating-{id}
         MapTo: /escrow/data/{mcid}/neschfd.rating-{id}
         Methods: [GET, POST]
