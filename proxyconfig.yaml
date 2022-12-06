@@ -480,8 +480,11 @@ Clusters:
       - MatchPath: /mcontent/data/merchant-address/nbizads-{id}
         MapTo: /bizaccount/nbizads-{id}/address
         Methods: [GET, PUT]
-      - MatchPath: /mcontent/data/merchant-schedule-setting/nbizsch-{id}
+      - MatchPath: /mcontent/data/merchant-schedule/nbizsch-{id}
         MapTo: /bizaccount/nbizsch-{id}/schedules
+        Methods: [GET, PUT]
+      - MatchPath: /mcontent/data/merchant-schedule-setting/nbizscs-{id}
+        MapTo: /bizaccount/nbizscs-{id}/schedules/settings
         Methods: [GET, PUT]
       - MatchPath: /mcontent/data/merchant-contract/nbizctt-{id}
         MapTo: /bizaccount/nbizctt-{id}/contracts
