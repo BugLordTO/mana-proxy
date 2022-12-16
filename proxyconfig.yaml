@@ -21,14 +21,6 @@ Clusters:
       - MatchPath: /mcontent/data/user-profile-image-edit/npflimg-{id}
         MapTo: /profile/image/npflimg-{id}
         Methods: [GET, POST]
-      - MatchPath: /profile/addresses/npflads-shipment/recall
-        MapTo: /profile/addresses/npflads-shipment/recall
-      - MatchPath: /profile/addresses/npflads-shipment/forget/remark
-        MapTo: /profile/addresses/npflads-shipment/forget/remark
-        Methods: [POST]
-      - MatchPath: /profile/addresses/npflads-shipment/forget/contactno
-        MapTo: /profile/addresses/npflads-shipment/forget/contactno
-        Methods: [POST]
       #######################   KYC   #######################
       - MatchPath: /mcontent/data/kyc-basic-create/nkycbsc-create
         MapTo: /kyc/basic/nkycbsc-create
@@ -85,6 +77,15 @@ Clusters:
       - MatchPath: /mcontent/data/gpsaddress-select/npflads-change
         MapTo: /profile/shipping/npflads-change/change
         Methods: [GET, PUT]
+        
+      - MatchPath: /api/profile/addresses/npflads-shipment/recall
+        MapTo: /profile/addresses/npflads-shipment/recall
+      - MatchPath: /api/profile/addresses/npflads-shipment/forget/remark
+        MapTo: /profile/addresses/npflads-shipment/forget/remark
+        Methods: [POST]
+      - MatchPath: /api/profile/addresses/npflads-shipment/forget/contactno
+        MapTo: /profile/addresses/npflads-shipment/forget/contactno
+        Methods: [POST]
 
       - MatchPath: /api/endpoints/npfladb-home
         MapTo: /profile/endpoints/npfladb-home/billing
