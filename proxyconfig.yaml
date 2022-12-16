@@ -21,6 +21,14 @@ Clusters:
       - MatchPath: /mcontent/data/user-profile-image-edit/npflimg-{id}
         MapTo: /profile/image/npflimg-{id}
         Methods: [GET, POST]
+      - MatchPath: /profile/addresses/npflads-shipment/recall
+        MapTo: /profile/addresses/npflads-shipment/recall
+      - MatchPath: /profile/addresses/npflads-shipment/forget/remark
+        MapTo: /profile/addresses/npflads-shipment/forget/remark
+        Methods: [POST]
+      - MatchPath: /profile/addresses/npflads-shipment/forget/contactno
+        MapTo: /profile/addresses/npflads-shipment/forget/contactno
+        Methods: [POST]
       #######################   KYC   #######################
       - MatchPath: /mcontent/data/kyc-basic-create/nkycbsc-create
         MapTo: /kyc/basic/nkycbsc-create
