@@ -77,6 +77,13 @@ Clusters:
       - MatchPath: /mcontent/data/gpsaddress-select/npflads-change
         MapTo: /profile/shipping/npflads-change/change
         Methods: [GET, PUT]
+        
+      - MatchPath: /api/profile/addresses/npflads-shipment/recall
+        MapTo: /profile/addresses/npflads-shipment/recall
+      - MatchPath: /api/profile/addresses/npflads-shipment/forget/remark
+        MapTo: /profile/addresses/npflads-shipment/forget/remark
+      - MatchPath: /api/profile/addresses/npflads-shipment/forget/contactno
+        MapTo: /profile/addresses/npflads-shipment/forget/contactno
 
       - MatchPath: /api/endpoints/npfladb-home
         MapTo: /profile/endpoints/npfladb-home/billing
@@ -480,8 +487,11 @@ Clusters:
       - MatchPath: /mcontent/data/merchant-address/nbizads-{id}
         MapTo: /bizaccount/nbizads-{id}/address
         Methods: [GET, PUT]
-      - MatchPath: /mcontent/data/merchant-schedule-setting/nbizsch-{id}
+      - MatchPath: /mcontent/data/merchant-schedule/nbizsch-{id}
         MapTo: /bizaccount/nbizsch-{id}/schedules
+        Methods: [GET, PUT]
+      - MatchPath: /mcontent/data/merchant-schedule-setting/nbizscs-{id}
+        MapTo: /bizaccount/nbizscs-{id}/schedules/settings
         Methods: [GET, PUT]
       - MatchPath: /mcontent/data/merchant-contract/nbizctt-{id}
         MapTo: /bizaccount/nbizctt-{id}/contracts
