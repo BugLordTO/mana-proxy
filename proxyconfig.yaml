@@ -82,10 +82,8 @@ Clusters:
         MapTo: /profile/addresses/npflads-shipment/recall
       - MatchPath: /api/profile/addresses/npflads-shipment/forget/remark
         MapTo: /profile/addresses/npflads-shipment/forget/remark
-        Methods: [POST]
       - MatchPath: /api/profile/addresses/npflads-shipment/forget/contactno
         MapTo: /profile/addresses/npflads-shipment/forget/contactno
-        Methods: [POST]
 
       - MatchPath: /api/endpoints/npfladb-home
         MapTo: /profile/endpoints/npfladb-home/billing
