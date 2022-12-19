@@ -253,13 +253,19 @@ Clusters:
         Methods: [GET, POST]
         
       - MatchPath: /api/endpoints/nmtmwdw.confirm-{id}
-        MapTo: /mm/endpoints/nmtmwdw.confirm-{id}/mtm/confirm
+        MapTo: /mm/endpoints/nmtmwdw.confirm-{id}/mtm/withdraw/confirm
         Methods: [POST]
       - MatchPath: /mcontent/data/v6-financial-mtm-withdraw-confirm/nmtmwdw.confirm-{id}
-        MapTo: /mm/nmtmwdw.confirm-{id}/mtm/confirm
+        MapTo: /mm/nmtmwdw.confirm-{id}/mtm/withdraw/confirm
 
       - MatchPath: /mcontent/data/wallet-transaction-ppay-payment/nmtmwdw.completed-{id}
         MapTo: /mm/nmtmwdw.completed-{id}/mtm/withdraw/completed
+        
+      - MatchPath: /api/endpoints/nmtmwdw.status-{id}
+        MapTo: /mm/endpoints/nmtmwdw.status-{id}/mtm/withdraw/status
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/v6-feed-mtm-withdraw/nmtmwdw.status-{id}
+        MapTo: /mm/nmtmwdw.status-{id}/mtm/withdraw/status
 
       #######################   Api ที่คุยกันตรงๆ   #######################
       - MatchPath: /signalr/{hub}/negotiate
