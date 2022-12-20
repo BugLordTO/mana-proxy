@@ -258,8 +258,8 @@ Clusters:
       - MatchPath: /mcontent/data/v6-financial-mtm-withdraw-confirm/nmtmwdw.confirm-{id}
         MapTo: /mm/nmtmwdw.confirm-{id}/mtm/withdraw/confirm
 
-      - MatchPath: /mcontent/data/wallet-transaction-ppay-payment/nmtmwdw.completed-{id}
-        MapTo: /mm/nmtmwdw.completed-{id}/mtm/withdraw/completed
+      - MatchPath: /mcontent/data/wallet-transaction-ppay-payment/nmtmwdw.requested-{id}
+        MapTo: /mm/nmtmwdw.requested-{id}/mtm/withdraw/requested
         
       - MatchPath: /api/endpoints/nmtmwdw.status-{id}
         MapTo: /mm/endpoints/nmtmwdw.status-{id}/mtm/withdraw/status
