@@ -201,7 +201,7 @@ Clusters:
 
       - MatchPath: /api/endpoints/ndepmmk.qr-home
         MapTo: /mm/endpoints/ndepmmk.qr-home/mextopupqr
-      - MatchPath: /mcontent/data/v6-financial-topup-qr/ndepmmk.qr-home
+      - MatchPath: /mcontent/data/v6-financial-topup-qr-create/ndepmmk.qr-home
         MapTo: /mm/ndepmmk.qr-home/mextopupqr/confirm
         Methods: [GET, POST]
 
