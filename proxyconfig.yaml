@@ -202,7 +202,7 @@ Clusters:
       - MatchPath: /api/endpoints/ndepmmk.qr-home
         MapTo: /mm/endpoints/ndepmmk.qr-home/mextopupqr
       - MatchPath: /mcontent/data/v6-financial-topup-qr-create/ndepmmk.qr-home
-        MapTo: /mm/ndepmmk.qr-home/mextopupqr/confirm
+        MapTo: /mm/ndepmmk.qr-home/mextopupqr
         Methods: [GET, POST]
 
       - MatchPath: /api/endpoints/ndepmmk.confirm-{id}
@@ -229,7 +229,7 @@ Clusters:
       - MatchPath: /mcontent/data/v6-cart-adhoc-confirm/nahcmex.confirm-{id}
         MapTo: /mm/nahcmex.confirm-{id}/adhocmex/confirm
 
-      - MatchPath: /mcontent/data/wallet-transaction-ppay-payment/nahcmex.completed-{id}
+      - MatchPath: /mcontent/data/v6-cart-bill/nahcmex.completed-{id}
         MapTo: /mm/nahcmex.completed-{id}/adhocmex/completed
 
         # MTM Withdraw
@@ -258,7 +258,7 @@ Clusters:
       - MatchPath: /mcontent/data/v6-financial-mtm-withdraw-confirm/nmtmwdw.confirm-{id}
         MapTo: /mm/nmtmwdw.confirm-{id}/mtm/withdraw/confirm
 
-      - MatchPath: /mcontent/data/wallet-transaction-ppay-payment/nmtmwdw.requested-{id}
+      - MatchPath: /mcontent/data/v6-cart-bill/nmtmwdw.requested-{id}
         MapTo: /mm/nmtmwdw.requested-{id}/mtm/withdraw/requested
         
       - MatchPath: /api/endpoints/nmtmwdw.status-{id}
