@@ -182,7 +182,7 @@ Clusters:
         MapTo: /kyc/agreement/nkycmym.agreement-create
 
       - MatchPath: /mcontent/data/kyc-basic-create/nkycmym-create
-        MapTo: mm/nkycmym-create/kyc
+        MapTo: /mm/nkycmym-create/kyc
         Methods: [GET, POST]
       - MatchPath: /mcontent/data/kyc-tel-confirm/nkycmym-{id}
         MapTo: /kyc/mobile/marked
