@@ -178,10 +178,13 @@ Clusters:
 
       #######################   MEX & MTM   #######################
       # KYC MM
+      - MatchPath: /mcontent/data/kyc-main/nkycmym-home
+        MapTo: /kyc/nkycdtl-home
+        
       - MatchPath: /mcontent/data/kyc-agreement/nkycmym.agreement-create
         MapTo: /kyc/agreement/nkycmym.agreement-create
 
-      - MatchPath: /mcontent/data/kyc-basic-create/nkycmym-create
+      - MatchPath: /mcontent/data/v6-profile-kyc-myanmar-basic-create/nkycmym-create
         MapTo: /mm/nkycmym-create/kyc
         Methods: [GET, POST]
       - MatchPath: /mcontent/data/kyc-tel-confirm/nkycmym-{id}
@@ -190,7 +193,7 @@ Clusters:
       - MatchPath: /api/endpoints/nkycmym.confirm-{id}
         MapTo: /mm/endpoints/nkycmym.confirm-{id}/kyc/confirm
         Methods: [POST]
-      - MatchPath: /mcontent/data/kyc-basic-confirm/nkycmym.confirm-{id}
+      - MatchPath: /mcontent/data/v6-profile-kyc-myanmar-basic-confirm/nkycmym.confirm-{id}
         MapTo: /mm/nkycmym.confirm-{id}/kyc/confirm
 
         # MEX Topup create qr
@@ -244,6 +247,8 @@ Clusters:
       - MatchPath: /api/endpoints/nmtmwdw.bankaccount-home
         MapTo: /mm/endpoints/nmtmwdw.bankaccount-home/myanmar/bankaccount
       - MatchPath: /mcontent/data/v6-dialog-bank-select/nmtmwdw.bankaccount-home
+        MapTo: /mm/nmtmwdw.bankaccount-home/myanmar/bankaccount
+      - MatchPath: /mcontent/data/v6-dialog-bank-select/nmtmwdw-home
         MapTo: /mm/nmtmwdw.bankaccount-home/myanmar/bankaccount
       
       - MatchPath: /mcontent/data/v6-financial-mtm-withdraw-create/nmtmwdw.amount-{id}
