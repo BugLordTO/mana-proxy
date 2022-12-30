@@ -251,6 +251,9 @@ Clusters:
       - MatchPath: /mcontent/data/v6-cart-bill/nahcmex.confirm-{id}
         MapTo: /mm/nahcmex.confirm-{id}/adhocmex/completed
 
+      - MatchPath: /api/endpoints/nahcmex.destcompleted-{id}
+        MapTo: /mm/endpoints/nahcmex.destcompleted-{id}/adhocmex/completed/dlg
+
         # MTM Withdraw
       - MatchPath: /api/endpoints/nmtmwdw-home
         MapTo: /mm/endpoints/nmtmwdw-home/mtm/withdraw
