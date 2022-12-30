@@ -176,6 +176,13 @@ Clusters:
         MapTo: /kyc/manager/consent/nkymapl-{id}/approval
         Methods: [GET, POST]
 
+      #######################   Financial general   #######################
+
+      - MatchPath: /api/endpoints/nfeedtl-home
+        MapTo: /mm/endpoints/nfeedtl-home/fee
+      - MatchPath: /mcontent/data/v6-financial-mtm-fee-info/nfeedtl-home
+        MapTo: /mm/fee
+
       #######################   MEX & MTM   #######################
       # KYC MM
       - MatchPath: /mcontent/data/kyc-main/nkycmym-home
@@ -273,6 +280,9 @@ Clusters:
         Methods: [GET, POST]
       - MatchPath: /mcontent/data/v6-feed-mtm-withdraw/nmtmwdw.status-{id}
         MapTo: /mm/nmtmwdw.status-{id}/mtm/withdraw/status
+        
+      - MatchPath: /api/endpoints/nmtmwdw.rejected-{id}
+        MapTo: /mm/endpoints/nmtmwdw.rejected-{id}/mtm/withdraw/rejected
 
       #######################   Api ที่คุยกันตรงๆ   #######################
       - MatchPath: /signalr/{hub}/negotiate
