@@ -294,6 +294,18 @@ Clusters:
       - MatchPath: /api/endpoints/nmtmwdw.rejected-{id}
         MapTo: /mm/endpoints/nmtmwdw.rejected-{id}/mtm/withdraw/rejected
 
+      #######################   WALLETS   #######################
+
+      - MatchPath: /api/endpoints/nwltbil-{id}
+        MapTo: /wallet/transaction/visit/nwltbil-{id}
+      - MatchPath: /mcontent/data/v6-cart-bill-detail/nwltbil-{id}
+        MapTo: /wallet/transaction/nwltbil-{id}
+        
+      - MatchPath: /api/endpoints/nwltrct-{id}
+        MapTo: /wallet/transaction/visit/nwltrct-{id}
+      - MatchPath: /mcontent/data/v6-cart-receipt/nwltrct-{id}
+        MapTo: /wallet/transaction/nwltrct-{id}
+
       #######################   Api ที่คุยกันตรงๆ   #######################
       - MatchPath: /signalr/{hub}/negotiate
         MapTo: /signalr/{hub}/negotiate
