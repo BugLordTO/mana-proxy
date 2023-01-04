@@ -213,8 +213,8 @@ Clusters:
         # MEX Topup create qr
       - MatchPath: /api/endpoints/ndepmmk-home
         MapTo: /mm/endpoints/ndepmmk-home/mextopup
-      - MatchPath: /mcontent/data/v6-financial-topup/ndepmmk-home
-        MapTo: /mm/ndepmmk-home/mextopup
+      - MatchPath: /mcontent/data/v6-financial-topup/nwltdep-home
+        MapTo: /mm/nwltdep-home/mextopup
 
       - MatchPath: /api/endpoints/ndepmmk.qr-home
         MapTo: /mm/endpoints/ndepmmk.qr-home/mextopupqr
@@ -302,7 +302,7 @@ Clusters:
         MapTo: /wallet/transaction/nwltbil-{id}
         
       - MatchPath: /api/endpoints/nwltrct-{id}
-        MapTo: /wallet/transaction/visit/nwltrct-{id}
+        MapTo: /wallet/transaction/visit/nwltrct-{id}/receipt
       - MatchPath: /mcontent/data/v6-cart-receipt/nwltrct-{id}
         MapTo: /wallet/transaction/nwltrct-{id}
 
