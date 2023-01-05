@@ -183,6 +183,129 @@ Clusters:
         MapTo: /kyc/manager/consent/nkymapl-{id}/approval
         Methods: [GET, POST]
 
+      #######################   Financial general   #######################
+
+      - MatchPath: /api/endpoints/nfeedtl-home
+        MapTo: /mm/endpoints/nfeedtl-home/fee
+      - MatchPath: /mcontent/data/v6-financial-mtm-fee-info/nfeedtl-home
+        MapTo: /mm/fee
+
+      #######################   MEX & MTM   #######################
+      # KYC MM
+      - MatchPath: /mcontent/data/kyc-main/nkycmym-home
+        MapTo: /kyc/nkycdtl-home
+        
+      - MatchPath: /mcontent/data/kyc-agreement/nkycmym.agreement-create
+        MapTo: /kyc/agreement/nkycmym.agreement-create
+
+      - MatchPath: /mcontent/data/v6-profile-kyc-myanmar-basic-create/nkycmym-create
+        MapTo: /mm/nkycmym-create/kyc
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/kyc-tel-confirm/nkycmym-{id}
+        MapTo: /kyc/mobile/marked
+
+      - MatchPath: /api/endpoints/nkycmym.confirm-{id}
+        MapTo: /mm/endpoints/nkycmym.confirm-{id}/kyc/confirm
+        Methods: [POST]
+      - MatchPath: /mcontent/data/v6-profile-kyc-myanmar-basic-confirm/nkycmym.confirm-{id}
+        MapTo: /mm/nkycmym.confirm-{id}/kyc/confirm
+
+        # MEX Topup create qr
+      - MatchPath: /api/endpoints/ndepmmk-home
+        MapTo: /mm/endpoints/ndepmmk-home/mextopup
+      - MatchPath: /mcontent/data/v6-financial-topup/nwltdep-home
+        MapTo: /mm/nwltdep-home/mextopup
+
+      - MatchPath: /api/endpoints/ndepmmk.qr-home
+        MapTo: /mm/endpoints/ndepmmk.qr-home/mextopupqr
+      - MatchPath: /mcontent/data/v6-financial-topup-qr-create/ndepmmk.qr-home
+        MapTo: /mm/ndepmmk.qr-home/mextopupqr
+        Methods: [GET, POST]
+
+      - MatchPath: /api/endpoints/ndepmmk.confirm-{id}
+        MapTo: /mm/endpoints/ndepmmk.confirm-{id}/mextopupqr/confirm
+        Methods: [POST]
+      - MatchPath: /mcontent/data/v6-financial-topup-qr-confirm/ndepmmk.confirm-{id}
+        MapTo: /mm/ndepmmk.confirm-{id}/mextopupqr/confirm
+        
+      - MatchPath: /mcontent/data/v6-financial-topup-qr-complete/ndepmmk.confirm-{id}
+        MapTo: /mm/ndepmmk.confirm-{id}/mextopupqr/detail
+
+        # MEX Topup scan qr
+      - MatchPath: /api/endpoints/nahcmex-{id}
+        MapTo: /mm/endpoints/nahcmex-{id}/adhocmex
+      - MatchPath: /mcontent/data/v6-cart-adhoc-edit/nahcmex-{id}
+        MapTo: /mm/nahcmex-{id}/adhocmex
+        Methods: [GET, POST]
+
+      - MatchPath: /mcontent/data/v6-cart-adhoc-exchange/nahcmex.mex-{id}
+        MapTo: /mm/nahcmex.mex-{id}/adhocmex/mex
+        Methods: [GET, POST]
+
+      - MatchPath: /api/endpoints/nahcmex.confirm-{id}
+        MapTo: /mm/endpoints/nahcmex.confirm-{id}/adhocmex/confirm
+        Methods: [POST]
+      - MatchPath: /mcontent/data/v6-cart-adhoc-confirm/nahcmex.confirm-{id}
+        MapTo: /mm/nahcmex.confirm-{id}/adhocmex/confirm
+
+      - MatchPath: /mcontent/data/v6-cart-bill/nahcmex.confirm-{id}
+        MapTo: /mm/nahcmex.confirm-{id}/adhocmex/completed
+
+      - MatchPath: /api/endpoints/nahcmex.destcompleted-{id}
+        MapTo: /mm/endpoints/nahcmex.destcompleted-{id}/adhocmex/completed/dlg
+
+        # MTM Withdraw
+      - MatchPath: /api/endpoints/nmtmwdw-home
+        MapTo: /mm/endpoints/nmtmwdw-home/mtm/withdraw
+      - MatchPath: /mcontent/data/v6-financial-mtm-withdraw-select-account/nmtmwdw-home
+        MapTo: /mm/nmtmwdw-home/mtm/withdraw
+        Methods: [GET, POST]
+        
+      - MatchPath: /api/endpoints/nmtmwdw.bankaccount-home
+        MapTo: /mm/endpoints/nmtmwdw.bankaccount-home/myanmar/bankaccount
+      - MatchPath: /mcontent/data/v6-dialog-bank-select/nmtmwdw.bankaccount-home
+        MapTo: /mm/nmtmwdw.bankaccount-home/myanmar/bankaccount
+      - MatchPath: /mcontent/data/v6-dialog-bank-select/nmtmwdw-home
+        MapTo: /mm/nmtmwdw.bankaccount-home/myanmar/bankaccount
+      
+      - MatchPath: /mcontent/data/v6-financial-mtm-withdraw-create/nmtmwdw.amount-{id}
+        MapTo: /mm/nmtmwdw.amount-{id}/mtm/withdraw/amount
+        Methods: [GET, POST]
+      
+      - MatchPath: /mcontent/data/v6-financial-mtm-withdraw-preview/nmtmwdw.edit-{id}
+        MapTo: /mm/nmtmwdw.edit-{id}/mtm/withdraw/edit
+        Methods: [GET, POST]
+        
+      - MatchPath: /api/endpoints/nmtmwdw.confirm-{id}
+        MapTo: /mm/endpoints/nmtmwdw.confirm-{id}/mtm/withdraw/confirm
+        Methods: [POST]
+      - MatchPath: /mcontent/data/v6-financial-mtm-withdraw-confirm/nmtmwdw.confirm-{id}
+        MapTo: /mm/nmtmwdw.confirm-{id}/mtm/withdraw/confirm
+
+      - MatchPath: /mcontent/data/v6-cart-bill/nmtmwdw.confirm-{id}
+        MapTo: /mm/nmtmwdw.confirm-{id}/mtm/withdraw/requested
+        
+      - MatchPath: /api/endpoints/nmtmwdw.status-{id}
+        MapTo: /mm/endpoints/nmtmwdw.status-{id}/mtm/withdraw/status
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/v6-feed-mtm-withdraw/nmtmwdw.status-{id}
+        MapTo: /mm/nmtmwdw.status-{id}/mtm/withdraw/status
+        
+      - MatchPath: /api/endpoints/nmtmwdw.rejected-{id}
+        MapTo: /mm/endpoints/nmtmwdw.rejected-{id}/mtm/withdraw/rejected
+
+      #######################   WALLETS   #######################
+
+      - MatchPath: /api/endpoints/nwltbil-{id}
+        MapTo: /wallet/transaction/visit/nwltbil-{id}
+      - MatchPath: /mcontent/data/v6-cart-bill-detail/nwltbil-{id}
+        MapTo: /wallet/transaction/nwltbil-{id}
+        
+      - MatchPath: /api/endpoints/nwltrct-{id}
+        MapTo: /wallet/transaction/visit/nwltrct-{id}/receipt
+      - MatchPath: /mcontent/data/v6-cart-receipt/nwltrct-{id}
+        MapTo: /wallet/transaction/nwltrct-{id}
+
       #######################   Api ที่คุยกันตรงๆ   #######################
       - MatchPath: /signalr/{hub}/negotiate
         MapTo: /signalr/{hub}/negotiate
