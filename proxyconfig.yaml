@@ -197,39 +197,41 @@ Clusters:
       - MatchPath: /mcontent/data/v6-financial-transfer-network-select/nfintfr-list
         MapTo: /monetarytx/tf-qr29/methods/nfintfr-list
 
-      - MatchPath: /api/endpoints/nahceac-home
-        MapTo: /monetarytx/endpoints/nahceac-home/tf-qr29/ppay
-      - MatchPath: /mcontent/data/v6-financial-transfer-network-promptpay-create/nahceac-home
-        MapTo: /monetarytx/tf-qr29/ppay/nahceac-home
-      - MatchPath: /mcontent/data/v6-financial-transfer-network-promptpay-create/nahceac-home
-        MapTo: /monetarytx/tf-qr29/submit/nahceac-home
+      - MatchPath: /api/endpoints/nahcepp-home
+        MapTo: /monetarytx/endpoints/nahcepp-home/tf-qr29/ppay
+      - MatchPath: /mcontent/data/v6-financial-transfer-network-promptpay-create/nahcepp-home
+        MapTo: /monetarytx/tf-qr29/ppay/nahcepp-home
+      - MatchPath: /mcontent/data/v6-financial-transfer-network-promptpay-create/nahcepp-home
+        MapTo: /monetarytx/tf-qr29/submit/nahcepp-home
         Methods: [POST]
 
-      - MatchPath: /api/endpoints/nahcepp-home
-        MapTo: /monetarytx/endpoints/nahcepp-home/tf-qr29/bank
-      - MatchPath: /mcontent/data/v6-financial-transfer-network-bank-create/nahcepp-home
-        MapTo: /monetarytx/tf-qr29/bank/nahcepp-home
-      - MatchPath: /mcontent/data/v6-financial-transfer-network-bank-create/nahcepp-home
-        MapTo: /monetarytx/tf-qr29/submit/nahcepp-home
+      - MatchPath: /api/endpoints/nahceac-home
+        MapTo: /monetarytx/endpoints/nahceac-home/tf-qr29/bank
+      - MatchPath: /mcontent/data/v6-financial-transfer-network-bank-create/nahceac-home
+        MapTo: /monetarytx/tf-qr29/bank/nahceac-home
+      - MatchPath: /mcontent/data/v6-dialog-bank-select/nahceac-home
+        MapTo: /monetarytx/tf-qr29/bank/nahceac-home
+      - MatchPath: /mcontent/data/v6-financial-transfer-network-bank-create/nahceac-home
+        MapTo: /monetarytx/tf-qr29/submit/nahceac-home
         Methods: [POST]
 
       - MatchPath: /mcontent/data/v6-cart-adhoc-qr29-edit/{id}
         MapTo: /monetarytx/tf-qr29/adhoc/{id}/edit
         Methods: [GET, POST]
 
-      - MatchPath: /api/endpoints/nahceac-{id}
-        MapTo: /monetarytx/endpoints/nahceac-{id}/tf-qr29/adhoc
-        Methods: [GET, POST]
       - MatchPath: /api/endpoints/nahcepp-{id}
         MapTo: /monetarytx/endpoints/nahcepp-{id}/tf-qr29/adhoc
+        Methods: [GET, POST]
+      - MatchPath: /api/endpoints/nahceac-{id}
+        MapTo: /monetarytx/endpoints/nahceac-{id}/tf-qr29/adhoc
         Methods: [GET, POST]
       - MatchPath: /mcontent/data/v6-cart-adhoc-qr29-confirm/{id}
         MapTo: /monetarytx/tf-qr29/adhoc/{id}/confirm
         
-      - MatchPath: /mcontent/data/v6-cart-bill/nahceac-{id}
-        MapTo: /monetarytx/tf-qr29/adhoc/nahceac-{id}/completed
       - MatchPath: /mcontent/data/v6-cart-bill/nahcepp-{id}
         MapTo: /monetarytx/tf-qr29/adhoc/nahcepp-{id}/completed
+      - MatchPath: /mcontent/data/v6-cart-bill/nahceac-{id}
+        MapTo: /monetarytx/tf-qr29/adhoc/nahceac-{id}/completed
 
       #######################   MEX & MTM   #######################
       # KYC MM
