@@ -217,19 +217,19 @@ Clusters:
         MapTo: /monetarytx/tf-qr29/adhoc/{id}/edit
         Methods: [GET, POST]
 
-      - MatchPath: /api/endpoints/nahceac-home
-        MapTo: /monetarytx/endpoints/nahceac-home/tf-qr29/adhoc
-        Methods: [POST]
-      - MatchPath: /api/endpoints/nahcepp-home
-        MapTo: /monetarytx/endpoints/nahcepp-home/tf-qr29/adhoc
-        Methods: [POST]
+      - MatchPath: /api/endpoints/nahceac-{id}
+        MapTo: /monetarytx/endpoints/nahceac-{id}/tf-qr29/adhoc
+        Methods: [GET, POST]
+      - MatchPath: /api/endpoints/nahcepp-{id}
+        MapTo: /monetarytx/endpoints/nahcepp-{id}/tf-qr29/adhoc
+        Methods: [GET, POST]
       - MatchPath: /mcontent/data/v6-cart-adhoc-qr29-confirm/{id}
         MapTo: /monetarytx/tf-qr29/adhoc/{id}/confirm
         
-      - MatchPath: /mcontent/data/v6-cart-bill/nahceac-home
-        MapTo: /monetarytx/tf-qr29/adhoc/nahceac-home/completed
-      - MatchPath: /mcontent/data/v6-cart-bill/nahcepp-home
-        MapTo: /monetarytx/tf-qr29/adhoc/nahcepp-home/completed
+      - MatchPath: /mcontent/data/v6-cart-bill/nahceac-{id}
+        MapTo: /monetarytx/tf-qr29/adhoc/nahceac-{id}/completed
+      - MatchPath: /mcontent/data/v6-cart-bill/nahcepp-{id}
+        MapTo: /monetarytx/tf-qr29/adhoc/nahcepp-{id}/completed
 
       #######################   MEX & MTM   #######################
       # KYC MM
