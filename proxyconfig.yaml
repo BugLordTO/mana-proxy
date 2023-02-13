@@ -631,7 +631,7 @@ Clusters:
       - MatchPath: /mcontent/data/merchant-transaction/nbiztxl-{id}
         MapTo: /bizaccount/nbiztxl-{id}/transactions
       - MatchPath: /mcontent/data/merchant-qr-receive-money/nbizqrp-{id}
-        MapTo: /bizaccount/nbizqrp-{id}/qrpayment
+        MapTo: /NO-OPERATION
         Methods: [GET, PUT]
       - MatchPath: /mcontent/data/merchant-topup/nbiztop-{id}
         MapTo: /bizaccount/tx/data/nbiztop-{id}/deposit
@@ -846,7 +846,7 @@ Clusters:
       # - MatchPath: /mcontent/data/ppay-payment-creating/{nppypmt}-{id}
       #   MapTo: /api/qrmanager/ppay/{txt}
       - MatchPath: /mcontent/data/ppay-payment-creating/nppypmt-{id}
-        MapTo: /wallet/ppay/payment/create/nppypmt-{id}
+        MapTo: /NO-OPERATION
         Methods: [POST]
       - MatchPath: /mcontent/data/ppay-payment-confirm/nppypmt-{id}
         MapTo: /wallet/ppay/payment/confirm/nppypmt-{id}
