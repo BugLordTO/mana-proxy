@@ -428,18 +428,18 @@ Clusters:
         MapTo: /bizaccount/visit/nbizdtl-{id}/home
       - MatchPath: /api/endpoints/nbizwit.confirm-{id}
         MapTo: /bizaccount/txconfirm/data/nbizwit.confirm-{id}
-        Methods: [GET]
-      - MatchPath: /api/endpoints/nbizwit.confirm-{id}
-        MapTo: /NO-OPERATION
-        Methods: [POST]
+        # Methods: [GET]
+      # - MatchPath: /api/endpoints/nbizwit.confirm-{id}
+      #   MapTo: /NO-OPERATION
+      #   Methods: [POST]
       - MatchPath: /api/endpoints/nbizwtx-{id}
         MapTo: /bizaccount/tx/visit/nbizwtx-{id}
       - MatchPath: /api/endpoints/nbiztop.confirm-{id}
         MapTo: /bizaccount/txconfirm/data/nbiztop.confirm-{id}
-        Methods: [GET]
-      - MatchPath: /api/endpoints/nbiztop.confirm-{id}
-        MapTo: /NO-OPERATION
-        Methods: [POST]
+        # Methods: [GET]
+      # - MatchPath: /api/endpoints/nbiztop.confirm-{id}
+      #   MapTo: /NO-OPERATION
+      #   Methods: [POST]
       - MatchPath: /api/endpoints/nbizttx-{id}
         MapTo: /bizaccount/tx/visit/nbizttx-{id}
       - MatchPath: /api/endpoints/nbizatx-{id}
@@ -707,10 +707,10 @@ Clusters:
         Methods: [GET, POST]
       - MatchPath: /mcontent/data/wallet-topup-confirm/nppydep-{id}
         MapTo: /wallet/deposit/nppydep-{id}
-        Methods: [GET]
-      - MatchPath: /mcontent/data/wallet-topup-confirm/nppydep-{id}
-        MapTo: /NO-OPERATION
-        Methods: [POST]
+      #   Methods: [GET]
+      # - MatchPath: /mcontent/data/wallet-topup-confirm/nppydep-{id}
+      #   MapTo: /NO-OPERATION
+      #   Methods: [POST]
       - MatchPath: /mcontent/data/wallet-topup-completed/nppydep-{id}
         MapTo: /wallet/deposit/success/data/nppydep-{id}
       - MatchPath: /mcontent/data/sandbox-wallet-topup-detail/nwltdep-{id}
@@ -721,19 +721,19 @@ Clusters:
         Methods: [GET, POST]
       - MatchPath: /mcontent/data/wallet-topup-ppay-confirm/nwltdep-{id}
         MapTo: /wallet/deposit2021/nwltdep-{id}
-        Methods: [GET]
-      - MatchPath: /mcontent/data/wallet-topup-ppay-confirm/nwltdep-{id}
-        MapTo: /NO-OPERATION
-        Methods: [POST]
+        # Methods: [GET]
+      # - MatchPath: /mcontent/data/wallet-topup-ppay-confirm/nwltdep-{id}
+      #   MapTo: /NO-OPERATION
+      #   Methods: [POST]
       - MatchPath: /mcontent/data/wallet-topup-ppay/ndepdlg-{id}
         MapTo: /wallet/depositrequest2021/ndepdlg-{id}
         Methods: [GET, POST]
       - MatchPath: /mcontent/data/wallet-topup-ppay-confirm/ndepdlg-{id}
         MapTo: /wallet/deposit2021/ndepdlg-{id}
-        Methods: [GET]
-      - MatchPath: /mcontent/data/wallet-topup-ppay-confirm/ndepdlg-{id}
-        MapTo: /NO-OPERATION
-        Methods: [POST]
+      #   Methods: [GET]
+      # - MatchPath: /mcontent/data/wallet-topup-ppay-confirm/ndepdlg-{id}
+      #   MapTo: /NO-OPERATION
+      #   Methods: [POST]
       - MatchPath: /mcontent/data/wallet-topup-completed/nwltdep-{id}
         MapTo: /wallet/deposit2021/success/data/nwltdep-{id}
       - MatchPath: /mcontent/data/wallet-withdraw-detail/nppywit-{id}
@@ -741,10 +741,10 @@ Clusters:
         Methods: [GET, POST]
       - MatchPath: /mcontent/data/wallet-withdraw-confirm/nppywit-{id}
         MapTo: /wallet/withdraw/nppywit-{id}
-        Methods: [GET]
-      - MatchPath: /mcontent/data/wallet-withdraw-confirm/nppywit-{id}
-        MapTo: /NO-OPERATION
-        Methods: [POST]
+      #   Methods: [GET]
+      # - MatchPath: /mcontent/data/wallet-withdraw-confirm/nppywit-{id}
+      #   MapTo: /NO-OPERATION
+      #   Methods: [POST]
       - MatchPath: /mcontent/data/wallet-withdraw-completed/nppywit-{id}
         MapTo: /wallet/withdraw/success/data/nppywit-{id}
       - MatchPath: /mcontent/data/wallet-withdraw-completed/nwltwit-{id}
@@ -756,10 +756,10 @@ Clusters:
         Methods: [GET, POST]
       - MatchPath: /mcontent/data/wallet-topup-qr-confirm/nwltdqr-{id}
         MapTo: /wallet/depositqr/nwltdqr-{id}
-        Methods: [GET]
-      - MatchPath: /mcontent/data/wallet-topup-qr-confirm/nwltdqr-{id}
-        MapTo: /NO-OPERATION
-        Methods: [POST]
+      #   Methods: [GET]
+      # - MatchPath: /mcontent/data/wallet-topup-qr-confirm/nwltdqr-{id}
+      #   MapTo: /NO-OPERATION
+      #   Methods: [POST]
       - MatchPath: /mcontent/data/wallet-topup-complete-qr/nwltdqr-{id}
         MapTo: /wallet/depositqr/success/nwltdqr-{id}
       - MatchPath: /mcontent/data/wallet-topup/nwltdep-{id}
@@ -769,19 +769,19 @@ Clusters:
         Methods: [GET, POST]
       - MatchPath: /mcontent/data/wallet-topup-bankaccount-confirm/nwltdep-{id}
         MapTo: /wallet/depositqr/acc/nwltdep-{id}
-        Methods: [GET]
-      - MatchPath: /mcontent/data/wallet-topup-bankaccount-confirm/nwltdep-{id}
-        MapTo: /NO-OPERATION
-        Methods: [POST]
+      #   Methods: [GET]
+      # - MatchPath: /mcontent/data/wallet-topup-bankaccount-confirm/nwltdep-{id}
+      #   MapTo: /NO-OPERATION
+      #   Methods: [POST]
       - MatchPath: /mcontent/data/wallet-topup-bankaccount/ndepdlg-{id}
         MapTo: /wallet/depositqrrequest/acc/ndepdlg-{id}
         Methods: [GET, POST]
       - MatchPath: /mcontent/data/wallet-topup-bankaccount-confirm/ndepdlg-{id}
         MapTo: /wallet/depositqr/acc/ndepdlg-{id}
-        Methods: [GET]
-      - MatchPath: /mcontent/data/wallet-topup-bankaccount-confirm/ndepdlg-{id}
-        MapTo: /NO-OPERATION
-        Methods: [POST]
+      #   Methods: [GET]
+      # - MatchPath: /mcontent/data/wallet-topup-bankaccount-confirm/ndepdlg-{id}
+      #   MapTo: /NO-OPERATION
+      #   Methods: [POST]
       - MatchPath: /mcontent/data/wallet-topup-complete-qr/nwltdep-{id}
         MapTo: /wallet/depositqr/acc/success/nwltdep-{id}
       - MatchPath: /wallet/deposit2021/success/nwltdqr-{id}
@@ -877,10 +877,10 @@ Clusters:
         Methods: [GET, POST]
       - MatchPath: /mcontent/data/wallet-withdraw-bankaccount-confirm/nwltwit-{id}
         MapTo: /wallet/default/withdraw/confirm/nwltwit-{id}
-        Methods: [GET]
-      - MatchPath: /mcontent/data/wallet-withdraw-bankaccount-confirm/nwltwit-{id}
-        MapTo: /NO-OPERATION
-        Methods: [POST]
+      #   Methods: [GET]
+      # - MatchPath: /mcontent/data/wallet-withdraw-bankaccount-confirm/nwltwit-{id}
+      #   MapTo: /NO-OPERATION
+      #   Methods: [POST]
       - MatchPath: /mcontent/data/account-main/neaclst-{id}
         MapTo: /wallet/exaccounts/neaclst-{id}
       - MatchPath: /mcontent/data/account-confirm-ppay/neacadd-{id}
