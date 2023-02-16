@@ -209,7 +209,7 @@ Clusters:
         MapTo: /monetarytx/endpoints/nahceac-home/tf-qr29/bank
       - MatchPath: /mcontent/data/v6-financial-transfer-network-bank-create/nahceac-home
         MapTo: /monetarytx/tf-qr29/bank/nahceac-home
-      - MatchPath: /mcontent/data/v6-dialog-bank-select/nahceac-home
+      - MatchPath: /mcontent/data/v6-dialog-qr29-bank-select/nahceac-home
         MapTo: /monetarytx/tf-qr29/bank/nahceac-home
       - MatchPath: /mcontent/data/v6-financial-transfer-network-bank-create/nahceac-home
         MapTo: /monetarytx/tf-qr29/submit/nahceac-home
