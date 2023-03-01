@@ -25,9 +25,6 @@ Clusters:
       - MatchPath: /mcontent/data/kyc-basic-create/nkycbsc-create
         MapTo: /kyc/basic/nkycbsc-create
         Methods: [GET, POST]
-      - MatchPath: /mcontent/data/kyc-basic-create/nkycbsc.resubmit-create
-        MapTo: /kyc/basic/nkycbsc.resubmit-create/resubmit
-        Methods: [GET, POST]
       #######################   Api ที่คุยกันตรงๆ   #######################
       - MatchPath: /tempupload/{mcid}/{endpointId}
         MapTo: /tempupload/{mcid}/{endpointId}
@@ -146,21 +143,27 @@ Clusters:
         MapTo: /kyc/endpoints/nkycbsc.agreement-create/agreement
       - MatchPath: /mcontent/data/kyc-agreement/nkycbsc.agreement-create
         MapTo: /kyc/agreement/nkycbsc.agreement-create
+
       - MatchPath: /api/endpoints/nkycbsc-create
         MapTo: /kyc/endpoints/nkycbsc-create/basic
-      - MatchPath: /api/endpoints/nkycbsc.resubmit-create
-        MapTo: /kyc/endpoints/nkycbsc.resubmit-create/basic/create
+      - MatchPath: /mcontent/data/v6-profile-kyc-myanmar-basic-create/nkycbsc-create
+        MapTo: /kyc/basic/nkycbsc-create/mm
+        Methods: [GET, POST]
+        
+      - MatchPath: /api/endpoints/nkycbsc.address-create
+        MapTo: /kyc/endpoints/nkycbsc.address-create/basic/address
 
       - MatchPath: /api/endpoints/nkycbsc.confirm-{id}
         MapTo: /kyc/endpoints/nkycbsc.confirm-{id}/basic/confirm
-        Methods: [GET, POST]
+        Methods: [POST]
       - MatchPath: /mcontent/data/kyc-basic-confirm/nkycbsc.confirm-{id}
         MapTo: /kyc/basic/nkycbsc.confirm-{id}/confirm
-      - MatchPath: /api/endpoints/nkycbsc.resubmit-{id}
-        MapTo: /kyc/endpoints/nkycbsc.resubmit-{id}/basic
-        Methods: [GET, POST]
-      - MatchPath: /mcontent/data/kyc-basic-confirm/nkycbsc.resubmit-{id}
-        MapTo: /kyc/basic/nkycbsc.resubmit-{id}/confirm
+        
+      - MatchPath: /api/endpoints/nkycbsc.mmconfirm-{id}
+        MapTo: /kyc/endpoints/nkycbsc.mmconfirm-{id}/basic/mm/confirm
+        Methods: [POST]
+      - MatchPath: /mcontent/data/v6-profile-kyc-myanmar-basic-confirm/nkycbsc.mmconfirm-{id}
+        MapTo: /kyc/basic/nkycbsc.mmconfirm-{id}/mm/confirm
 
       - MatchPath: /api/endpoints/nkycbsc.feed-{id}
         MapTo: /kyc/endpoints/nkycbsc.feed-{id}/basic/feed
@@ -234,25 +237,6 @@ Clusters:
         MapTo: /monetarytx/tf-qr29/adhoc/nahceac-{id}/completed
 
       #######################   MEX & MTM   #######################
-      # KYC MM
-      - MatchPath: /mcontent/data/kyc-main/nkycmym-home
-        MapTo: /kyc/nkycdtl-home
-        
-      - MatchPath: /mcontent/data/kyc-agreement/nkycmym.agreement-create
-        MapTo: /kyc/agreement/nkycmym.agreement-create
-
-      - MatchPath: /mcontent/data/v6-profile-kyc-myanmar-basic-create/nkycmym-create
-        MapTo: /mm/nkycmym-create/kyc
-        Methods: [GET, POST]
-      - MatchPath: /mcontent/data/kyc-tel-confirm/nkycmym-{id}
-        MapTo: /kyc/mobile/marked
-
-      - MatchPath: /api/endpoints/nkycmym.confirm-{id}
-        MapTo: /mm/endpoints/nkycmym.confirm-{id}/kyc/confirm
-        Methods: [POST]
-      - MatchPath: /mcontent/data/v6-profile-kyc-myanmar-basic-confirm/nkycmym.confirm-{id}
-        MapTo: /mm/nkycmym.confirm-{id}/kyc/confirm
-
         # MEX Topup create qr
       - MatchPath: /api/endpoints/ndepmmk-home
         MapTo: /mm/endpoints/ndepmmk-home/mextopup
