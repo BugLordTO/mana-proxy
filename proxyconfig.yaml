@@ -127,6 +127,7 @@ Clusters:
         Methods: [GET, POST]
 
       #######################   KYC   #######################
+
       - MatchPath: /kyc/update
         MapTo: /kyc/update
       - MatchPath: /mcontent/data/kyc-tel-confirm/nkycbsc-{id}
@@ -185,6 +186,153 @@ Clusters:
       - MatchPath: /mcontent/data/consent-kyc-by-manager/nkymapl-{id}
         MapTo: /kyc/manager/consent/nkymapl-{id}/approval
         Methods: [GET, POST]
+
+      #######################   BizCenter   #######################
+
+      # biz center
+      - MatchPath: /mcontent/data/merchant-select/nbizdtl-{id}
+        MapTo: /bizaccount/nbizdtl-{id}
+
+      # KYM
+      - MatchPath: /api/endpoints/nbizdtl.agreement-create$shop
+        MapTo: /bizaccount/endpoints/nbizdtl.agreement-create$shop/create
+      - MatchPath: /api/endpoints/nbizdtl.agreement-create$dev
+        MapTo: /bizaccount/endpoints/nbizdtl.agreement-create$dev/create
+      - MatchPath: /api/endpoints/nbizkym.feed-{id}
+        MapTo: /bizaccount/visit/nbizkym.feed-{id}/kymbasicfeed
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/kym-feed/nbizkym.feed-{id}
+        MapTo: /bizaccount/nbizkym.feed-{id}/kymbasicfeed
+      - MatchPath: /mcontent/data/kym-feed/nbizkym.status-{id}
+        MapTo: /bizaccount/nbizkym.status-{id}/kymstatus
+
+      # biz main
+      - MatchPath: /api/endpoints/nbizdtl-{id}
+        MapTo: /bizaccount/visit/nbizdtl-{id}/home
+      - MatchPath: /mcontent/data/merchant-home-basic/nbizdtl-{id}
+        MapTo: /bizaccount/nbizdtl-{id}/basic
+      - MatchPath: /mcontent/data/merchant-home-pending/nbizdtl-{id}
+        MapTo: /bizaccount/nbizdtl-{id}/basic
+      - MatchPath: /mcontent/data/merchant-home/nbizdtl-{id}
+        MapTo: /bizaccount/nbizdtl-{id}/advance
+
+      # bix profile
+      - MatchPath: /api/endpoints/nbizppf-{id}
+        MapTo: /bizaccount/visit/nbizppf-{id}/publicprofile
+      - MatchPath: /mcontent/data/{mcid}/nbizppf-{id}
+        MapTo: /bizaccount/nbizppf-{id}/publicprofile
+      - MatchPath: /mcontent/data/merchant-profile/nbizpfl-{id}
+        MapTo: /bizaccount/nbizpfl-{id}/profile
+      # bix name
+      - MatchPath: /mcontent/data/merchant-edit-name/nbiznme-{id}
+        MapTo: /bizaccount/nbiznme-{id}/name
+        Methods: [GET, PUT]
+      # bix ref code
+      - MatchPath: /mcontent/data/merchant-edit-code/nbizcde-{id}
+        MapTo: /bizaccount/nbizcde-{id}/code
+        Methods: [GET, PUT]
+      # bix phone
+      - MatchPath: /mcontent/data/merchant-phone/nbizphn-{id}
+        MapTo: /bizaccount/nbizphn-{id}/phones
+      - MatchPath: /mcontent/data/merchant-add-phone/nbizphn-{id}
+        MapTo: /bizaccount/nbizphn-{id}/phones
+        Methods: [POST]
+      - MatchPath: /mcontent/data/merchant-edit-phone/nbizphn-{id}
+        MapTo: /bizaccount/nbizphn-{id}/phones/edit
+        Methods: [GET, PUT]
+      # bix address
+      - MatchPath: /mcontent/data/merchant-address/nbizads-{id}
+        MapTo: /bizaccount/nbizads-{id}/address
+        Methods: [GET, PUT]
+      # bix scedule
+      - MatchPath: /mcontent/data/merchant-schedule/nbizsch-{id}
+        MapTo: /bizaccount/nbizsch-{id}/schedules
+        Methods: [GET, PUT]
+      - MatchPath: /mcontent/data/merchant-schedule-setting/nbizscs-{id}
+        MapTo: /bizaccount/nbizscs-{id}/schedules/settings
+        Methods: [GET, PUT]
+      # bix conact
+      - MatchPath: /mcontent/data/merchant-contract/nbizctt-{id}
+        MapTo: /bizaccount/nbizctt-{id}/contracts
+      - MatchPath: /mcontent/data/merchant-contract-income/nbizctt-{id}
+        MapTo: /bizaccount/contracts/nbizctt-{id}
+      # bix pledge
+      - MatchPath: /mcontent/data/merchant-deposit/nbizplg-{id}
+        MapTo: /bizaccount/nbizplg-{id}/pledges
+      - MatchPath: /api/endpoints/nbizimg-{id}
+        MapTo: /bizaccount/visit/nbizimg-{id}/image
+      # bix qr
+      - MatchPath: /mcontent/data/merchant-qr-receive-money/nbizqrp-{id}
+        MapTo: /bizaccount/nbizqrp-{id}/qrpayment
+        Methods: [GET, PUT]
+      # bix employee
+      - MatchPath: /mcontent/data/merchant-employee/nbizemp-{id}
+        MapTo: /bizaccount/nbizemp-{id}/employees
+      # - MatchPath: /mcontent/data/{mcid}/nbizemp-{id}
+      #   MapTo: /bizaccount/employees/nbizemp-{id}
+      #   Methods: [GET, POST]
+      # bix budget
+      - MatchPath: /mcontent/data/merchant-budget/nbizbgt-{id}
+        MapTo: /bizaccount/nbizbgt-{id}/budgets
+      # - MatchPath: /mcontent/data/{mcid}/nbizbgt-{id}
+      #   MapTo: /bizaccount/budgets/nbizbgt-{id}
+      #   Methods: [GET, POST]
+
+      # bix withdraw
+      - MatchPath: /api/endpoints/nbizwit.confirm-{id}
+        MapTo: /bizaccount/txconfirm/data/nbizwit.confirm-{id}
+      - MatchPath: /mcontent/data/merchant-withdraw/nbizwit-{id}
+        MapTo: /bizaccount/tx/data/nbizwit-{id}/withdraw
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/merchant-withdraw-confirm/nbizwit.confirm-{id}
+        MapTo: /bizaccount/txconfirm/data/nbizwit.confirm-{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/merchant-withdraw-completed/nbizwit.confirm-{id}
+        MapTo: /bizaccount/txcompleted/data/nbizwit.confirm-{id}
+        Methods: [GET, POST]
+
+      # bix deposit
+      - MatchPath: /api/endpoints/nbiztop.confirm-{id}
+        MapTo: /bizaccount/txconfirm/data/nbiztop.confirm-{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/merchant-topup/nbiztop-{id}
+        MapTo: /bizaccount/tx/data/nbiztop-{id}/deposit
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/merchant-topup-confirm/nbiztop.confirm-{id}
+        MapTo: /bizaccount/txconfirm/data/nbiztop.confirm-{id}
+        Methods: [GET, POST]
+      - MatchPath: /mcontent/data/merchant-topup-completed/nbiztop.confirm-{id}
+        MapTo: /bizaccount/txcompleted/data/nbiztop.confirm-{id}
+
+      # bix tx log
+      - MatchPath: /mcontent/data/merchant-transaction/nbiztxl-{id}
+        MapTo: /bizaccount/nbiztxl-{id}/transactions
+
+      - MatchPath: /api/endpoints/nbizttx-{id}
+        MapTo: /bizaccount/tx/visit/nbizttx-{id}
+      - MatchPath: /mcontent/data/merchant-transaction-topup/nbizttx-{id}
+        MapTo: /bizaccount/tx/data/nbizttx-{id}
+
+      - MatchPath: /api/endpoints/nbizwtx-{id}
+        MapTo: /bizaccount/tx/visit/nbizwtx-{id}
+      - MatchPath: /mcontent/data/merchant-transaction-withdraw/nbizwtx-{id}
+        MapTo: /bizaccount/tx/data/nbizwtx-{id}
+
+      - MatchPath: /api/endpoints/nbizatx-{id}
+        MapTo: /bizaccount/tx/visit/nbizatx-{id}
+      - MatchPath: /mcontent/data/merchant-transaction-receive/nbizatx-{id}
+        MapTo: /bizaccount/tx/data/nbizatx-{id}
+
+      - MatchPath: /api/endpoints/nbizctx-{id}
+        MapTo: /bizaccount/tx/visit/nbizctx-{id}
+      - MatchPath: /mcontent/data/merchant-transaction-receive/nbizctx-{id}
+        MapTo: /bizaccount/tx/data/nbizctx-{id}
+
+      # bix category
+      - MatchPath: /api/endpoints/nbizcat-{id}
+        MapTo: /bizaccount/visit/nbizcat-{id}/catalog
+      - MatchPath: /mcontent/data/{mcid}/nbizcat-{id}
+        MapTo: /bizaccount/nbizcat-{id}/catalog
 
       #######################   Financial general   #######################
 
@@ -273,7 +421,8 @@ Clusters:
         Methods: [POST]
 
       #######################   MEX & MTM   #######################
-        # MEX Topup create qr
+
+      # MEX Topup create qr
       - MatchPath: /api/endpoints/ndepmmk-home
         MapTo: /mm/endpoints/ndepmmk-home/mextopup
       - MatchPath: /mcontent/data/v6-financial-topup/nwltdep-home
@@ -392,7 +541,7 @@ Clusters:
         MapTo: /report/endpoints/nrptdtl-create/issue
 
       #######################   Api ที่คุยกันตรงๆ   #######################
-      
+
       - MatchPath: /signalr/{hub}/negotiate
         MapTo: /signalr/{hub}/negotiate
         Methods: [POST]
@@ -503,31 +652,6 @@ Clusters:
         MapTo: /mcontent/endpoints/nmctmck-{id}
       - MatchPath: /api/endpoints/nafmdtl-{id}
         MapTo: /applicationform/visit/nafmdtl-{id}
-      - MatchPath: /api/endpoints/nbizppf-{id}
-        MapTo: /bizaccount/visit/nbizppf-{id}/publicprofile
-      - MatchPath: /api/endpoints/nbizcat-{id}
-        MapTo: /bizaccount/visit/nbizcat-{id}/catalog
-      - MatchPath: /api/endpoints/nbizdtl-{id}
-        MapTo: /bizaccount/visit/nbizdtl-{id}/home
-      - MatchPath: /api/endpoints/nbizwit.confirm-{id}
-        MapTo: /bizaccount/txconfirm/data/nbizwit.confirm-{id}
-        Methods: [GET, POST]
-      - MatchPath: /api/endpoints/nbizwtx-{id}
-        MapTo: /bizaccount/tx/visit/nbizwtx-{id}
-      - MatchPath: /api/endpoints/nbiztop.confirm-{id}
-        MapTo: /bizaccount/txconfirm/data/nbiztop.confirm-{id}
-        Methods: [GET, POST]
-      - MatchPath: /api/endpoints/nbizttx-{id}
-        MapTo: /bizaccount/tx/visit/nbizttx-{id}
-      - MatchPath: /api/endpoints/nbizatx-{id}
-        MapTo: /bizaccount/tx/visit/nbizatx-{id}
-      - MatchPath: /api/endpoints/nbizctx-{id}
-        MapTo: /bizaccount/tx/visit/nbizctx-{id}
-      - MatchPath: /api/endpoints/nbizimg-{id}
-        MapTo: /bizaccount/visit/nbizimg-{id}/image
-      - MatchPath: /api/endpoints/nbizkym.feed-{id}
-        MapTo: /bizaccount/visit/nbizkym.feed-{id}/kymbasicfeed
-        Methods: [GET, POST]
       - MatchPath: /api/endpoints/nmemdtl-{id}
         MapTo: /membership/endpoints/nmemdtl-{id}
         Methods: [GET, POST]
@@ -659,95 +783,6 @@ Clusters:
       - MatchPath: /mcontent/data/{mcid}/nafmdtl-{id}
         MapTo: /applicationform/data/{id}
         Methods: [GET, POST]
-      - MatchPath: /mcontent/data/{mcid}/nbizppf-{id}
-        MapTo: /bizaccount/nbizppf-{id}/publicprofile
-      - MatchPath: /mcontent/data/{mcid}/nbizcat-{id}
-        MapTo: /bizaccount/nbizcat-{id}/catalog
-      - MatchPath: /mcontent/data/merchant-select/nbizdtl-{id}
-        MapTo: /bizaccount/nbizdtl-{id}
-      # - MatchPath: /mcontent/data/merchant-create/nbizdtl-{id}
-      #   MapTo: /bizaccount/nbizdtl-{id}
-      #   Methods: [POST]
-      - MatchPath: /mcontent/data/merchant-home-basic/nbizdtl-{id}
-        MapTo: /bizaccount/nbizdtl-{id}/basic
-      - MatchPath: /mcontent/data/merchant-home-pending/nbizdtl-{id}
-        MapTo: /bizaccount/nbizdtl-{id}/basic
-      - MatchPath: /mcontent/data/merchant-home/nbizdtl-{id}
-        MapTo: /bizaccount/nbizdtl-{id}/advance
-      - MatchPath: /mcontent/data/merchant-profile/nbizpfl-{id}
-        MapTo: /bizaccount/nbizpfl-{id}/profile
-      - MatchPath: /mcontent/data/merchant-edit-name/nbiznme-{id}
-        MapTo: /bizaccount/nbiznme-{id}/name
-        Methods: [GET, PUT]
-      - MatchPath: /mcontent/data/merchant-edit-code/nbizcde-{id}
-        MapTo: /bizaccount/nbizcde-{id}/code
-        Methods: [GET, PUT]
-      - MatchPath: /mcontent/data/merchant-phone/nbizphn-{id}
-        MapTo: /bizaccount/nbizphn-{id}/phones
-      - MatchPath: /mcontent/data/merchant-add-phone/nbizphn-{id}
-        MapTo: /bizaccount/nbizphn-{id}/phones
-        Methods: [POST]
-      - MatchPath: /mcontent/data/merchant-edit-phone/nbizphn-{id}
-        MapTo: /bizaccount/nbizphn-{id}/phones/edit
-        Methods: [GET, PUT]
-      - MatchPath: /mcontent/data/merchant-address/nbizads-{id}
-        MapTo: /bizaccount/nbizads-{id}/address
-        Methods: [GET, PUT]
-      - MatchPath: /mcontent/data/merchant-schedule/nbizsch-{id}
-        MapTo: /bizaccount/nbizsch-{id}/schedules
-        Methods: [GET, PUT]
-      - MatchPath: /mcontent/data/merchant-schedule-setting/nbizscs-{id}
-        MapTo: /bizaccount/nbizscs-{id}/schedules/settings
-        Methods: [GET, PUT]
-      - MatchPath: /mcontent/data/merchant-contract/nbizctt-{id}
-        MapTo: /bizaccount/nbizctt-{id}/contracts
-      - MatchPath: /mcontent/data/merchant-contract-income/nbizctt-{id}
-        MapTo: /bizaccount/contracts/nbizctt-{id}
-      - MatchPath: /mcontent/data/merchant-deposit/nbizplg-{id}
-        MapTo: /bizaccount/nbizplg-{id}/pledges
-      - MatchPath: /mcontent/data/merchant-transaction/nbiztxl-{id}
-        MapTo: /bizaccount/nbiztxl-{id}/transactions
-      - MatchPath: /mcontent/data/merchant-qr-receive-money/nbizqrp-{id}
-        MapTo: /bizaccount/nbizqrp-{id}/qrpayment
-        Methods: [GET, PUT]
-      - MatchPath: /mcontent/data/merchant-topup/nbiztop-{id}
-        MapTo: /bizaccount/tx/data/nbiztop-{id}/deposit
-        Methods: [GET, POST]
-      - MatchPath: /mcontent/data/merchant-topup-confirm/nbiztop.confirm-{id}
-        MapTo: /bizaccount/txconfirm/data/nbiztop.confirm-{id}
-        Methods: [GET, POST]
-      - MatchPath: /mcontent/data/merchant-topup-completed/nbiztop.confirm-{id}
-        MapTo: /bizaccount/txcompleted/data/nbiztop.confirm-{id}
-      - MatchPath: /mcontent/data/merchant-transaction-topup/nbizttx-{id}
-        MapTo: /bizaccount/tx/data/nbizttx-{id}
-      - MatchPath: /mcontent/data/merchant-withdraw/nbizwit-{id}
-        MapTo: /bizaccount/tx/data/nbizwit-{id}/withdraw
-        Methods: [GET, POST]
-      - MatchPath: /mcontent/data/merchant-withdraw-confirm/nbizwit.confirm-{id}
-        MapTo: /bizaccount/txconfirm/data/nbizwit.confirm-{id}
-        Methods: [GET, POST]
-      - MatchPath: /mcontent/data/merchant-withdraw-completed/nbizwit.confirm-{id}
-        MapTo: /bizaccount/txcompleted/data/nbizwit.confirm-{id}
-      - MatchPath: /mcontent/data/merchant-transaction-withdraw/nbizwtx-{id}
-        MapTo: /bizaccount/tx/data/nbizwtx-{id}
-      - MatchPath: /mcontent/data/merchant-transaction-receive/nbizatx-{id}
-        MapTo: /bizaccount/tx/data/nbizatx-{id}
-      - MatchPath: /mcontent/data/merchant-transaction-receive/nbizctx-{id}
-        MapTo: /bizaccount/tx/data/nbizctx-{id}
-      - MatchPath: /mcontent/data/merchant-employee/nbizemp-{id}
-        MapTo: /bizaccount/nbizemp-{id}/employees
-      # - MatchPath: /mcontent/data/{mcid}/nbizemp-{id}
-      #   MapTo: /bizaccount/employees/nbizemp-{id}
-      #   Methods: [GET, POST]
-      - MatchPath: /mcontent/data/merchant-budget/nbizbgt-{id}
-        MapTo: /bizaccount/nbizbgt-{id}/budgets
-      # - MatchPath: /mcontent/data/{mcid}/nbizbgt-{id}
-      #   MapTo: /bizaccount/budgets/nbizbgt-{id}
-      #   Methods: [GET, POST]
-      - MatchPath: /mcontent/data/kym-feed/nbizkym.feed-{id}
-        MapTo: /bizaccount/nbizkym.feed-{id}/kymbasicfeed
-      - MatchPath: /mcontent/data/kym-feed/nbizkym.status-{id}
-        MapTo: /bizaccount/nbizkym.status-{id}/kymstatus
       - MatchPath: /mcontent/data/{mcid}/nmemlst{idx}
         MapTo: /membership
       - MatchPath: /mcontent/data/{mcid}/nmemreg-{id}
