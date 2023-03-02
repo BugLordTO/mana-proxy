@@ -151,8 +151,8 @@ Clusters:
         MapTo: /kyc/basic/nkycbsc-create/mm
         Methods: [GET, POST]
 
-      - MatchPath: /api/endpoints/nkycbsc.address-create
-        MapTo: /kyc/endpoints/nkycbsc.address-create/basic/address
+      - MatchPath: /api/endpoints/nkycbsc.address-home
+        MapTo: /kyc/endpoints/nkycbsc.address-home/basic/address
 
       - MatchPath: /api/endpoints/nkycbsc.confirm-{id}
         MapTo: /kyc/endpoints/nkycbsc.confirm-{id}/basic/confirm
@@ -195,9 +195,9 @@ Clusters:
 
       # KYM
       - MatchPath: /api/endpoints/nbizdtl.agreement-create$shop
-        MapTo: /bizaccount/endpoints/nbizdtl.agreement-create$shop/create
+        MapTo: /bizaccount/endpoints/nbizdtl.agreement-create$shop/create/agreement
       - MatchPath: /api/endpoints/nbizdtl.agreement-create$dev
-        MapTo: /bizaccount/endpoints/nbizdtl.agreement-create$dev/create
+        MapTo: /bizaccount/endpoints/nbizdtl.agreement-create$dev/create/agreement
       - MatchPath: /api/endpoints/nbizkym.feed-{id}
         MapTo: /bizaccount/visit/nbizkym.feed-{id}/kymbasicfeed
         Methods: [GET, POST]
@@ -279,8 +279,11 @@ Clusters:
       #   Methods: [GET, POST]
 
       # bix withdraw
+      - MatchPath: /api/endpoints/nbizwit-{id}
+        MapTo: /bizaccount/endpoints/nbizwit-{id}/withdraw
       - MatchPath: /api/endpoints/nbizwit.confirm-{id}
         MapTo: /bizaccount/txconfirm/data/nbizwit.confirm-{id}
+        Methods: [GET, POST]
       - MatchPath: /mcontent/data/merchant-withdraw/nbizwit-{id}
         MapTo: /bizaccount/tx/data/nbizwit-{id}/withdraw
         Methods: [GET, POST]
@@ -289,9 +292,10 @@ Clusters:
         Methods: [GET, POST]
       - MatchPath: /mcontent/data/merchant-withdraw-completed/nbizwit.confirm-{id}
         MapTo: /bizaccount/txcompleted/data/nbizwit.confirm-{id}
-        Methods: [GET, POST]
 
       # bix deposit
+      - MatchPath: /api/endpoints/nbiztop-{id}
+        MapTo: /bizaccount/endpoints/nbiztop-{id}/topup
       - MatchPath: /api/endpoints/nbiztop.confirm-{id}
         MapTo: /bizaccount/txconfirm/data/nbiztop.confirm-{id}
         Methods: [GET, POST]
