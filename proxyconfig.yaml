@@ -74,7 +74,7 @@ Clusters:
       - MatchPath: /mcontent/data/gpsaddress-select/npflads-change
         MapTo: /profile/shipping/npflads-change/change
         Methods: [GET, PUT]
-        
+
       - MatchPath: /api/profile/addresses/npflads-shipment/recall
         MapTo: /profile/addresses/npflads-shipment/recall
       - MatchPath: /api/profile/addresses/npflads-shipment/forget/remark
@@ -149,7 +149,7 @@ Clusters:
       - MatchPath: /mcontent/data/v6-profile-kyc-myanmar-basic-create/nkycbsc-create
         MapTo: /kyc/basic/nkycbsc-create/mm
         Methods: [GET, POST]
-        
+
       - MatchPath: /api/endpoints/nkycbsc.address-create
         MapTo: /kyc/endpoints/nkycbsc.address-create/basic/address
 
@@ -158,7 +158,7 @@ Clusters:
         Methods: [POST]
       - MatchPath: /mcontent/data/kyc-basic-confirm/nkycbsc.confirm-{id}
         MapTo: /kyc/basic/nkycbsc.confirm-{id}/confirm
-        
+
       - MatchPath: /api/endpoints/nkycbsc.mmconfirm-{id}
         MapTo: /kyc/endpoints/nkycbsc.mmconfirm-{id}/basic/mm/confirm
         Methods: [POST]
@@ -187,6 +187,9 @@ Clusters:
         Methods: [GET, POST]
 
       #######################   Financial general   #######################
+
+      - MatchPath: /mcontent/data/financial-menu/nfinanc-home
+        MapTo: /wallet/default
 
       - MatchPath: /api/endpoints/nfeedtl-home
         MapTo: /mm/endpoints/nfeedtl-home/fee
@@ -230,11 +233,44 @@ Clusters:
         Methods: [GET, POST]
       - MatchPath: /mcontent/data/v6-cart-adhoc-qr29-confirm/{id}
         MapTo: /monetarytx/tf-qr29/adhoc/{id}/confirm
-        
+
       - MatchPath: /mcontent/data/v6-cart-bill/nahcepp-{id}
         MapTo: /monetarytx/tf-qr29/adhoc/nahcepp-{id}/completed
       - MatchPath: /mcontent/data/v6-cart-bill/nahceac-{id}
         MapTo: /monetarytx/tf-qr29/adhoc/nahceac-{id}/completed
+
+      #######################   Financial deposit   #######################
+
+      - MatchPath: /api/endpoints/nwltdep-home
+        MapTo: /wallet/endpoints/nwltdep-home/deposit
+
+      #######################   Financial withdraw   #######################
+
+      - MatchPath: /api/endpoints/nwltwit-home
+        MapTo: /wallet/endpoints/nwltwit-home/withdraw
+
+      #######################   Financial external accounts   #######################
+
+      - MatchPath: /api/endpoints/neaclst-home
+        MapTo: /wallet/endpoints/neaclst-home/exaccounts
+      - MatchPath: /mcontent/data/account-main/neaclst-{id}
+        MapTo: /wallet/exaccounts/neaclst-{id}
+
+      - MatchPath: /mcontent/data/account-confirm-ppay/neacadd-{id}
+        MapTo: /wallet/exaccount/neacadd-{id}
+      - MatchPath: /mcontent/data/account-create-ppay/neacadd-{id}
+        MapTo: /wallet/exaccount/promptpay/neacadd-{id}
+        Methods: [POST]
+
+      - MatchPath: /mcontent/data/account-confirm-bankaccount/neacadd-{id}
+        MapTo: /wallet/exaccount/neacadd-{id}
+      - MatchPath: /mcontent/data/account-create-bankaccount/neacadd-{id}
+        MapTo: /wallet/exaccount/bank/neacadd-{id}
+        Methods: [POST]
+
+      - MatchPath: /api/wallet/exaccount/neacadd-{id}
+        MapTo: /wallet/exaccount/neacadd-{id}
+        Methods: [POST]
 
       #######################   MEX & MTM   #######################
         # MEX Topup create qr
@@ -254,7 +290,7 @@ Clusters:
         Methods: [POST]
       - MatchPath: /mcontent/data/v6-financial-topup-qr-confirm/ndepmmk.confirm-{id}
         MapTo: /mm/ndepmmk.confirm-{id}/mextopupqr/confirm
-        
+
       - MatchPath: /mcontent/data/v6-financial-topup-qr-complete/ndepmmk.confirm-{id}
         MapTo: /mm/ndepmmk.confirm-{id}/mextopupqr/detail
 
@@ -282,27 +318,25 @@ Clusters:
         MapTo: /mm/endpoints/nahcmex.destcompleted-{id}/adhocmex/completed/dlg
 
         # MTM Withdraw
-      - MatchPath: /api/endpoints/nmtmwdw-home
-        MapTo: /mm/endpoints/nmtmwdw-home/mtm/withdraw
       - MatchPath: /mcontent/data/v6-financial-mtm-withdraw-select-account/nmtmwdw-home
         MapTo: /mm/nmtmwdw-home/mtm/withdraw
         Methods: [GET, POST]
-        
+
       - MatchPath: /api/endpoints/nmtmwdw.bankaccount-home
         MapTo: /mm/endpoints/nmtmwdw.bankaccount-home/myanmar/bankaccount
       - MatchPath: /mcontent/data/v6-dialog-bank-select/nmtmwdw.bankaccount-home
         MapTo: /mm/nmtmwdw.bankaccount-home/myanmar/bankaccount
       - MatchPath: /mcontent/data/v6-dialog-bank-select/nmtmwdw-home
         MapTo: /mm/nmtmwdw.bankaccount-home/myanmar/bankaccount
-      
+
       - MatchPath: /mcontent/data/v6-financial-mtm-withdraw-create/nmtmwdw.amount-{id}
         MapTo: /mm/nmtmwdw.amount-{id}/mtm/withdraw/amount
         Methods: [GET, POST]
-      
+
       - MatchPath: /mcontent/data/v6-financial-mtm-withdraw-preview/nmtmwdw.edit-{id}
         MapTo: /mm/nmtmwdw.edit-{id}/mtm/withdraw/edit
         Methods: [GET, POST]
-        
+
       - MatchPath: /api/endpoints/nmtmwdw.confirm-{id}
         MapTo: /mm/endpoints/nmtmwdw.confirm-{id}/mtm/withdraw/confirm
         Methods: [POST]
@@ -311,29 +345,54 @@ Clusters:
 
       - MatchPath: /mcontent/data/v6-cart-bill/nmtmwdw.confirm-{id}
         MapTo: /mm/nmtmwdw.confirm-{id}/mtm/withdraw/requested
-        
+
       - MatchPath: /api/endpoints/nmtmwdw.status-{id}
         MapTo: /mm/endpoints/nmtmwdw.status-{id}/mtm/withdraw/status
         Methods: [GET, POST]
       - MatchPath: /mcontent/data/v6-feed-mtm-withdraw/nmtmwdw.status-{id}
         MapTo: /mm/nmtmwdw.status-{id}/mtm/withdraw/status
-        
+
       - MatchPath: /api/endpoints/nmtmwdw.rejected-{id}
         MapTo: /mm/endpoints/nmtmwdw.rejected-{id}/mtm/withdraw/rejected
 
       #######################   WALLETS   #######################
 
+      - MatchPath: /mcontent/data/wallet-select/nwltlst-{id}
+        MapTo: /wallet
+
+      - MatchPath: /mcontent/data/wallet-detail/nwltdft-{id}
+        MapTo: /wallet/{id}/transaction
+
+      - MatchPath: /mcontent/data/wallet-transaction-adhoc/nwtxahc-{id}
+        MapTo: /wallet/transaction/adhoc/nwtxahc-{id}
+      - MatchPath: /mcontent/data/wallet-transaction-ppay-payment/nwtxpmt-{id}
+        MapTo: /wallet/transaction/ppaypayment/nwtxpmt-{id}
+      - MatchPath: /mcontent/data/wallet-transaction-topup/nwtxdep-{id}
+        MapTo: /wallet/transaction/deposit/nwtxdep-{id}
+      - MatchPath: /mcontent/data/wallet-transaction-withdraw/nwtxwit-{id}
+        MapTo: /wallet/transaction/withdraw/nwtxwit-{id}
+      - MatchPath: /mcontent/data/wallet-transaction-withdraw/nwtxwac-{id}
+        MapTo: /wallet/transaction/withdraw/nwtxwac-{id}
+      - MatchPath: /mcontent/data/wallet-transaction-receivemoney/nwtxrmy-{id}
+        MapTo: /wallet/transaction/receivemoney/nwtxrmy-{id}
+
       - MatchPath: /api/endpoints/nwltbil-{id}
         MapTo: /wallet/transaction/visit/nwltbil-{id}
       - MatchPath: /mcontent/data/v6-cart-bill-detail/nwltbil-{id}
         MapTo: /wallet/transaction/nwltbil-{id}
-        
+
       - MatchPath: /api/endpoints/nwltrct-{id}
         MapTo: /wallet/transaction/visit/nwltrct-{id}/receipt
       - MatchPath: /mcontent/data/v6-cart-receipt/nwltrct-{id}
         MapTo: /wallet/transaction/nwltrct-{id}
 
+      #######################   Issue report   #######################
+
+      - MatchPath: /api/endpoints/nrptdtl-create
+        MapTo: /report/endpoints/nrptdtl-create/issue
+
       #######################   Api ที่คุยกันตรงๆ   #######################
+      
       - MatchPath: /signalr/{hub}/negotiate
         MapTo: /signalr/{hub}/negotiate
         Methods: [POST]
@@ -380,9 +439,6 @@ Clusters:
         Methods: [POST]
       - MatchPath: /api/wallet/default/withdraw/confirm/nwltwit-{id}
         MapTo: /wallet/default/withdraw/confirm/nwltwit-{id}
-        Methods: [POST]
-      - MatchPath: /api/wallet/exaccount/neacadd-{id}
-        MapTo: /wallet/exaccount/neacadd-{id}
         Methods: [POST]
       - MatchPath: /search/result
         MapTo: /search/result
@@ -755,8 +811,6 @@ Clusters:
         MapTo: /wallet/withdraw/success/data/nppywit-{id}
       - MatchPath: /mcontent/data/wallet-withdraw-completed/nwltwit-{id}
         MapTo: /wallet/withdraw/account/success/data/nwltwit-{id}
-      # - MatchPath: /mcontent/data/wallet-topup/nwltdqr-{id}
-      #   MapTo: /wallet/user/accounts/nwltdqr-{id}
       - MatchPath: /mcontent/data/wallet-topup-qr-create/nwltdqr-{id}
         MapTo: /wallet/depositqrrequest/nwltdqr-{id}
         Methods: [GET, POST]
@@ -849,24 +903,6 @@ Clusters:
         MapTo: /wallet/ppay/payment/confirm/nppypmt-{id}
       - MatchPath: /mcontent/data/ppay-payment-completed/nppypmt-{id}
         MapTo: /wallet/ppay/payment/completed/nppypmt-{id}
-      - MatchPath: /mcontent/data/financial-menu/nfinanc-home
-        MapTo: /wallet/default
-      - MatchPath: /mcontent/data/wallet-select/nwltlst-{id}
-        MapTo: /wallet
-      - MatchPath: /mcontent/data/wallet-detail/nwltdft-{id}
-        MapTo: /wallet/1/transaction
-      - MatchPath: /mcontent/data/wallet-transaction-adhoc/nwtxahc-{id}
-        MapTo: /wallet/transaction/adhoc/nwtxahc-{id}
-      - MatchPath: /mcontent/data/wallet-transaction-ppay-payment/nwtxpmt-{id}
-        MapTo: /wallet/transaction/ppaypayment/nwtxpmt-{id}
-      - MatchPath: /mcontent/data/wallet-transaction-topup/nwtxdep-{id}
-        MapTo: /wallet/transaction/deposit/nwtxdep-{id}
-      - MatchPath: /mcontent/data/wallet-transaction-withdraw/nwtxwit-{id}
-        MapTo: /wallet/transaction/withdraw/nwtxwit-{id}
-      - MatchPath: /mcontent/data/wallet-transaction-withdraw/nwtxwac-{id}
-        MapTo: /wallet/transaction/withdraw/nwtxwac-{id}
-      - MatchPath: /mcontent/data/wallet-transaction-receivemoney/nwtxrmy-{id}
-        MapTo: /wallet/transaction/receivemoney/nwtxrmy-{id}
       - MatchPath: /mcontent/data/wallet-withdraw/nwltwit-{id}
         MapTo: /wallet/user/accounts/nwltwit-{id}
       - MatchPath: /mcontent/data/wallet-withdraw-bankaccount/nwltwit-{id}
@@ -875,18 +911,6 @@ Clusters:
       - MatchPath: /mcontent/data/wallet-withdraw-bankaccount-confirm/nwltwit-{id}
         MapTo: /wallet/default/withdraw/confirm/nwltwit-{id}
         Methods: [GET, POST]
-      - MatchPath: /mcontent/data/account-main/neaclst-{id}
-        MapTo: /wallet/exaccounts/neaclst-{id}
-      - MatchPath: /mcontent/data/account-confirm-ppay/neacadd-{id}
-        MapTo: /wallet/exaccount/neacadd-{id}
-      - MatchPath: /mcontent/data/account-confirm-bankaccount/neacadd-{id}
-        MapTo: /wallet/exaccount/neacadd-{id}
-      - MatchPath: /mcontent/data/account-create-ppay/neacadd-{id}
-        MapTo: /wallet/exaccount/promptpay/neacadd-{id}
-        Methods: [POST]
-      - MatchPath: /mcontent/data/account-create-bankaccount/neacadd-{id}
-        MapTo: /wallet/exaccount/bank/neacadd-{id}
-        Methods: [POST]
       - MatchPath: /mcontent/data/{mcid}/nrmddtl-{id}
         MapTo: /reminder/{id}
         Methods: [GET, POST]
