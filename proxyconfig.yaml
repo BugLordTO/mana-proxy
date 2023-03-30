@@ -507,7 +507,35 @@ Clusters:
 
       - MatchPath: /api/endpoints/nmtmwdw.rejected-{id}
         MapTo: /mm/endpoints/nmtmwdw.rejected-{id}/mtm/withdraw/rejected
+        
+      #######################   MEX ADHOC   #######################
 
+      # MEX ADHOC TOPUP
+      
+      - MatchPath: /api/endpoints/nahcdep-{qrtext}
+        MapTo: /monetarytx/endpoints/nahcdep-{qrtext}/adhocmex
+        
+      - MatchPath: /mcontent/data/m1/nahcdep-{qrtext}
+        MapTo: /monetarytx/nahcdep-{qrtext}/adhocmex
+        Methods: [GET, POST] 
+      
+      - MatchPath: /mcontent/data/m2mex/{endpoinid}
+        MapTo: /monetarytx/{endpoinid}/adhocmex/mex
+        Methods: [GET, POST] 
+        
+      - MatchPath: /mcontent/data/m3/nahcdep-{qrtext}
+        MapTo: /monetarytx/nahcdep-{qrtext}/adhocmex/confirm
+   
+      - MatchPath: /api/endpoints/nahcdep-{qrtext}
+        MapTo: /monetarytx/endpoints/nahcdep-{qrtext}/adhocmex/confirm
+        Methods: [POST] 
+        
+      - MatchPath: /mcontent/data/dlgsuccess/nahcdep-{qrtext}
+        MapTo: /monetarytx/nahcdep-{qrtext}/adhocmex/completed
+        
+      - MatchPath: /api/endpoints/nahcdep-{qrtext}
+        MapTo: /monetarytx/endpoints/nahcdep-{qrtext}/adhocmex/completed/dlg
+      
       #######################   WALLETS   #######################
 
       - MatchPath: /mcontent/data/wallet-select/nwltlst-{id}
