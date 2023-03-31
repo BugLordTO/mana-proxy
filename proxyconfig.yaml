@@ -515,22 +515,22 @@ Clusters:
       - MatchPath: /api/endpoints/nahcdep-{qrtext}
         MapTo: /monetarytx/endpoints/nahcdep-{qrtext}/adhoc
         
-      - MatchPath: /mcontent/data/m1/nahcdep-{qrtext}
+      - MatchPath: /mcontent/data/nv-cart-adhoc-edit/nahcdep-{qrtext}
         MapTo: /monetarytx/adhoc/nahcdep-{qrtext}
         Methods: [GET, POST] 
       
-      - MatchPath: /mcontent/data/m1.5/{endpoinid}
+      - MatchPath: /mcontent/data/nv-cart-adhoc-exchange/{endpoinid}
         MapTo: /monetarytx/adhoc/{endpoinid}/mex
         Methods: [GET, POST] 
         
-      - MatchPath: /mcontent/data/m2/nahcdep-{qrtext}
+      - MatchPath: /mcontent/data/nv-cart-adhoc-confirm/nahcdep-{qrtext}
         MapTo: /monetarytx/adhoc/{nahcdep-{qrtext}/confirm
    
       - MatchPath: /api/endpoints/nahcdep-{qrtext}
         MapTo: /monetarytx/endpoints/nahcdep-{qrtext}/adhoc/confirm
         Methods: [POST] 
         
-      - MatchPath: /mcontent/data/dlgsuccess/nahcdep-{qrtext}
+      - MatchPath: /mcontent/data/nv-cart-bill/nahcdep-{qrtext}
         MapTo: /monetarytx/adhoc/nahcdep-{qrtext}/completed   
         
       #######################   WALLETS   #######################
