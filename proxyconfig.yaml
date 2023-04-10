@@ -524,7 +524,7 @@ Clusters:
         Methods: [GET, POST] 
         
       - MatchPath: /mcontent/data/nv-cart-adhoc-confirm/nahcdep-{qrtext}
-        MapTo: /monetarytx/adhoc/{nahcdep-{qrtext}/confirm
+        MapTo: /monetarytx/adhoc/nahcdep-{qrtext}/confirm
    
       - MatchPath: /api/endpoints/nahcdep-{qrtext}
         MapTo: /monetarytx/endpoints/nahcdep-{qrtext}/adhoc/confirm
