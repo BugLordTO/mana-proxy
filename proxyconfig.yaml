@@ -39,6 +39,11 @@ Clusters:
         Methods: [POST]
   - Id: mana
     Routes:
+      #######################   GENERAL   #######################
+
+      - MatchPath: /home/messageandbalance/{endpointid}
+        MapTo: /home/messageandbalance/{endpointid}
+
       #######################   PROFILE   #######################
       - MatchPath: /api/endpoints/npflacc-home
         MapTo: /profile/endpoints/npflacc-home
@@ -553,12 +558,12 @@ Clusters:
 
       - MatchPath: /api/endpoints/nwltbil-{id}
         MapTo: /wallet/transaction/visit/nwltbil-{id}
-      - MatchPath: /mcontent/data/v6-cart-bill-detail/nwltbil-{id}
+      - MatchPath: /mcontent/data/nv-cart-bill-detail/nwltbil-{id}
         MapTo: /wallet/transaction/nwltbil-{id}
 
       - MatchPath: /api/endpoints/nwltrct-{id}
         MapTo: /wallet/transaction/visit/nwltrct-{id}/receipt
-      - MatchPath: /mcontent/data/v6-cart-receipt/nwltrct-{id}
+      - MatchPath: /mcontent/data/nv-cart-receipt/nwltrct-{id}
         MapTo: /wallet/transaction/nwltrct-{id}
 
       #######################   Issue report   #######################
