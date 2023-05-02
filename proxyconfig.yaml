@@ -360,6 +360,9 @@ Clusters:
       - MatchPath: /mcontent/data/v6-financial-transfer-network-select/nfintfr-list
         MapTo: /monetarytx/tf-qr29/methods/nfintfr-list
 
+      - MatchPath: /api/endpoints/nahcppy-home
+        MapTo: /monetarytx/endpoints/nahcppy-home/tf-qr29/scan
+
       - MatchPath: /api/endpoints/nahcepp-home
         MapTo: /monetarytx/endpoints/nahcepp-home/tf-qr29/ppay
       - MatchPath: /mcontent/data/v6-financial-transfer-network-promptpay-create/nahcepp-home
