@@ -986,9 +986,9 @@ Clusters:
       - MatchPath: /mcontent/data/{mcid}/nrmdses-{id}
         MapTo: /reminder/session/{id}
         Methods: [GET, POST]
-      - MatchPath: /mcontent/data/{mcid}/{nptid}
-        MapTo: /mcontent/data/{mcid}/{nptid}
-        Methods: [GET, POST, PUT, DELETE]
+      # - MatchPath: /mcontent/data/{mcid}/{nptid}
+      #   MapTo: /mcontent/data/{mcid}/{nptid}
+        # Methods: [GET, POST, PUT, DELETE]
       - MatchPath: /mcontent/data/kym-agreement/nbizdtl-create$shop
         MapTo: /mcontent/endpoints/{nptid}
         Methods: [GET, POST, PUT, DELETE]
