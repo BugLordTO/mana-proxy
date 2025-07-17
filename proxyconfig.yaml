@@ -1,4 +1,39 @@
 Clusters:
+  - Id: mana2018
+    Routes:
+      #######################   DEVICE 2018   #######################
+      - MatchPath: /api/device/start/{buildNumber}
+        MapTo: /api/device/start/{buildNumber}
+      - MatchPath: /api/device/connect
+        MapTo: /api/device/connect
+        Methods: [POST]
+      - MatchPath: /api/device/disconnect
+        MapTo: /api/device/disconnect
+        Methods: [POST]
+      - MatchPath: /api/device/pusher/auth
+        MapTo: /api/device/pusher/auth
+        Methods: [POST]
+      - MatchPath: /api/device/login
+        MapTo: /api/device/login
+        Methods: [POST]
+
+      #######################   VISIT GET SUBMIT 2018   #######################
+      - MatchPath: /api/subscriptions/{SubscriptionId}/visit/{McId}/{Flow}
+        MapTo: /api/subscriptions/{SubscriptionId}/visit/{McId}/{Flow}
+      - MatchPath: /api/subscriptions/{SubscriptionId}/visit/{McId}
+        MapTo: /api/subscriptions/{SubscriptionId}/visit/{McId}
+      - MatchPath: /api/subscriptions/{SubscriptionId}/contracts/{ApiId}/{Path}
+        MapTo: /api/subscriptions/{SubscriptionId}/contracts/{ApiId}/{Path}
+        Methods: [GET, POST]
+      - MatchPath: /api/subscriptions/{SubscriptionId}/contracts/{ApiId}
+        MapTo: /api/subscriptions/{SubscriptionId}/contracts/{ApiId}
+        Methods: [GET, POST]
+      - MatchPath: /api/subscriptions/{SubscriptionId}/predefined-consent-accept/{ApiId}
+        MapTo: /api/subscriptions/{SubscriptionId}/predefined-consent-accept/{ApiId}
+        Methods: [POST]
+      - MatchPath: /api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}
+        MapTo: /api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}
+        Methods: [POST]
   - Id: qr
     Routes:
       - MatchPath: /api/qrmanager/rdr
@@ -190,6 +225,10 @@ Clusters:
         MapTo: /kyc/endpoints/nkymapl-{id}/manager/consent/approval
       - MatchPath: /mcontent/data/consent-kyc-by-manager/nkymapl-{id}
         MapTo: /kyc/manager/consent/nkymapl-{id}/approval
+        Methods: [GET, POST]
+
+      - MatchPath: /api/endpoints/nkycbsc.facereg-{id}
+        MapTo: /kyc/endpoints/nkycbsc.facereg-{id}/basic/facereg
         Methods: [GET, POST]
 
       #######################   BizCenter   #######################
@@ -524,6 +563,10 @@ Clusters:
         MapTo: /monetarytx/endpoints/nahcdep-{qrtext}/adhoc
         Methods: [GET, POST]
 
+      - MatchPath: /mcontent/data/nv-cart-adhoc-edit/nahcdep-{something}//mcproxy-release.onmana.app/api/endpoints/nahcdep-{qrtext}
+        MapTo: /monetarytx/adhoc/nahcdep-{qrtext}
+        Methods: [GET, POST]
+
       - MatchPath: /mcontent/data/nv-cart-adhoc-edit/nahcdep-{qrtext}
         MapTo: /monetarytx/adhoc/nahcdep-{qrtext}
         Methods: [GET, POST]
@@ -573,6 +616,12 @@ Clusters:
 
       - MatchPath: /api/endpoints/nrptdtl-create
         MapTo: /report/endpoints/nrptdtl-create/issue
+
+      #######################   Face verify   #######################
+
+      - MatchPath: /api/endpoints/nfcever.{step}-{id}
+        MapTo: /kyc/endpoints/nfcever.{step}-{id}/facever
+        Methods: [GET, POST]
 
       #######################   Api ที่คุยกันตรงๆ   #######################
 
