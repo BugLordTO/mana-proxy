@@ -34,6 +34,111 @@ Clusters:
       - MatchPath: /api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}
         MapTo: /api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}
         Methods: [POST]
+  - Id: mana2018xxx
+    Routes:
+      #######################   DEVICE 2018   #######################
+      - MatchPath: /xxx/api/device/start/{buildNumber}
+        MapTo: /api/device/start/{buildNumber}
+      - MatchPath: /xxx/api/device/connect
+        MapTo: /api/device/connect
+        Methods: [POST]
+      - MatchPath: /xxx/api/device/disconnect
+        MapTo: /api/device/disconnect
+        Methods: [POST]
+      - MatchPath: /xxx/api/device/pusher/auth
+        MapTo: /api/device/pusher/auth
+        Methods: [POST]
+      - MatchPath: /xxx/api/device/login
+        MapTo: /api/device/login
+        Methods: [POST]
+
+      #######################   VISIT GET SUBMIT 2018   #######################
+      - MatchPath: /xxx/api/subscriptions/{SubscriptionId}/visit/{McId}/{Flow}
+        MapTo: /api/subscriptions/{SubscriptionId}/visit/{McId}/{Flow}
+      - MatchPath: /xxx/api/subscriptions/{SubscriptionId}/visit/{McId}
+        MapTo: /api/subscriptions/{SubscriptionId}/visit/{McId}
+      - MatchPath: /xxx/api/subscriptions/{SubscriptionId}/contracts/{ApiId}/{Path}
+        MapTo: /api/subscriptions/{SubscriptionId}/contracts/{ApiId}/{Path}
+        Methods: [GET, POST]
+      - MatchPath: /xxx/api/subscriptions/{SubscriptionId}/contracts/{ApiId}
+        MapTo: /api/subscriptions/{SubscriptionId}/contracts/{ApiId}
+        Methods: [GET, POST]
+      - MatchPath: /xxx/api/subscriptions/{SubscriptionId}/predefined-consent-accept/{ApiId}
+        MapTo: /api/subscriptions/{SubscriptionId}/predefined-consent-accept/{ApiId}
+        Methods: [POST]
+      - MatchPath: /xxx/api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}
+        MapTo: /api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}
+        Methods: [POST]
+  - Id: mana2018yyy
+    Routes:
+      #######################   DEVICE 2018   #######################
+      - MatchPath: /yyy/api/device/start/{buildNumber}
+        MapTo: /api/device/start/{buildNumber}
+      - MatchPath: /yyy/api/device/connect
+        MapTo: /api/device/connect
+        Methods: [POST]
+      - MatchPath: /yyy/api/device/disconnect
+        MapTo: /api/device/disconnect
+        Methods: [POST]
+      - MatchPath: /yyy/api/device/pusher/auth
+        MapTo: /api/device/pusher/auth
+        Methods: [POST]
+      - MatchPath: /yyy/api/device/login
+        MapTo: /api/device/login
+        Methods: [POST]
+
+      #######################   VISIT GET SUBMIT 2018   #######################
+      - MatchPath: /yyy/api/subscriptions/{SubscriptionId}/visit/{McId}/{Flow}
+        MapTo: /api/subscriptions/{SubscriptionId}/visit/{McId}/{Flow}
+      - MatchPath: /yyy/api/subscriptions/{SubscriptionId}/visit/{McId}
+        MapTo: /api/subscriptions/{SubscriptionId}/visit/{McId}
+      - MatchPath: /yyy/api/subscriptions/{SubscriptionId}/contracts/{ApiId}/{Path}
+        MapTo: /api/subscriptions/{SubscriptionId}/contracts/{ApiId}/{Path}
+        Methods: [GET, POST]
+      - MatchPath: /yyy/api/subscriptions/{SubscriptionId}/contracts/{ApiId}
+        MapTo: /api/subscriptions/{SubscriptionId}/contracts/{ApiId}
+        Methods: [GET, POST]
+      - MatchPath: /yyy/api/subscriptions/{SubscriptionId}/predefined-consent-accept/{ApiId}
+        MapTo: /api/subscriptions/{SubscriptionId}/predefined-consent-accept/{ApiId}
+        Methods: [POST]
+      - MatchPath: /yyy/api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}
+        MapTo: /api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}
+        Methods: [POST]
+  - Id: mana2018zzz
+    Routes:
+      #######################   DEVICE 2018   #######################
+      - MatchPath: /zzz/api/device/start/{buildNumber}
+        MapTo: /api/device/start/{buildNumber}
+      - MatchPath: /zzz/api/device/connect
+        MapTo: /api/device/connect
+        Methods: [POST]
+      - MatchPath: /zzz/api/device/disconnect
+        MapTo: /api/device/disconnect
+        Methods: [POST]
+      - MatchPath: /zzz/api/device/pusher/auth
+        MapTo: /api/device/pusher/auth
+        Methods: [POST]
+      - MatchPath: /zzz/api/device/login
+        MapTo: /api/device/login
+        Methods: [POST]
+
+      #######################   VISIT GET SUBMIT 2018   #######################
+      - MatchPath: /zzz/api/subscriptions/{SubscriptionId}/visit/{McId}/{Flow}
+        MapTo: /api/subscriptions/{SubscriptionId}/visit/{McId}/{Flow}
+      - MatchPath: /zzz/api/subscriptions/{SubscriptionId}/visit/{McId}
+        MapTo: /api/subscriptions/{SubscriptionId}/visit/{McId}
+      - MatchPath: /zzz/api/subscriptions/{SubscriptionId}/contracts/{ApiId}/{Path}
+        MapTo: /api/subscriptions/{SubscriptionId}/contracts/{ApiId}/{Path}
+        Methods: [GET, POST]
+      - MatchPath: /zzz/api/subscriptions/{SubscriptionId}/contracts/{ApiId}
+        MapTo: /api/subscriptions/{SubscriptionId}/contracts/{ApiId}
+        Methods: [GET, POST]
+      - MatchPath: /zzz/api/subscriptions/{SubscriptionId}/predefined-consent-accept/{ApiId}
+        MapTo: /api/subscriptions/{SubscriptionId}/predefined-consent-accept/{ApiId}
+        Methods: [POST]
+      - MatchPath: /zzz/api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}
+        MapTo: /api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}
+        Methods: [POST]
   - Id: qr
     Routes:
       - MatchPath: /api/qrmanager/rdr
@@ -563,7 +668,7 @@ Clusters:
         MapTo: /monetarytx/endpoints/nahcdep-{qrtext}/adhoc
         Methods: [GET, POST]
 
-      - MatchPath: /mcontent/data/nv-cart-adhoc-edit/nahcdep-{something}//mcproxy-release.onmana.app/api/endpoints/nahcdep-{qrtext}
+      - MatchPath: /mcontent/data/nv-cart-adhoc-edit/nahcdep-{something} # //mcproxy-release.onmana.app/api/endpoints/nahcdep-{qrtext}
         MapTo: /monetarytx/adhoc/nahcdep-{qrtext}
         Methods: [GET, POST]
 
