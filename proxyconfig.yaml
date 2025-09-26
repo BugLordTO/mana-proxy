@@ -34,6 +34,15 @@ Clusters:
       - MatchPath: /api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}
         MapTo: /api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}
         Methods: [POST]
+      - MatchPath: /api/p2d/{path}
+        MapTo: /api/p2d/{path}
+        Methods: [GET, POST, PUT, DELETE]
+      - MatchPath: /api/paymentresult/{path}
+        MapTo: /api/paymentresult/{path}
+        Methods: [GET, POST, PUT, DELETE]
+      - MatchPath: /dev/{daid}/service/{svcid}/gateway/{path}
+        MapTo: /dev/{daid}/service/{svcid}/gateway/{path}
+        Methods: [GET, POST, PUT, DELETE]
   - Id: mana2018xxx
     Routes:
       #######################   DEVICE 2018   #######################
@@ -69,6 +78,15 @@ Clusters:
       - MatchPath: /xxx/api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}
         MapTo: /api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}
         Methods: [POST]
+      - MatchPath: /xxx/api/p2d/{path}
+        MapTo: /api/p2d/{path}
+        Methods: [GET, POST, PUT, DELETE]
+      - MatchPath: /xxx/api/paymentresult/{path}
+        MapTo: /api/paymentresult/{path}
+        Methods: [GET, POST, PUT, DELETE]
+      - MatchPath: /xxx/dev/{daid}/service/{svcid}/gateway/{path}
+        MapTo: /dev/{daid}/service/{svcid}/gateway/{path}
+        Methods: [GET, POST, PUT, DELETE]
   - Id: mana2018yyy
     Routes:
       #######################   DEVICE 2018   #######################
@@ -104,6 +122,15 @@ Clusters:
       - MatchPath: /yyy/api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}
         MapTo: /api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}
         Methods: [POST]
+      - MatchPath: /yyy/api/p2d/{path}
+        MapTo: /api/p2d/{path}
+        Methods: [GET, POST, PUT, DELETE]
+      - MatchPath: /yyy/api/paymentresult/{path}
+        MapTo: /api/paymentresult/{path}
+        Methods: [GET, POST, PUT, DELETE]
+      - MatchPath: /yyy/dev/{daid}/service/{svcid}/gateway/{path}
+        MapTo: /dev/{daid}/service/{svcid}/gateway/{path}
+        Methods: [GET, POST, PUT, DELETE]
   - Id: mana2018zzz
     Routes:
       #######################   DEVICE 2018   #######################
@@ -139,6 +166,59 @@ Clusters:
       - MatchPath: /zzz/api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}
         MapTo: /api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}
         Methods: [POST]
+      - MatchPath: /zzz/api/p2d/{path}
+        MapTo: /api/p2d/{path}
+        Methods: [GET, POST, PUT, DELETE]
+      - MatchPath: /zzz/api/paymentresult/{path}
+        MapTo: /api/paymentresult/{path}
+        Methods: [GET, POST, PUT, DELETE]
+      - MatchPath: /zzz/dev/{daid}/service/{svcid}/gateway/{path}
+        MapTo: /dev/{daid}/service/{svcid}/gateway/{path}
+        Methods: [GET, POST, PUT, DELETE]
+  - Id: mana2018ddd
+    Routes:
+      #######################   DEVICE 2018   #######################
+      - MatchPath: /ddd/api/device/start/{buildNumber}
+        MapTo: /api/device/start/{buildNumber}
+      - MatchPath: /ddd/api/device/connect
+        MapTo: /api/device/connect
+        Methods: [POST]
+      - MatchPath: /ddd/api/device/disconnect
+        MapTo: /api/device/disconnect
+        Methods: [POST]
+      - MatchPath: /ddd/api/device/pusher/auth
+        MapTo: /api/device/pusher/auth
+        Methods: [POST]
+      - MatchPath: /ddd/api/device/login
+        MapTo: /api/device/login
+        Methods: [POST]
+
+      #######################   VISIT GET SUBMIT 2018   #######################
+      - MatchPath: /ddd/api/subscriptions/{SubscriptionId}/visit/{McId}/{Flow}
+        MapTo: /api/subscriptions/{SubscriptionId}/visit/{McId}/{Flow}
+      - MatchPath: /ddd/api/subscriptions/{SubscriptionId}/visit/{McId}
+        MapTo: /api/subscriptions/{SubscriptionId}/visit/{McId}
+      - MatchPath: /ddd/api/subscriptions/{SubscriptionId}/contracts/{ApiId}/{Path}
+        MapTo: /api/subscriptions/{SubscriptionId}/contracts/{ApiId}/{Path}
+        Methods: [GET, POST]
+      - MatchPath: /ddd/api/subscriptions/{SubscriptionId}/contracts/{ApiId}
+        MapTo: /api/subscriptions/{SubscriptionId}/contracts/{ApiId}
+        Methods: [GET, POST]
+      - MatchPath: /ddd/api/subscriptions/{SubscriptionId}/predefined-consent-accept/{ApiId}
+        MapTo: /api/subscriptions/{SubscriptionId}/predefined-consent-accept/{ApiId}
+        Methods: [POST]
+      - MatchPath: /ddd/api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}
+        MapTo: /api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}
+        Methods: [POST]
+      - MatchPath: /ddd/api/p2d/{path}
+        MapTo: /api/p2d/{path}
+        Methods: [GET, POST, PUT, DELETE]
+      - MatchPath: /ddd/api/paymentresult/{path}
+        MapTo: /api/paymentresult/{path}
+        Methods: [GET, POST, PUT, DELETE]
+      - MatchPath: /ddd/dev/{daid}/service/{svcid}/gateway/{path}
+        MapTo: /dev/{daid}/service/{svcid}/gateway/{path}
+        Methods: [GET, POST, PUT, DELETE]
   - Id: qr
     Routes:
       - MatchPath: /api/qrmanager/rdr
