@@ -31,6 +31,12 @@ Clusters:
       - MatchPath: /api/subscriptions/{SubscriptionId}/predefined-consent-accept/{ApiId}
         MapTo: /api/subscriptions/{SubscriptionId}/predefined-consent-accept/{ApiId}
         Methods: [POST]
+      - MatchPath: /api/subscriptions/{SubscriptionId}/predefined-consent-accept/{ApiId}
+        MapTo: /api/subscriptions/{SubscriptionId}/predefined-consent-accept/{ApiId}
+        Methods: [POST]
+      - MatchPath: /api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}
+        MapTo: /api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}
+        Methods: [POST]
       - MatchPath: /api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}
         MapTo: /api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}
         Methods: [POST]
@@ -74,6 +80,12 @@ Clusters:
         Methods: [GET, POST]
       - MatchPath: /xxx/api/subscriptions/{SubscriptionId}/predefined-consent-accept/{ApiId}
         MapTo: /api/subscriptions/{SubscriptionId}/predefined-consent-accept/{ApiId}
+        Methods: [POST]
+      - MatchPath: /xxx/api/subscriptions/{SubscriptionId}/predefined-consent-accept/{ApiId}
+        MapTo: /api/subscriptions/{SubscriptionId}/predefined-consent-accept/{ApiId}
+        Methods: [POST]
+      - MatchPath: /xxx/api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}
+        MapTo: /api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}
         Methods: [POST]
       - MatchPath: /xxx/api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}
         MapTo: /api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}
@@ -119,6 +131,12 @@ Clusters:
       - MatchPath: /yyy/api/subscriptions/{SubscriptionId}/predefined-consent-accept/{ApiId}
         MapTo: /api/subscriptions/{SubscriptionId}/predefined-consent-accept/{ApiId}
         Methods: [POST]
+      - MatchPath: /yyy/api/subscriptions/{SubscriptionId}/predefined-consent-accept/{ApiId}
+        MapTo: /api/subscriptions/{SubscriptionId}/predefined-consent-accept/{ApiId}
+        Methods: [POST]
+      - MatchPath: /yyy/api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}
+        MapTo: /api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}
+        Methods: [POST]
       - MatchPath: /yyy/api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}
         MapTo: /api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}
         Methods: [POST]
@@ -163,6 +181,12 @@ Clusters:
       - MatchPath: /zzz/api/subscriptions/{SubscriptionId}/predefined-consent-accept/{ApiId}
         MapTo: /api/subscriptions/{SubscriptionId}/predefined-consent-accept/{ApiId}
         Methods: [POST]
+      - MatchPath: /zzz/api/subscriptions/{SubscriptionId}/predefined-consent-accept/{ApiId}
+        MapTo: /api/subscriptions/{SubscriptionId}/predefined-consent-accept/{ApiId}
+        Methods: [POST]
+      - MatchPath: /zzz/api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}
+        MapTo: /api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}
+        Methods: [POST]
       - MatchPath: /zzz/api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}
         MapTo: /api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}
         Methods: [POST]
@@ -204,8 +228,14 @@ Clusters:
       - MatchPath: /ddd/api/subscriptions/{SubscriptionId}/contracts/{ApiId}
         MapTo: /api/subscriptions/{SubscriptionId}/contracts/{ApiId}
         Methods: [GET, POST]
+      - MatchPath: /ddd/api/subscriptions/{SubscriptionId}/predefined-consent-accept/{ApiId}/{Path}
+        MapTo: /api/subscriptions/{SubscriptionId}/predefined-consent-accept/{ApiId}/{Path}
+        Methods: [POST]
       - MatchPath: /ddd/api/subscriptions/{SubscriptionId}/predefined-consent-accept/{ApiId}
         MapTo: /api/subscriptions/{SubscriptionId}/predefined-consent-accept/{ApiId}
+        Methods: [POST]
+      - MatchPath: /ddd/api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}/{Path}
+        MapTo: /api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}/{Path}
         Methods: [POST]
       - MatchPath: /ddd/api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}
         MapTo: /api/subscriptions/{SubscriptionId}/predefined-consent-reject/{ApiId}
