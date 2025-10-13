@@ -778,10 +778,6 @@ Clusters:
         MapTo: /monetarytx/endpoints/nahcdep-{qrtext}/adhoc
         Methods: [GET, POST]
 
-      - MatchPath: /mcontent/data/nv-cart-adhoc-edit/nahcdep-{something} # //mcproxy-release.onmana.app/api/endpoints/nahcdep-{qrtext}
-        MapTo: /monetarytx/adhoc/nahcdep-{qrtext}
-        Methods: [GET, POST]
-
       - MatchPath: /mcontent/data/nv-cart-adhoc-edit/nahcdep-{qrtext}
         MapTo: /monetarytx/adhoc/nahcdep-{qrtext}
         Methods: [GET, POST]
