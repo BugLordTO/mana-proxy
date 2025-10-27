@@ -276,9 +276,6 @@ Clusters:
         MapTo: /kyc/basic/nkycbsc-create
         Methods: [GET, POST]
       #######################   Api ที่คุยกันตรงๆ   #######################
-      - MatchPath: /tempupload/{mcid}/{endpointId}
-        MapTo: /tempupload/{mcid}/{endpointId}
-        Methods: [POST]
       #######################   Endpoints to each API   #######################
       ##################   Form & Page => Get data / Submit data   ##################
       - MatchPath: /mcontent/data/merchant-profile-image-edit/nbizimg-{id}
@@ -919,6 +916,9 @@ Clusters:
         Methods: [POST]
       - MatchPath: /mcontent/togglepin/{id}
         MapTo: /mcontent/togglepin/{id}
+        Methods: [POST]
+      - MatchPath: /tempupload/{mcid}/{endpointId}
+        MapTo: /tempupload/{mcid}/{endpointId}
         Methods: [POST]
       #######################   Endpoints to each API   #######################
       - MatchPath: /api/endpoints/ntrhalk-{id}
