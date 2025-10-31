@@ -610,7 +610,8 @@ Clusters:
       #######################   Financial transfer external ppay/bank account   #######################
 
       - MatchPath: /api/endpoints/nfintfr-list
-        MapTo: /monetarytx/endpoints/nfintfr-list/tf-qr29
+        # MapTo: /monetarytx/endpoints/nfintfr-list/tf-qr29
+        MapTo: /api/underconstruction/endpoints/nfintfr-list/underconstruction
       - MatchPath: /mcontent/data/v6-financial-transfer-network-select/nfintfr-list
         MapTo: /monetarytx/tf-qr29/methods/nfintfr-list
 
